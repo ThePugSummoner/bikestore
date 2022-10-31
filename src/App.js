@@ -11,6 +11,7 @@ function App() {
           Here is our new project!
         </p>
         <p>Ilia Zubov</p>
+        <p>Tomi Valtanen</p>
       </header>
     </div>
   );
