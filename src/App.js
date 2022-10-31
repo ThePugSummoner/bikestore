@@ -10,6 +10,7 @@ function App() {
           Hello World!
           Here is our new project!
         </p>
+        <p>Ilia Zubov</p>
       </header>
     </div>
   );
