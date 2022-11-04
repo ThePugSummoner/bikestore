@@ -56,7 +56,7 @@ body{
   display: inline;
   margin-left: 20px;
 }
-main{
+.main{
   min-height: 100vh;
 }
 footer{
