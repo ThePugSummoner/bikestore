@@ -1,11 +1,12 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   margin: 0;
 }
-.top-nav{
+
+.top-nav {
   background-color: orange;
   padding: 20px;
   margin-block: auto;
@@ -14,89 +15,106 @@ body{
   justify-content: center;
   align-items: center;
 }
-.logo-img{
+
+.logo-img {
   margin-left: 20px;
 }
-.top-nav-search{
+
+.top-nav-search {
   width: 633px;
   height: 35px;
   margin: auto;
   border-radius: 10px;
   border: none;
+  text-indent: 10px;
 }
-.user{
+
+.user {
   display: flex;
   flex-direction: row;
 }
-.user-logo{
+
+.user-logo {
   height: 50px;
 }
-.shoppingCart{
+
+.shoppingCart {
   display: flex;
   flex-direction: row;
   margin-left: 10px;
 }
-.cart-logo{
+
+.cart-logo {
   height: 35px;
 }
 
-.bottom-nav{
+.bottom-nav {
   display: flex;
   border: 1px solid black;
   height: 40px;
   background-color: black;
   align-items: center;
-  
+
 }
-.bottom-nav > ul{
+
+.bottom-nav>ul {
   list-style: none;
   color: white;
 }
-.bottom-nav>ul>li{
+
+.bottom-nav>ul>li {
   display: inline;
   margin-left: 20px;
 }
-.main{
+
+.main {
   min-height: 100vh;
 }
-footer{
+
+footer {
   padding: 10px;
-  margin-top:auto ;
+  margin-top: auto;
   background-color: black;
   color: white;
 }
-.footer-container{
+
+.footer-container {
   display: flex;
   flex-direction: row;
   gap: 150px;
   flex-wrap: wrap;
   justify-content: center;
 }
-.footer-ul{
+
+.footer-ul {
   list-style: none;
 }
-.footer-ul>li:first-child{
-font-size: 20px;
-text-decoration: underline;
-margin-bottom: 15px;
+
+.footer-ul>li:first-child {
+  font-size: 20px;
+  text-decoration: underline;
+  margin-bottom: 15px;
 }
-.footer-tuoteryhma>ul>li{
+
+.footer-tuoteryhma>ul>li {
   margin-bottom: 5px;
 }
-dt{
+
+dt {
   text-decoration: underline;
   font-size: 18px;
 }
-dd{
+
+dd {
   margin: 0;
   padding: 0 0 0.5em 0;
   display: flex;
   flex-direction: column;
 }
-.span-container{
+
+.span-container {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   width: 100px;
 }
-
