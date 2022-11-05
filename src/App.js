@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes,Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Navbar from './components/navbar';
 import Home from './components/home';
 import User from './components/userInfo';
