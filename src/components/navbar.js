@@ -16,7 +16,7 @@ function Navbar(){
         <header>
             <div className="top-nav">
             <Link className="logo-img" to="/"><img  src={logo} alt="logo"></img></Link>
-            <input className="top-nav-search" type="text" placeholder="search..."></input>
+            <input className="top-nav-search" style={{padding:10}} type="text" placeholder="Search..."></input>
             
             <div className="user"> 
             <img className="user-logo" src={userIcon} alt="usericon"></img>          
