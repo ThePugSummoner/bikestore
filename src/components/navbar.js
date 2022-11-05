@@ -26,15 +26,6 @@ function Navbar() {
             <img className="cart-logo" src={cart} alt="cartlogo"></img>        
             <Link style={linkStyle} to="/shoppingcart">Ostoskärry</Link>
             </div>
-
-                <div className="user">
-                    <img className="user-logo" src={userIcon} alt="usericon"></img>
-                    <Link style={linkStyle} to="/userinfo">Oma Tili</Link>
-                </div>
-                <div className="shoppingCart">
-                    <img className="cart-logo" src={cart} alt="cartlogo"></img>
-                    <Link style={linkStyle} to="/shoppingcart">Ostoskärry</Link>
-                </div>
             </div>
             <div className="bottom-nav">
                 <ul>
