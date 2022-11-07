@@ -32,6 +32,14 @@ function ImageFrame() {
                     </div>
 
                 </div>
+                <div className="bottom-image">
+                <img className="bottom-picture" src={mallisto} alt="mallisto"></img>
+                    <div className="image-bottom-text">
+                        <h3>Mallisto</h3>
+                        <button>Lue lisää</button>
+                    </div>
+
+                </div>
             </div>
         </div>
 

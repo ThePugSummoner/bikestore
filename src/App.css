@@ -134,8 +134,6 @@ ImageFrame css starts here
 .image-container {
   display: flex;
   flex-direction: column;
-  width: 75%;
-  max-width: 1100px;
   margin: auto;
   gap: 10px;
   margin-bottom: 20px;
@@ -168,13 +166,13 @@ h3{
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
 }
 .bottom-image{
   position:relative;
 }
 .bottom-picture{
-  max-width:565px;
+  max-width:625px;
   width: 100%;
 }
 .image-bottom-text{
@@ -196,3 +194,48 @@ width: 100%;
 /*
 ImageFrame css ends here
 */
+
+/*
+card item css starts here
+*/
+.card-item{
+border: 1px solid black;
+border-radius: 10px;
+width: 300px;
+padding: 10px;
+margin-bottom: 20px;
+text-align: center;
+margin: 20px;
+}
+.card-image-container{
+margin-bottom: 10px;
+}
+.card-footer{
+display: flex;
+flex-direction: column;
+padding: 10px;
+}
+.card-footer span{
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+.card-footer button{
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+}
+
+/*
+card item css ends here
+*/
+.lista-test{
+width: 95%;
+margin: auto;
+overflow-x: scroll;
+}
+.lista-test>ul{
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+}
