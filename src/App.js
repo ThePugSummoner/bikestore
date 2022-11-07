@@ -6,8 +6,8 @@ import User from './components/userInfo';
 import ShoppingCart from './components/shoppingCart';
 import Footer from './components/footer';
 import RegForm from './components/regform';
+import Rules from './components/rules';
 import axios from 'axios';
-
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
       <Route path="/userinfo" element={<User/>}></Route>
       <Route path="/shoppingcart" element={<ShoppingCart/>}></Route>
       <Route path="/regform" element={<RegForm/>}></Route>
+      <Route path="/rules" element={<Rules/>}></Route>
     </Routes>
     <Footer/>
     </>

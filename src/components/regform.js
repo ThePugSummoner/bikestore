@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const styles = {
     margin: 'auto',
@@ -28,11 +29,27 @@ function RegForm() {
             </div>
             <div className="col-md-12">
                 <label style={{marginLeft:10}} htmlFor="inputPhone" className="form-label">Puhelinnumero*</label>
-                <input type="email" className="form-control" id="inputPhone" placeholder="Puhelinnumero"/>
+                <input type="phone" className="form-control" id="inputPhone" placeholder="Puhelinnumero"/>
             </div>
             <div className="col-md-12">
                 <label style={{marginLeft:10}} htmlFor="inputPAsword4" className="form-label">Salasana*</label>
                 <input type="password" className="form-control" id="inputPassword4" placeholder="Salasana"/>
+            </div>
+            <div className="col-6">
+                <div style={{marginLeft:10}} className="form-check">
+                    <input className="form-check-input" type="checkbox" id="newsCheck"/>
+                    <label className="form-check-label" htmlFor="newsCheck">
+                        Haluan tilata uutiskirjen
+                    </label>
+                </div>
+            </div>
+            <div className="col-6">
+                <div style={{marginLeft:10}} className="form-check">
+                    <input className="form-check-input" type="checkbox" id="rulesCheck"/>
+                    <label className="form-check-label" htmlFor="rulesCheck">
+                        Hyväksyn <Link to="/rules">käyttöehdot</Link>
+                    </label>
+            </div>
             </div>
             <div className="col-12">
                 <button style={{width:500, fontSize:'1.5em', backgroundColor: '#333', marginTop:10}}type="submit" className="btn btn-dark mb-3">Rekisteröidy</button>

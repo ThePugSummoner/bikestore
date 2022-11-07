@@ -29,7 +29,7 @@ return (
             <p style={{width:500, textAlign: "center"}}>Etkö ole vielä rekisteröinyt?</p>
         </div>
         <div>
-        <Link to="/regform">Luo tili täältä!</Link>
+            <Link to="/regform">Luo tili täältä!</Link>
         </div>
     </form>
 </div>
