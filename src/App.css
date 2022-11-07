@@ -5,7 +5,9 @@
 body {
   margin: 0;
 }
-
+/*
+Navbar css starts here
+*/
 .top-nav {
   background-color: orange;
   padding: 20px;
@@ -53,24 +55,27 @@ body {
   border: 1px solid black;
   height: 40px;
   background-color: black;
-  align-items: center;
-
 }
 
 .bottom-nav>ul {
   list-style: none;
   color: white;
+  margin-block: auto;
 }
 
 .bottom-nav>ul>li {
   display: inline;
   margin-left: 20px;
 }
-
+/*
+Navbar css ends here
+*/
 .main {
   min-height: 100vh;
 }
-
+/*
+Footer css starts here
+*/
 footer {
   padding: 10px;
   margin-top: auto;
@@ -117,4 +122,120 @@ dd {
   flex-direction: row;
   justify-content: space-between;
   width: 100px;
+}
+/*
+Footer css ends here
+*/
+
+
+/*
+ImageFrame css starts here
+*/
+.image-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+h3{
+  color: white;
+  margin-top:25px;
+}
+.top-image {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  background-image: url(../src/images/mountainbike.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 80%;
+
+}
+
+.image-top-text {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  width: 35%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+.bottom-image-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom-image{
+  position:relative;
+}
+.bottom-picture{
+  max-width:625px;
+  width: 100%;
+}
+.image-bottom-text{
+position: absolute;
+text-align: center;
+bottom: 0;
+height: 50%;
+background: rgba(0, 0, 0, 0.6);
+width: 100%;
+}
+.image-container button{
+  background-color: red;
+  width: 150px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+}
+/*
+ImageFrame css ends here
+*/
+
+/*
+card item css starts here
+*/
+.card-item{
+border: 1px solid black;
+border-radius: 10px;
+width: 300px;
+padding: 10px;
+margin-bottom: 20px;
+text-align: center;
+margin: 20px;
+}
+.card-image-container{
+margin-bottom: 10px;
+}
+.card-footer{
+display: flex;
+flex-direction: column;
+padding: 10px;
+}
+.card-footer span{
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+.card-footer button{
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+}
+
+/*
+card item css ends here
+*/
+.lista-test{
+width: 95%;
+margin: auto;
+overflow-x: scroll;
+}
+.lista-test>ul{
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
 }
