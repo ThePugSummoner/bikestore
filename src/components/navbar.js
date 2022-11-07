@@ -32,7 +32,6 @@ function Navbar() {
                 <ul>
                     <li>Tuotteet</li>
                     <li>Huolto</li>
-                    <li>Info</li>
                 </ul>
             </div>
         </header>
