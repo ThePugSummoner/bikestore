@@ -1,3 +1,4 @@
+import React from "react"
 import userIcon from "../images/omatili icon.png"
 import cart from "../images/shoppingcart icon.png"
 import logo from "../images/Logo.png"

@@ -118,3 +118,25 @@ dd {
   justify-content: space-between;
   width: 100px;
 }
+
+.image-container {
+  position: relative;
+  height: 300px;
+  width: 60%;
+  margin: auto;
+  background-image: url(../src/images/mountainbike.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y:80%;
+  cursor: pointer;
+}
+.image-top-text {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 35%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+}
