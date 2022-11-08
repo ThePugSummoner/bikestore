@@ -9,7 +9,7 @@ body {
 Navbar css starts here
 */
 .top-nav {
-  background-color: orange;
+  background-color: #7584B4;
   padding: 20px;
   margin-block: auto;
   display: flex;
@@ -20,6 +20,7 @@ Navbar css starts here
 
 .logo-img {
   margin-left: 20px;
+  height: 80px;
 }
 
 .top-nav-search {
@@ -190,6 +191,20 @@ padding: 10px;
 
 /*
 card item css ends here
+*/
+/*
+banner css starts here
+*/
+.front{
+  background-image: url(../src/images/front-bicycle.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+/*
+banner css ends here
 */
 .lista-test{
 width: 95%;

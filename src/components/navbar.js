@@ -1,7 +1,7 @@
 import React from "react"
 import userIcon from "../images/omatili icon.png"
 import cart from "../images/shoppingcart icon.png"
-import logo from "../images/Logo.png"
+import logo from "../images/sivunlogo.png"
 import { Link } from "react-router-dom"
 
 
@@ -16,7 +16,7 @@ function Navbar() {
     return (
         <header>
             <div className="top-nav">
-            <Link className="logo-img" to="/"><img  src={logo} alt="logo"></img></Link>
+            <Link  to="/"><img className="logo-img" src={logo} alt="logo"></img></Link>
             <input className="top-nav-search" style={{padding:10}} type="text" placeholder="Search..."></input>
             
             <div className="user"> 

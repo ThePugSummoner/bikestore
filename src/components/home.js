@@ -1,4 +1,5 @@
 import React from "react"
+import Banner from "./banner"
 import Card from "./card"
 import ImageFrame from "./imagaFrame"
 
@@ -13,7 +14,7 @@ for(let i=0; i<10;i++){
 
     return(
        <main className="main">
-         
+         <Banner/>
         <ImageFrame />
         <div className="lista-test">
          <h1>Uutuudet</h1>   
