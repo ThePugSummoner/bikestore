@@ -196,7 +196,7 @@ card item css ends here
 banner css starts here
 */
 .front{
-  background-image: url(../src/images/front-bicycle.png);
+  background-image: url(../src/images/snow.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
