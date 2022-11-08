@@ -13,6 +13,7 @@ for(let i=0; i<10;i++){
 
     return(
        <main className="main">
+         
         <ImageFrame />
         <div className="lista-test">
          <h1>Uutuudet</h1>   
