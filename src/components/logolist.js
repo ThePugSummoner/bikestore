@@ -12,7 +12,7 @@ function LogoList(){
         <div className="container">
         <div className="row">
            <div className="col">
-              <h3 className="text-center pt-2 pb-2">Huippumerkit</h3>
+              <h3 className="text-center pt-4 pb-2">Huippumerkit</h3>
            <ul className="logo-ul">
               <li><img className="logo"  src={cannondale} alt="cannondale logo"></img></li>
               <li><img className="logo"  src={cube} alt="cube logo"></img></li>
