@@ -2,6 +2,7 @@ import React from "react"
 import Banner from "./banner"
 import Card from "./card"
 import ImageFrame from "./imagaFrame"
+import LogoList from "./logolist"
 
 function Home(){
 
@@ -15,6 +16,7 @@ for(let i=0; i<10;i++){
     return(
        <main className="main">
          <Banner/>
+         <LogoList/>
         <ImageFrame />
         <div className="lista-test">
          <h1>Uutuudet</h1>   

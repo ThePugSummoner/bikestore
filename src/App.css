@@ -10,7 +10,7 @@ Navbar css starts here
 */
 .top-nav {
   background-color: #7584B4;
-  padding: 20px;
+  padding: 10px;
   margin-block: auto;
   display: flex;
   flex-direction: row;
@@ -215,4 +215,21 @@ overflow-x: scroll;
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
+}
+/*
+logot home start here
+*/
+
+.logo-ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+}
+.logo{
+  background-color: transparent;
+  height: 80px;
+  width: 120px;
 }
