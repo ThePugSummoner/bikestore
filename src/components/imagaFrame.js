@@ -1,5 +1,5 @@
 import React from "react"
-import mountainbike from "../images/maantiepyora.png"
+import mountainbike from "../images/maastopyora.png"
 import electricbike from "../images/sahkopyora.png"
 import racingbike from "../images/maantiepyora.png"
 import kidsbike from "../images/lastenpyora.png"
