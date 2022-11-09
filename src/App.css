@@ -24,17 +24,27 @@ Navbar css starts here
 }
 
 .top-nav-search {
-  width: 633px;
-  height: 35px;
-  margin: auto;
-  border-radius: 10px;
+  width: 550px;
+  height: 40px;
+  margin-left: auto;
+  border-radius:10px 0 0 10px;
+  border: 1px solid black;
   border: none;
-  text-indent: 10px;
+  text-indent: 15px;
 }
-
+.search-button{
+height: 40px;
+width: 75px;
+background-color: #2C4C84;
+border-radius:0 10px 10px 0;
+}
+.search-button:active{
+  box-shadow: -2px 0px 8px 5px rgba(0,0,0,0.2) inset;
+}
 .user {
   display: flex;
   flex-direction: row;
+  margin-left: auto;
 }
 
 .user-logo {

@@ -6,11 +6,7 @@ import LogoList from "./logolist"
 
 function Home(){
 
-const array=[]
 
-for(let i=0; i<10;i++){
-   array.push(<li><Card/></li>)
-}
 
 
     return(
@@ -18,24 +14,6 @@ for(let i=0; i<10;i++){
          <Banner/>
          <LogoList/>
         <ImageFrame />
-        <div className="lista-test">
-         <h1>Uutuudet</h1>   
-        <ul>
-         {array}
-        </ul>
-        </div> 
-        <div className="lista-test">
-         <h1>Maastopyörät</h1>   
-        <ul>
-         {array}
-        </ul>
-        </div> 
-        <div className="lista-test">
-         <h1>Hypdidipyörät</h1>   
-        <ul>
-         {array}
-        </ul>
-        </div> 
        </main>
 
         

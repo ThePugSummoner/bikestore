@@ -35,7 +35,7 @@ function ImageFrame() {
                     </div>
                     </div>
                 </div>
-                <div className="row gx-5 image-row">
+                <div className="row gx-5 image-row pb-4">
                 <div className="col-md-3  p-0 image-container">
                 <img className="img-fluid" src={kidsbike} alt="mallisto"></img>
                     <div className="black-canvas text-center pt-lg-5 pt-sm-2">
