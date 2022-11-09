@@ -1,37 +1,25 @@
 import React from "react"
+import Banner from "./banner"
 import Card from "./card"
 import ImageFrame from "./imagaFrame"
+import LogoList from "./logolist"
 
 function Home(){
 
-const array=[]
 
+<<<<<<< HEAD
 for (let i=0; i<10; i++){
    array.push(<li><Card/></li>)
 }
+=======
+>>>>>>> 80f14d02e256595893c14d30b4b9ff5993537d03
 
 
     return(
        <main className="main">
+         <Banner/>
+         <LogoList/>
         <ImageFrame />
-        <div className="lista-test">
-         <h1>Uutuudet</h1>   
-        <ul>
-         {array}
-        </ul>
-        </div> 
-        <div className="lista-test">
-         <h1>Maastopyörät</h1>   
-        <ul>
-         {array}
-        </ul>
-        </div> 
-        <div className="lista-test">
-         <h1>Hypdidipyörät</h1>   
-        <ul>
-         {array}
-        </ul>
-        </div> 
        </main>
 
         

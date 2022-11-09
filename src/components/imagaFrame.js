@@ -1,42 +1,62 @@
 import React from "react"
-import bike from "../images/mountainbike.jpg"
-import tarvike from "../images/tarvikkeet.jpg"
-import mallisto from "../images/mallisto.jpg"
+import mountainbike from "../images/maastopyora.png"
+import electricbike from "../images/sahkopyora.png"
+import racingbike from "../images/maantiepyora.png"
+import kidsbike from "../images/lastenpyora.png"
+import tarvikeet from "../images/tarvikkeet.png"
+import huolto from "../images/tarvikkeet.jpg"
 
 
 function ImageFrame() {
     return (
 
-        <div className="image-container">
-            <div className="top-image">
-                <div className="image-top-text">
-                    <h3>Maastopyörät</h3>
-                    <button>Lue lisää</button>
-                </div>
-            </div>
-
-
-            <div className="bottom-image-container">
-                <div className="bottom-image">
-                    <img className="bottom-picture" src={tarvike} alt="tarvike"></img>
-                    <div className="image-bottom-text">
-                        <h3>Tarvikkeet</h3>
-                        <button>Lue lisää</button>
+        <div className="container-fluid">          
+            <div className="row gx-5 image-row">
+                <div className="col-md-3 p-0 image-container">
+                    <img className="img-fluid" src={mountainbike} alt="tarvike"></img>
+                    <div className="black-canvas text-center pt-lg-5 pt-md-2">
+                        <h3 className="mt-4">Maastopyörät</h3>
+                        
                     </div>
                 </div>
-                <div className="bottom-image">
-                <img className="bottom-picture" src={mallisto} alt="mallisto"></img>
-                    <div className="image-bottom-text">
-                        <h3>Mallisto</h3>
-                        <button>Lue lisää</button>
+                <div className="col-md-3  p-0 image-container">
+                <img className="img-fluid" src={electricbike} alt="mallisto"></img>
+                    <div className="black-canvas text-center pt-lg-5 pt-md-2">
+                        <h3 className="mt-4">Sähköpyörät</h3>
+                        
                     </div>
 
                 </div>
-                <div className="bottom-image">
-                <img className="bottom-picture" src={mallisto} alt="mallisto"></img>
-                    <div className="image-bottom-text">
-                        <h3>Mallisto</h3>
-                        <button>Lue lisää</button>
+                <div className="col-md-3  p-0 image-container">
+                <img className="img-fluid" src={racingbike} alt="mallisto"></img>
+                    <div className="black-canvas text-center pt-lg-5 pt-md-2">
+                        <h3 className="mt-4">Maantiepyörät</h3>
+                        
+                    </div>
+                    </div>
+                </div>
+                <div className="row gx-5 image-row pb-4">
+                <div className="col-md-3  p-0 image-container">
+                <img className="img-fluid" src={kidsbike} alt="mallisto"></img>
+                    <div className="black-canvas text-center pt-lg-5 pt-sm-2">
+                        <h3 className="mt-4">Lastenpyörät</h3>
+                        
+                    </div>
+
+                </div>
+                <div className="col-md-3  p-0 image-container">
+                <img className="img-fluid" src={huolto} alt="mallisto"></img>
+                    <div className="black-canvas text-center pt-lg-5 pt-md-2">
+                        <h3 className="mt-4">Huolto</h3>
+                        
+                    </div>
+
+                </div>
+                <div className="col-md-3  p-0 image-container">
+                <img className="img-fluid" src={tarvikeet} alt="mallisto"></img>
+                    <div className="black-canvas text-center pt-lg-5 pt-md-2">
+                        <h3 className="mt-4">Tarvikkeet</h3>
+                        
                     </div>
 
                 </div>

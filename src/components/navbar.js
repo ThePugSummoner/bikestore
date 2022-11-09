@@ -1,8 +1,9 @@
 import React from "react"
 import userIcon from "../images/omatili icon.png"
 import cart from "../images/shoppingcart icon.png"
-import logo from "../images/Logo.png"
+import logo from "../images/sivunlogo.png"
 import { Link } from "react-router-dom"
+import searchLogo from "../images/spanner 2.png"
 
 
 const linkStyle = {
@@ -16,9 +17,9 @@ function Navbar() {
     return (
         <header>
             <div className="top-nav">
-            <Link className="logo-img" to="/"><img  src={logo} alt="logo"></img></Link>
-            <input className="top-nav-search" style={{padding:10}} type="text" placeholder="Search..."></input>
-            
+            <Link  to="/"><img className="logo-img" src={logo} alt="logo"></img></Link>
+            <input className="top-nav-search"  type="text" placeholder="Search..."></input>
+            <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
             <div className="user"> 
             <img className="user-logo" src={userIcon} alt="usericon"></img>          
             <Link style={linkStyle} to="/userinfo">Oma Tili</Link>
