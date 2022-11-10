@@ -1,5 +1,4 @@
 import React from "react"
-import image from "../images/front-bicycle.png"
 
 function Banner(){
 
