@@ -217,16 +217,6 @@ banner css starts here
 /*
 banner css ends here
 */
-.lista-test{
-width: 95%;
-margin: auto;
-overflow-x: scroll;
-}
-.lista-test>ul{
-  display: flex;
-  flex-wrap: nowrap;
-  list-style: none;
-}
 /*
 logot home start here
 */
