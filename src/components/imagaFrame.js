@@ -10,7 +10,7 @@ import huolto from "../images/tarvikkeet.jpg"
 function ImageFrame() {
     return (
 
-        <div className="container-fluid">          
+        <div className="container">          
             <div className="row gx-5 image-row">
                 <div className="col-md-3 p-0 image-container">
                     <img className="img-fluid" src={mountainbike} alt="tarvike"></img>
