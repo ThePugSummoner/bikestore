@@ -7,6 +7,7 @@ import ShoppingCart from './components/shoppingCart';
 import Footer from './components/footer';
 import RegForm from './components/regform';
 import Rules from './components/rules';
+import Account from './components/account';
 import axios from 'axios';
 import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -26,6 +27,7 @@ function App() {
       <Route path="/shoppingcart" element={<ShoppingCart/>}></Route>
       <Route path="/regform" element={<RegForm/>}></Route>
       <Route path="/rules" element={<Rules/>}></Route>
+      <Route path="/account" element={<Account/>}></Route>
     </Routes>
     <Footer/>
     </>

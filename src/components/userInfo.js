@@ -23,7 +23,7 @@ return (
             <label htmlFor="floatingPassword">Salasana*</label>
         </div>
         <div>
-            <button style={{width:500, textAlign: "center", fontSize: '1.5em'}} type="button" className="btn btn-dark mb-3">Kirjaudu sisään</button>
+            <button style={{width:500, textAlign: "center", fontSize: '1.5em'}} type="button" className="btn btn-dark mb-3"><Link style={{textDecoration: 'none', color:'white'}}to="/account">Kirjaudu sisään</Link></button>
         </div>
         <div style={styles}>
             <p style={{width:500, textAlign: "center"}}>Etkö ole vielä rekisteröinyt?</p>

@@ -1,21 +1,15 @@
 <?php
+require_once 'inc/functions.php';
+require_once 'inc/headers.php';
 
-require ('dbconnection.php');
+try{
+    $dbcon = openDb();
+    $sql = "select * from tilaus";
+    $query = $dbcon->query($sql);
+    $results = $query->fetchAll(PDO::FETCH_ASSOC);
+    header('HTTP/1.1 200 OK');
+    print json_encode($results);
+} catch (PDOException $pdoex) {
+    returnError($pdoex);
+}
 
-   
-
-    $dbcon = createDbConnection();
-
-    $command = "INSERT INTO asiakas (etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VALUES ('Antti', 'Miettinen', 'miettinen@gmail.com', '0465897895', 'TESTTEST', 'K')";
-
-    //$command = "SELECT * FROM asiakas";
-
-    //$command = "DELETE FROM asiakas WHERE id > 0";
-
-    $dbcon->exec($command);
-
-    //$id = $dbcon->lastInsertId();
-
-    //$command = "INSERT INTO albums (Title, ArtistId) VALUES ('Anarchy in the U.K.', $id)";
-
-    //$dbcon->exec($command);
