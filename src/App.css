@@ -172,28 +172,39 @@ ImageFrame css ends here
 /*
 card item css starts here
 */
-.card-item{
-border: 1px solid black;
-border-radius: 10px;
-width: 300px;
-padding: 10px;
-margin-bottom: 20px;
-text-align: center;
-margin: 20px;
+.card-item {
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  margin: 0;
+  max-width: 120px;
+
 }
-.card-image-container{
-margin-bottom: 10px;
+.card-item h5{
+  font-size:15px;
+  margin-bottom: 0;
 }
-.card-footer{
-display: flex;
-flex-direction: column;
-padding: 10px;
+.card-image-container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid black;
 }
-.card-footer span{
-  font-size: 35px;
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.card-footer span {
+  font-size: 15px;
+  color: red;
   margin-bottom: 5px;
 }
-.card-footer button{
+
+.card-footer button {
   background-color: black;
   color: white;
   border-radius: 10px;
@@ -235,3 +246,65 @@ logot home start here
   height: 80px;
   width: 120px;
 }
+/*
+Slider starts here
+*/
+.slider-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-slide {
+  background-color: white;
+  border-radius: 10px;
+  padding:20px 40px 20px 40px;
+  max-width: 1180px;
+  min-width: 300px;
+  margin: auto;
+  
+}
+.button-container{
+  position: relative;
+  display: flex;
+  top: -150px;
+}
+.carousel-control-prev{
+  height: 40px;
+  width: 40px;
+  left: -40px;
+}
+.carousel-control-next{
+  height: 40px;
+  width: 40px;
+  right: -40px;
+
+}
+.carousel-control-prev-icon {
+  background-color: red;
+}
+
+.carousel-control-next-icon {
+  background-color: red;
+}
+
+.carousel-inner {
+  display: flex;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+.carousel-item {
+  display: block;
+  margin-right: 0;
+  flex: 0 0 calc(100% / 6);
+  margin-left: 0;
+  padding: 0;
+  margin: 0;
+}
+.carousel-slide h3{
+  border-bottom: 2px solid;
+  border-image:   linear-gradient(to right, transparent 14%,black 8%,black 40%, black 50%)10;
+
+}
+/*
+Slider Ends here
+*/
