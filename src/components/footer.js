@@ -9,7 +9,7 @@ function Footer() {
                 <div className="row">
                     <div className="footer-tuoteryhma col-md-3 col-6 mt-3">
                         <ul className="footer-ul">
-                            <li>Tuotegategoriat</li>
+                            <li>Tuotekategoriat</li>
                             <li>Maastopyörät</li>
                             <li>Sähköpyörät</li>
                             <li>Maantiepyörät</li>
