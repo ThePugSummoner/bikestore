@@ -13,7 +13,7 @@ CREATE TABLE asiakas (
     puhnro VARCHAR(255) NOT NULL,
     salasana VARCHAR(255) NOT NULL,
     uutiskirje VARCHAR(5)
-);
+) AUTO_INCREMENT = 100;
 
 
 
@@ -22,8 +22,8 @@ INSERT INTO asiakas (etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VA
 
 CREATE TABLE tilaus (
     astunnus INT(10),
-    tila VARCHAR(30),
     tilausnro SMALLINT PRIMARY KEY AUTO_INCREMENT,
+    tila VARCHAR(30),
     tilauspvm DATETIME,
     summa DECIMAL(10,2),
     palautus VARCHAR(30),
@@ -36,10 +36,13 @@ INSERT INTO tilaus (tila, tilauspvm, summa, palautus) VALUES ('Käsittelyssä', 
 
 INSERT INTO tilaus (tila, tilauspvm, summa, palautus) VALUES ('Toimitettu', '2021-8-18', 99.90, 'Palautus ei onnistu');
 
-INSERT INTO tilaus (tila, tilauspvm, summa, palautus) VALUES ('Matkalla', '2019-2-12', 599.90, 'Palautus ei onnistu');
+INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (100, 'Matkalla', '2019-2-12', 599.90, 'Palautus ei onnistu');
 
 INSERT INTO tilaus (tila, tilauspvm, summa, palautus) VALUES ('Toimitettu', '2020-4-15', 12599.90, 'Palautus ei onnistu');
 
+INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (101, 'Toimitettu', '2018-12-20', 1299, 'Palautus ei onnistu');
+
+INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (100, 'Käsittelyssä', '2022-11-14', 325.55, 'Palauta tuote');
 
 {/*DROP TABLE asiakas;*/}
 
