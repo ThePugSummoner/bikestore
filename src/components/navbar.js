@@ -1,12 +1,8 @@
 import React from "react"
-import userIcon from "../images/omatili icon.png"
-import cart from "../images/shoppingcart icon.png"
 import logo from "../images/AngularBikes3.png"
 import { Link } from "react-router-dom"
 import searchLogo from "../images/spanner 2.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faShoppingCart, faWrench } from '@fortawesome/free-solid-svg-icons'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
 const linkStyle = {
@@ -24,16 +20,12 @@ function Navbar() {
             <div className="top-nav">
             <Link  to="/"><img className="logo-img"  src={logo} alt="logo"></img></Link>
             <input className="top-nav-search"  type="text" placeholder="Search..."></input>
-            <button className="search-button"> <FontAwesomeIcon icon={faWrench} size="2x"/></button>
-            <div className="user"> 
-            {/*<img className="user-logo" src={userIcon} alt="usericon"></img>*/}
-                        
-                <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon={faUser} size="2x" />KIRJAUDU SISÄÄN</Link>
+            <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
+            <div className="user">          
+            <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user"size="lg" /> Oma Tili</Link>
             </div>  
-            <div className="shoppingCart"> 
-            {/*<img className="cart-logo" src={cart} alt="cartlogo"></img>*/}
-                
-                <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon={faShoppingCart} size="2x"/>OSTOSKORI</Link>
+            <div className="shoppingCart">        
+            <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg"/> Ostoskärry</Link>
             </div>
             </div>
             <div className="bottom-nav">

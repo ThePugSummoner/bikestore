@@ -11,9 +11,10 @@ import Account from './components/account';
 import axios from 'axios';
 import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo} from '@fortawesome/free-solid-svg-icons'
+import {faFacebook,faSquareInstagram,faYoutube,faTwitter} from '@fortawesome/free-brands-svg-icons'
 
-library.add (faShoppingCart, faUser)
+library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter)
 
 
 
