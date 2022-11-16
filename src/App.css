@@ -210,7 +210,7 @@ card item css starts here
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border: 1px solid black;
+
 }
 
 .card-footer {
