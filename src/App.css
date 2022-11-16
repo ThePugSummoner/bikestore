@@ -95,14 +95,6 @@ footer {
   color: white;
 }
 
-.footer-container {
-  display: flex;
-  flex-direction: row;
-  gap: 150px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .footer-ul {
   list-style: none;
 }
@@ -111,6 +103,7 @@ footer {
   font-size: 20px;
   text-decoration: underline;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .footer-tuoteryhma>ul>li {
@@ -134,6 +127,34 @@ dd {
   flex-direction: row;
   justify-content: space-between;
   width: 100px;
+}
+.footer-logos{
+  display: flex;
+  flex-direction: row;
+}
+.footer-logos img{
+  max-height: 150px;
+}
+.footer-logos ul{
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+
+}
+.footer-logos li:hover{
+color: #7584B4;
+cursor: pointer;
+}
+.quote{
+  display: flex;
+  justify-content:right;
+  align-items: flex-end;
+  
+}
+.quote p{
+  font-size: large;
+  font-style: italic;
 }
 /*
 Footer css ends here
