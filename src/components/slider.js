@@ -38,7 +38,7 @@ function Slider() {
     const cardElement = []
 
     for (let i = 0; i < 9; i++) {
-        cardElement.push(<div className="carousel-item"><Card key={i} /></div>)
+        cardElement.push(<div key={i} className="carousel-item"><Card key={i} /></div>)
     }
 
     return (
