@@ -22,10 +22,10 @@ function Navbar() {
             <input className="top-nav-search"  type="text" placeholder="Search..."></input>
             <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
             <div className="user">          
-            <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user"size="lg" /> Oma Tili</Link>
+            <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user"size="lg" />{window.innerWidth<1000 ? "" : "Oma Tili"} </Link>
             </div>  
             <div className="shoppingCart">        
-            <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg"/> Ostoskärry</Link>
+            <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg"/> {window.innerWidth<1000 ? "" : "Ostoskärry"}</Link>
             </div>
             </div>
             <div className="bottom-nav">

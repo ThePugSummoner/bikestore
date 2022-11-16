@@ -95,21 +95,6 @@ footer {
   color: white;
 }
 
-.footer-ul {
-  list-style: none;
-}
-
-.footer-ul>li:first-child {
-  font-size: 20px;
-  text-decoration: underline;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.footer-tuoteryhma>ul>li {
-  margin-bottom: 5px;
-}
-
 dt {
   text-decoration: underline;
   font-size: 18px;
@@ -138,6 +123,7 @@ dd {
 .footer-logos ul{
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   gap: 20px;
 
