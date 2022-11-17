@@ -11,7 +11,7 @@ function Slider() {
 
     useEffect(() => {
         setScrollPosition(ref.current.scrollWidth);
-    }, []);
+    }, [window.innerWidth]);
 
     function next() {
         const add = 175
@@ -36,7 +36,6 @@ function Slider() {
         }
     }
     const cardElement = []
-
     for (let i = 0; i < 10; i++) {
         cardElement.push(<div key={i} className="carousel-item"><Card key={i} /></div>)
     }

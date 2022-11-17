@@ -16,21 +16,33 @@ Navbar css starts here
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 90px;
 }
-
+.top-nav span{
+  color: #2C4C84;
+}
 .logo-img {
-  margin-left: 20px;
-  height: 80px;
+  margin-left: 10px;
+  height: 70px;
 }
 
 .top-nav-search {
-  width: 550px;
+  width:550px;
+  min-width:100px;
   height: 40px;
   margin-left: auto;
   border-radius:10px 0 0 10px;
-  border: 1px solid black;
   border: none;
   text-indent: 15px;
+}
+.search-container{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  min-width: 100px;
 }
 .search-button{
 height: 40px;
@@ -42,43 +54,40 @@ border: none;
 .search-button:active{
   box-shadow: -2px 0px 8px 5px rgba(0,0,0,0.2) inset;
 }
-.user {
-  display: flex;
-  flex-direction: row;
-  margin-left: auto;
-}
-
-.user-logo {
-  height: 50px;
-}
-
-.shoppingCart {
-  display: flex;
-  flex-direction: row;
-  margin-left: 10px;
-}
-
-.cart-logo {
-  height: 35px;
-}
-
 .bottom-nav {
   display: flex;
   border: 1px solid black;
-  height: 40px;
   background-color: black;
+  height: 40px;
 }
-
-.bottom-nav>ul {
-  list-style: none;
+.dropdown-tuote{
+  position: relative;
+  z-index: 10;
+ 
+}
+.dropdown-tuote button{
   color: white;
-  margin-block: auto;
+  background-color: transparent;
+  height: 39px;
+}
+.dropdown-contents{
+  position: absolute;
+  background-color: rgba(30, 37, 115, 0.8);
+  border-radius:0px 0px 10px 0px ;
+  width: 200px;
+  user-select: none;
+  color: white;
+  left: -10px;
+}
+.dropdown-contents ul{
+  list-style: none;
+  padding:8px ;
+  cursor: pointer;
+  line-height: 30px;
+  
 }
 
-.bottom-nav>ul>li {
-  display: inline;
-  margin-left: 20px;
-}
+
 /*
 Navbar css ends here
 */
