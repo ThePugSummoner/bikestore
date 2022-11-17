@@ -1,11 +1,4 @@
 <?php
-/*header('Access-Control-Allow-Origin:*'); //http://localhost:3000
-header('Access-Control-Allow-Headers: Accept, Content-Type', 'Access-Control-Allow-Header');
-header('Content-Type: application/json');
-
-if ($_SERVER ['REQUEST_METHOD'] === 'OPTIONS' ) {
-    return 0;
-}*/
 
 require_once 'inc/functions.php';
 require_once 'inc/headers.php';
@@ -14,12 +7,24 @@ $input = json_decode(file_get_contents('php://input'));
 //$description = $input ->description;
 $description1 = filter_var($input->description1, FILTER_UNSAFE_RAW);
 $description2 = filter_var($input->description2, FILTER_UNSAFE_RAW);
-$description3 = filter_var($input->description3, FILTER_UNSAFE_RAW);
-$description4 = filter_var($input->description4, FILTER_UNSAFE_RAW);
+$description3 = filter_var($input->description3, FILTER_UNSAFE_RAW, FILTER_SANITIZE_EMAIL);
+$description4 = filter_var($input->description4, FILTER_UNSAFE_RAW, FILTER_SANITIZE_NUMBER_INT);
 $description5 = filter_var($input->description5, FILTER_UNSAFE_RAW);
 $description6 = filter_var($input->description6, FILTER_UNSAFE_RAW);
-//$description = strp_tags($description);
 
+$description1 = strip_tags($description1);
+$description2 = strip_tags($description2);
+$description3 = strip_tags($description3);
+$description4 = strip_tags($description4);
+$description5 = strip_tags($description5);
+$description6 = strip_tags($description6);
+
+$description1 = trim($description1);
+$description2 = trim($description2);
+$description3 = trim($description3);
+$description4 = trim($description4);
+$description5 = trim($description5);
+$description6 = trim($description6);
 
 try {
     /*$db = new PDO('mysql:host=localhost;dbname=todo;charset=utf8', 'root', '');
