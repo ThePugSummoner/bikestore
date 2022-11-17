@@ -318,7 +318,7 @@ Slider starts here
 }
 .carousel-slide h3{
   border-bottom: 2px solid;
-  border-image:   linear-gradient(to right, transparent 14%,black 8%,black 40%, black 50%)10;
+  border-image:   linear-gradient(to right, transparent 14%,black 8%,black 40%, black 50%) 10;
 
 }
 /*
