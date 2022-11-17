@@ -11,7 +11,7 @@ function Slider() {
 
     useEffect(() => {
         setScrollPosition(ref.current.scrollWidth);
-    }, [window.innerWidth]);
+    }, []);
 
     function next() {
         const add = 175
