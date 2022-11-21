@@ -79,11 +79,25 @@ border: none;
   color: white;
   left: -10px;
 }
-.dropdown-contents ul{
+.dropdown-contents-huolto{
+  position: absolute;
+  background-color: rgba(30, 37, 115, 0.8);
+  border-radius:0px 0px 10px 0px ;
+  width: 200px;
+  user-select: none;
+  color: white;
+}
+.dropdown-contents h5,.dropdown-contents-huolto h5{
+  line-height: 25px;
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+}
+.dropdown-contents ul,.dropdown-contents-huolto ul{
   list-style: none;
-  padding:8px ;
   cursor: pointer;
   line-height: 30px;
+  padding-left: 18px;
   
 }
 

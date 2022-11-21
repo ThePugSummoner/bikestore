@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import logo from "../images/AngularBikes3.png"
 import { Link } from "react-router-dom"
 import searchLogo from "../images/spanner 2.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {useState} from "react"
+import { useState} from "react"
+import DropwDown from "./dropdown"
 
 
 const linkStyle = {
@@ -13,104 +14,61 @@ const linkStyle = {
     textAlign: 'center'
 };
 
-
 function Navbar() {
-const [open,setOpen]= useState(false)
-const [openMenuOne,setOpenMenuOne]= useState(false)
-const [openMenuTwo,setOpenMenuTwo]= useState(false)
-const [openMenuThree,setOpenMenuThree]= useState(false)
-const [openMenuFour,setOpenMenuFour]= useState(false)
-const [openMenuFive,setOpenMenuFive]= useState(false)
+    const [open, setOpen] = useState(false)
+    const [array,setArray]=useState([])
+    const [array2,setArray2]=useState([])
+    function handleOpen() {
+        setOpen(!open)
 
-function handleOpen (){
-setOpen(!open)
-if(open===false){
-    setOpenMenuOne(false)
-    setOpenMenuTwo(false)
-    setOpenMenuThree(false)
-    setOpenMenuFour(false)
-    setOpenMenuFive(false)
-}
-}
+    }
+    const [openHuolto, setOpenHuolto] = useState(false)
+    function handleOpenHuolto() {
+        setOpenHuolto(!openHuolto)
 
-function handleMenuOne(){
-    setOpenMenuOne(!openMenuOne)
-}
-function handleMenuTwo(){
-    setOpenMenuTwo(!openMenuTwo)
-}
-function handleMenuThree(){
-    setOpenMenuThree(!openMenuThree)
-}
-function handleMenuFour(){
-    setOpenMenuFour(!openMenuFour)
-}
-function handleMenuFive(){
-    setOpenMenuFive(!openMenuFive)
-}
-
-
-
-
+    }useEffect(()=>{
+        setArray(["Jarrut","Johdot ja akut","Kampisarjat","Kasetit","Keskiöt","Ketjut","Kiekot","Klossit","Navat","Osasarjat","Polkimet","Vaihdevivut","Vaihtajat","Vaijerit ja kuoret","Vanteet","Varaosat DT"])
+        setArray2(["item1","item2","item3","item4"])
+    },[])
+    
     return (
         <header>
             <div className="top-nav">
-            <Link  to="/"><img className="logo-img"  src={logo} alt="logo"></img></Link>
-            <span>Angular Bikes</span>
-            <div className="search-container">
-            <input className="top-nav-search"  type="text" placeholder="Search..."></input>
-            <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
-            </div>       
-            <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user"size="lg" />Oma tili</Link>
-            <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg"/>Ostoskärry</Link>
-            
+                <Link to="/"><img className="logo-img" src={logo} alt="logo"></img></Link>
+                <span>Angular Bikes</span>
+                <div className="search-container">
+                    <input className="top-nav-search" type="text" placeholder="Search..."></input>
+                    <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
+                </div>
+                <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" />Oma tili</Link>
+                <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg" />Ostoskärry</Link>
+
             </div>
             <div className="bottom-nav">
                 <div className="dropdown-tuote mx-2">
-                <button onClick={handleOpen}><FontAwesomeIcon icon="fa-solid fa-bars" size="lg"/> {open? "Sulje":"Tuotealueet"}</button>
-                <div className="dropdown-contents">
-                {open&&(
-                <ul>
-                    <li onClick={handleMenuOne}>Maastopyörät <FontAwesomeIcon icon="fa-solid fa-caret-down" /></li>
-                    {openMenuOne&&(<ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                    </ul>)}
-                    
-                    <li onClick={handleMenuTwo}>Sähköpyörät <FontAwesomeIcon icon="fa-solid fa-caret-down" /></li>
-                    {openMenuTwo&&(<ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                    </ul>)}
-                    <li onClick={handleMenuThree}>Maantiepyörät <FontAwesomeIcon icon="fa-solid fa-caret-down" /></li>
-                    {openMenuThree&&(<ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                    </ul>)}
-                    <li onClick={handleMenuFour}>Lastenpyörät <FontAwesomeIcon icon="fa-solid fa-caret-down" /></li>
-                    {openMenuFour&&(<ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                    </ul>)}
-                    <li onClick={handleMenuFive}>Tarvikkeet <FontAwesomeIcon icon="fa-solid fa-caret-down" /></li>
-                    {openMenuFive&&(<ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                    </ul>)}                   
-                </ul>)}
+                    <button onClick={handleOpen}><FontAwesomeIcon icon="fa-solid fa-bars" size="lg" /> {open ? "Sulje" : "Tuotealueet"}</button>
+                    <div className="dropdown-contents">
+                        {open && (
+                            <>
+                                <DropwDown items={array2} heading="Maastopyörät" />
+                                <DropwDown items={array2} heading="Sähköpyörät" />
+                                <DropwDown items={array2} heading="Maantiepyörät" />
+                                <DropwDown items={array2} heading="Lastenpyörät" />
+                                <DropwDown items={array2} heading="Tarvikkeet" />
+                            </>
+                        )}
+                    </div>
+                
+                <button onClick={handleOpenHuolto}><FontAwesomeIcon icon="fa-solid fa-screwdriver-wrench" /> {openHuolto ? "Sulje" : "Huolto"}</button>
+                <div style={open ? {left:190}:{left:-10}} className="dropdown-contents-huolto">
+                    {openHuolto && (
+                        <>
+                            <DropwDown  items={array} heading="Komponentit"/>
+                            <h5>Ajanvaraus</h5>
+                        </>
+                    )}
+                    </div>
                 </div>
-                </div>
-                <button>Huolto</button>
             </div>
         </header>
     )

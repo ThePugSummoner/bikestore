@@ -7,21 +7,22 @@ import {addToCart} from "../features/cartSlice";
 
 
 function Banner(){
+   /*
    const {data, error, isLoading} = useGetAllProductsQuery();
        const dispatch = useDispatch();
    
       const handleAddToCart = (product) => {
          dispatch(addToCart(product));
       }
-   
+   */
    return(
       <div className="container-fluid front min-vh-100">
          <div className="row">
             <div className="col-12 p-0 slider-container min-vh-100">
-               <Slider/>
+               <Slider/>{/*  Kortti hommat alkavat tästä ! 
                <div className="home-container">
-                  {isLoading? ( /* Tuotteet */
-                  <p>Ladataan...</p>
+                  {isLoading? ( /* Tuotteet */}
+                  {/*<p>Ladataan...</p>
                   ) : error? (
                   <p>Virhe tapahtui..</p>
                   ) : ( <div className="products">
@@ -40,7 +41,7 @@ function Banner(){
                         ))}
                      </div>
                   )};
-               </div>
+            </div>*/}
             </div>
          </div>
       </div>
