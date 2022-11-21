@@ -8,18 +8,18 @@ function Slider() {
 
     const [width, setWidth] = useState(0)
     const [scrollPosition, setScrollPosition] = useState(0)
-    const [testi, setTesti] = useState(0)
+    const [elementWidth, setElementWidth] = useState(0)
 
     useEffect(() => {
         setScrollPosition(ref.current.scrollWidth);
-        setTesti(ref.current.clientWidth)
+        setElementWidth(ref.current.clientWidth)
     }, []);
 
 
     const getListSize = () => {
         if(ref.current && ref.current.scrollWidth && ref.current.clientWidth){
             const newWidth = ref.current.clientWidth;
-            setTesti(newWidth);
+            setElementWidth(newWidth);
             ref.current.scrollTo(0, 0)
             setWidth(0)
           }
@@ -34,11 +34,11 @@ function Slider() {
 
 
     useEffect(() => {
-        const joku=ref.current
-        joku.addEventListener('scroll', getScrollSize, { passive: true })
+        const elementRef=ref.current
+        elementRef.addEventListener('scroll', getScrollSize, { passive: true })
 
         return () => {
-            joku.removeEventListener('scroll', getScrollSize)
+            elementRef.removeEventListener('scroll', getScrollSize)
         }
     }, [])
 
@@ -50,20 +50,20 @@ function Slider() {
     function next() {
         let add = 183.5
         let next = scrollPosition
-        if(testi < 250){
+        if(elementWidth < 250){
             add = 120
             next -= (add * 2)
         }
-        else if (testi < 450) {
+        else if (elementWidth < 450) {
             add = 140
             next -= (add * 3)
         } 
-        else if(testi < 500){
+        else if(elementWidth < 500){
             add=165
             next -= (add * 3)
         }
 
-        else if(testi < 800){
+        else if(elementWidth < 800){
             add=167.5
             next -= (add * 4)
         }
@@ -78,17 +78,17 @@ function Slider() {
     }
     function prev() {
         let add = 183.5
-        if(testi < 250){
+        if(elementWidth < 250){
             add=120
         }
-       else if (testi < 450) {
+       else if (elementWidth < 450) {
             add = 140
 
         } 
-        else if(testi < 500){
+        else if(elementWidth < 500){
             add=165
         }
-        else if(testi < 800){
+        else if(elementWidth < 800){
             add=167.5
         }
         const prev = width - add
