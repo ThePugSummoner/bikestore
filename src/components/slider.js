@@ -9,13 +9,13 @@ function Slider() {
     const [width, setWidth] = useState(0)
     const [scrollPosition, setScrollPosition] = useState(0)
     const [elementWidth, setElementWidth] = useState(0)
-
+//Haetaan scroll ja client width hetikun sivusto aukeaa
     useEffect(() => {
         setScrollPosition(ref.current.scrollWidth);
         setElementWidth(ref.current.clientWidth)
     }, []);
 
-
+// functio että saadaan jos elementti löytyy reffin kautta ja annetaan uusi width , jos muuttunut elementtin leveys. Samalla siirretään scrolli 0,0 ja laitetaan width 0
     const getListSize = () => {
         if(ref.current && ref.current.scrollWidth && ref.current.clientWidth){
             const newWidth = ref.current.clientWidth;
@@ -26,13 +26,13 @@ function Slider() {
        
     }
 
-
+// eventlistener laitettuna jos vaihtaa leveyttä.
     useEffect(() => {
         window.addEventListener("resize", getListSize)
         
     }, [])
 
-
+// eventlistener kanssa elementin x scrollille ja laittaa myös kun ei tarvita niin sen pois.
     useEffect(() => {
         const elementRef=ref.current
         elementRef.addEventListener('scroll', getScrollSize, { passive: true })
@@ -41,12 +41,12 @@ function Slider() {
             elementRef.removeEventListener('scroll', getScrollSize)
         }
     }, [])
-
+// functio ,että saadaan uusi scrollin leveys
     const getScrollSize = () => {
         const newScrollSize = ref.current.scrollWidth;
         setScrollPosition(newScrollSize);
     };
-
+// siirretään seuraavalle itemille sliderilla, ottaa huomioon elemententin leveyden.
     function next() {
         let add = 183.5
         let next = scrollPosition
@@ -76,6 +76,8 @@ function Slider() {
             setWidth(prevWidth => prevWidth + add)
         }
     }
+
+// menee taakse päin niin pitkälle ,että leveys on 0.    
     function prev() {
         let add = 183.5
         if(elementWidth < 250){
@@ -97,6 +99,8 @@ function Slider() {
             setWidth(prevWidth => prevWidth - add)
         }
     }
+
+ // for looppi card itemeille testaamista varten + array   
     const cardElement = []
     for (let i = 0; i < 10; i++) {
         cardElement.push(<div key={i} className="carousel-item"><Card key={i} /></div>)
