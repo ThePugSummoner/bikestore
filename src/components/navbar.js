@@ -40,8 +40,8 @@ function Navbar() {
                     <input className="top-nav-search" type="text" placeholder="Search..."></input>
                     <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
                 </div>
-                <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" />Oma tili</Link>
-                <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg" />Ostoskärry</Link>
+                <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span>Oma tili</span></Link>
+                <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg" /><span>Ostoskärry</span></Link>
 
             </div>
             <div className="bottom-nav">

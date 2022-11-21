@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect} from 'react';
 import Card from './card';
 
 
@@ -6,20 +6,63 @@ function Slider() {
 
     const ref = useRef(null);
 
-    const [width, setWidth] = useState(0);
-    const [scrollPosition, setScrollPosition] = useState(0);
+    const [width, setWidth] = useState(0)
+    const [scrollPosition, setScrollPosition] = useState(0)
+    const [testi, setTesti] = useState(0)
 
     useEffect(() => {
         setScrollPosition(ref.current.scrollWidth);
+        setTesti(ref.current.offsetWidth)
     }, []);
 
+    useEffect(() => {
+        window.addEventListener("resize", getListSize)
+        
+    }, [])
+
+    const getListSize = () => {
+        const newWidth = ref.current.offsetWidth;
+        setTesti(newWidth);
+        ref.current.scrollTo(0, 0)
+        setWidth(0)
+    };
+
+    useEffect(() => {
+        const joku=ref.current
+        joku.addEventListener('scroll', getScrollSize, { passive: true })
+
+        return () => {
+            joku.removeEventListener('scroll', getScrollSize)
+        }
+    }, [])
+
+    const getScrollSize = () => {
+        const newScrollSize = ref.current.scrollWidth;
+        setScrollPosition(newScrollSize);
+    };
+
     function next() {
-        const add = 175
+        let add = 183.5
         let next = scrollPosition
-        if (window.innerWidth < 550) {
-            next -= 320
-        } else {
-            next -= 1200
+        if(testi < 250){
+            add = 120
+            next -= (add * 2)
+        }
+        else if (testi < 450) {
+            add = 140
+            next -= (add * 3)
+        } 
+        else if(testi < 500){
+            add=165
+            next -= (add * 3)
+        }
+
+        else if(testi < 800){
+            add=167.5
+            next -= (add * 4)
+        }
+        else {
+            next -= (add * 6)
         }
         if (width < next) {
             const newPos = width + add
@@ -28,7 +71,20 @@ function Slider() {
         }
     }
     function prev() {
-        const add = 175
+        let add = 183.5
+        if(testi < 250){
+            add=120
+        }
+       else if (testi < 450) {
+            add = 140
+
+        } 
+        else if(testi < 500){
+            add=165
+        }
+        else if(testi < 800){
+            add=167.5
+        }
         const prev = width - add
         if (prev >= 0) {
             ref.current.scrollTo(prev, 0)
@@ -39,7 +95,8 @@ function Slider() {
     for (let i = 0; i < 10; i++) {
         cardElement.push(<div key={i} className="carousel-item"><Card key={i} /></div>)
     }
-
+    console.log(testi)
+    console.log(scrollPosition)
     return (
         <div id="carouselExampleControls" className="carousel-slide" data-bs-ride="carousel">
             <h3>Aletuotteet</h3>
