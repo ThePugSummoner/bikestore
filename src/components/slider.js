@@ -4,7 +4,7 @@ import Card from './card';
 
 function Slider() {
 
-    const ref = useRef(null);
+    const ref = useRef();
 
     const [width, setWidth] = useState(0)
     const [scrollPosition, setScrollPosition] = useState(0)
@@ -12,20 +12,26 @@ function Slider() {
 
     useEffect(() => {
         setScrollPosition(ref.current.scrollWidth);
-        setTesti(ref.current.offsetWidth)
+        setTesti(ref.current.clientWidth)
     }, []);
+
+
+    const getListSize = () => {
+        if(ref.current && ref.current.scrollWidth && ref.current.clientWidth){
+            const newWidth = ref.current.clientWidth;
+            setTesti(newWidth);
+            ref.current.scrollTo(0, 0)
+            setWidth(0)
+          }
+       
+    }
+
 
     useEffect(() => {
         window.addEventListener("resize", getListSize)
         
     }, [])
 
-    const getListSize = () => {
-        const newWidth = ref.current.offsetWidth;
-        setTesti(newWidth);
-        ref.current.scrollTo(0, 0)
-        setWidth(0)
-    };
 
     useEffect(() => {
         const joku=ref.current
