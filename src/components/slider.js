@@ -101,8 +101,6 @@ function Slider() {
     for (let i = 0; i < 10; i++) {
         cardElement.push(<div key={i} className="carousel-item"><Card key={i} /></div>)
     }
-    console.log(testi)
-    console.log(scrollPosition)
     return (
         <div id="carouselExampleControls" className="carousel-slide" data-bs-ride="carousel">
             <h3>Aletuotteet</h3>
