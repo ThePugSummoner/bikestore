@@ -31,7 +31,9 @@ function Navbar() {
             <div className="bottom-nav">
                 <ul>
                     <li>Tuotteet</li>
-                    <li>Huolto</li>
+                    <li>
+                    <Link style={{textDecoration: 'none', color: 'white'}} to="/booking">Huolto</Link>
+                    </li>
                 </ul>
             </div>
         </header>

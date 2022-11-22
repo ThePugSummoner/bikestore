@@ -22,6 +22,7 @@ export default function Table({ columns, data }) {
         },
         td: {
           padding: "10px",
+          borderBottom: "1px solid lightgrey"
         },
       };
 

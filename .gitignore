@@ -21,3 +21,88 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+================================================================
+
+import React from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+
+const styles = {
+    width: '500px',
+    textAlign: 'center',
+    margin: 'auto'
+}
+
+const URL = 'http://localhost/angularbikes/'
+
+function User() {
+
+    const [email, setEmail] = useState('')
+    const [pwd, setPwd] = useState('')
+
+    const handle = () => {
+        localStorage.setItem('sposti', JSON.stringify(email))
+        localStorage.setItem('salasana', JSON.stringify(pwd))
+    }
+
+    {/*const check = () => {
+        const json = JSON.stringify({password: pwd})
+        axios.post(URL + 'login.php', json, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+          .then(response => {
+            setPwd('')
+        }).catch(error => {
+            console.log(error.response ? error.response.data.error : error)
+            alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
+          })
+        }*/}
+    
+
+    const remove = () => {
+        localStorage.removeItem('Email')
+        localStorage.removeItem('Password')
+    }
+
+
+
+return (
+    <div style={styles} className="main">
+        <h1 style={{margin: 15}}>Kirjaudu sisään</h1>
+    <form>
+        <div style={styles} className="form-floating mb-3">
+            <input style={{width:500}} type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)}/>
+            <label htmlFor="floatingInput">Sähköposti*</label>
+        </div>
+        <div style={styles} className="form-floating mb-3">
+            <input style={{width:500}} type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={(e) => setPwd(e.target.value)}/>
+            <label htmlFor="floatingPassword">Salasana*</label>
+        </div>
+        <div>
+            {/*<button style={{width:500, textAlign: "center", fontSize: '1.5em'}} type="button" className="btn btn-dark mb-3" onChange={handle}><Link style={{textDecoration: 'none', color:'white'}}to="/account">Kirjaudu sisään</Link></button>*/}
+
+            <button style={{width:500, textAlign: "center", fontSize: '1.5em'}} type="button" className="btn btn-dark mb-3" onClick={handle}>Kirjaudu sisään</button>
+        </div>
+        <div style={styles}>
+            <p style={{width:500, textAlign: "center"}}>Etkö ole vielä rekisteröinyt?</p>
+        </div>
+        <div>
+            <Link to="/regform">Luo tili täältä!</Link>
+        </div>
+        <div>
+            <button onClick={remove}>Remove</button>
+        </div>
+    </form>
+
+
+</div>
+    
+)
+}
+
+
+export default User
