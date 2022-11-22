@@ -8,14 +8,17 @@ function Footer() {
             <div className="container">
                 <div className="row">
                     <div className="footer-tuoteryhma col-md-3 col-6 mt-3">
-                        <ul className="footer-ul">
-                            <li>Tuotegategoriat</li>
-                            <li>Maastopyörät</li>
-                            <li>Sähköpyörät</li>
-                            <li>Maantiepyörät</li>
-                            <li>Lastenpyörät</li>
-                            <li>Tarvikkeet</li>
-                        </ul>
+                       <dl>
+                        <dt className="mb-2">Tuotekategoriat</dt>
+                        <dd>
+                            <span>Maastopyörät</span>
+                            <span>Sähköpyörät</span>
+                            <span>Maantiepyörät</span>
+                            <span>Lastenpyörät</span>
+                            <span>Tarvikkeet</span>
+                            <span>Huolto</span>
+                        </dd>
+                       </dl>
                     </div>
                     <div className="footer-myymala col-md-3 col-6 mt-3">
                         <dl>
