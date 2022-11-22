@@ -5,7 +5,6 @@ import searchLogo from "../images/spanner 2.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState} from "react"
 import DropwDown from "./dropdown"
-import uuid from 'react-uuid';
 
 
 const linkStyle = {

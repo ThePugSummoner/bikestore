@@ -5,7 +5,6 @@ import racingbike from "../images/maantiepyora.png"
 import kidsbike from "../images/lastenpyora.png"
 import tarvikeet from "../images/tarvikkeet.png"
 import huolto from "../images/tarvikkeet.jpg"
-import { Link } from "react-router-dom"
 import ImageContainer from "./imagecontainer"
 
 
