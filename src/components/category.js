@@ -1,5 +1,6 @@
 import React from "react"
 import { useLocation } from "react-router-dom";
+import ToTop from "./toTop";
 
 
 function Category(props){
@@ -14,6 +15,7 @@ return(
         <div className="row">
             <div className="col min-vh-100">
             <h1>{data}</h1>
+            <ToTop/>
             </div>
         </div>
 </div>
