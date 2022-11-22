@@ -5,6 +5,7 @@ import searchLogo from "../images/spanner 2.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState} from "react"
 import DropwDown from "./dropdown"
+import uuid from 'react-uuid';
 
 
 const linkStyle = {
@@ -60,7 +61,7 @@ function Navbar() {
                     </div>
                 
                 <button onClick={handleOpenHuolto}><FontAwesomeIcon icon="fa-solid fa-screwdriver-wrench" /> {openHuolto ? "Sulje" : "Huolto"}</button>
-                <div style={open ? {left:190}:{left:-10}} className="dropdown-contents-huolto">
+                <div style={open ? {left:140}:{left:-10}} className="dropdown-contents-huolto">
                     {openHuolto && (
                         <>
                             <DropwDown  items={array} heading="Komponentit"/>

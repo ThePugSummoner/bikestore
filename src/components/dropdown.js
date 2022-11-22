@@ -15,7 +15,7 @@ return(
 <>
                     <h5 onClick={handleOpen}>{props.heading} <FontAwesomeIcon icon="fa-solid fa-caret-down" size="lg"/></h5>
                     {open&&(<ul>
-                        {props.items.map(item => <li key={uuid}>{item}</li>)}
+                        {props.items.map(item => <li key={uuid()}>{item}</li>)}
                     </ul>)}
 
 </>
