@@ -5,6 +5,9 @@
 body {
   margin: 0;
 }
+.main {
+  min-height: 100vh;
+}
 
 /*
 Navbar css starts here
@@ -137,9 +140,200 @@ Navbar css starts here
 /*
 Navbar css ends here
 */
-.main {
-  min-height: 100vh;
+
+/*
+banner css starts here
+*/
+.front {
+  background-image: url(../src/images/snow.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+/*
+banner css ends here
+*/
+
+/*
+Slider starts here
+*/
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 40px 20px 40px;
+  max-width: 1180px;
+  min-width: 300px;
+  margin: auto;
+
+}
+
+.button-container {
+  position: relative;
+  display: flex;
+  top: -150px;
+}
+
+.carousel-control-prev {
+  height: 40px;
+  width: 40px;
+  left: -40px;
+}
+
+.carousel-control-next {
+  height: 40px;
+  width: 40px;
+  right: -40px;
+
+}
+
+.carousel-control-prev-icon {
+  background-color: #7584B4;
+}
+
+.carousel-control-next-icon {
+  background-color: #7584B4;
+}
+
+.carousel-inner {
+  display: flex;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  display: block;
+  margin-right: 0;
+  flex: 0 0 calc(100% / 6);
+  margin-left: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-slide h3 {
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, transparent 14%, black 8%, black 40%, black 50%) 10;
+
+}
+
+/*
+Slider Ends here
+*/
+
+
+/*
+card item css starts here
+*/
+.card-item {
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  margin: 0;
+  max-width: 120px;
+
+}
+
+.card-item h5 {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.card-image-container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.card-footer span {
+  font-size: 15px;
+  color: red;
+  margin-bottom: 5px;
+}
+
+.card-footer button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+}
+
+/*
+card item css ends here
+*/
+
+/*
+logot home start here
+*/
+
+.logo-ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.logo {
+  background-color: transparent;
+  height: 80px;
+  width: 120px;
+}
+/*
+logot home ends here
+*/
+
+
+/*
+ImageFrame css starts here
+*/
+.image-row {
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.black-canvas {
+  position: absolute;
+  color: white;
+  display: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+}
+
+.image-container:hover .black-canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ImageFrame css ends here
+*/
+
+
 
 /*
 Footer css starts here
@@ -225,193 +419,8 @@ dd {
 /*
 Footer css ends here
 */
-
-
 /*
-ImageFrame css starts here
-*/
-.image-row {
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.image-container {
-  position: relative;
-}
-
-.black-canvas {
-  position: absolute;
-  color: white;
-  display: none;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-
-}
-
-.image-container:hover .black-canvas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*
-ImageFrame css ends here
-*/
-
-/*
-card item css starts here
-*/
-.card-item {
-  border-radius: 10px;
-  width: 300px;
-  text-align: center;
-  margin: 0;
-  max-width: 120px;
-
-}
-
-.card-item h5 {
-  font-size: 15px;
-  margin-bottom: 0;
-}
-
-.card-image-container {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-}
-
-.card-footer {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.card-footer span {
-  font-size: 15px;
-  color: red;
-  margin-bottom: 5px;
-}
-
-.card-footer button {
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-  height: 40px;
-}
-
-/*
-card item css ends here
-*/
-/*
-banner css starts here
-*/
-.front {
-  background-image: url(../src/images/snow.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-
-
-/*
-banner css ends here
-*/
-/*
-logot home start here
-*/
-
-.logo-ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-}
-
-.logo {
-  background-color: transparent;
-  height: 80px;
-  width: 120px;
-}
-
-/*
-Slider starts here
-*/
-.slider-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-slide {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px 40px 20px 40px;
-  max-width: 1180px;
-  min-width: 300px;
-  margin: auto;
-
-}
-
-.button-container {
-  position: relative;
-  display: flex;
-  top: -150px;
-}
-
-.carousel-control-prev {
-  height: 40px;
-  width: 40px;
-  left: -40px;
-}
-
-.carousel-control-next {
-  height: 40px;
-  width: 40px;
-  right: -40px;
-
-}
-
-.carousel-control-prev-icon {
-  background-color: #7584B4;
-}
-
-.carousel-control-next-icon {
-  background-color: #7584B4;
-}
-
-.carousel-inner {
-  display: flex;
-  background-color: white;
-  scroll-behavior: smooth;
-}
-
-.carousel-item {
-  display: block;
-  margin-right: 0;
-  flex: 0 0 calc(100% / 6);
-  margin-left: 0;
-  padding: 0;
-  margin: 0;
-}
-
-.carousel-slide h3 {
-  border-bottom: 2px solid;
-  border-image: linear-gradient(to right, transparent 14%, black 8%, black 40%, black 50%) 10;
-
-}
-
-/*
-Slider Ends here
+Media screen starts here
 */
 @media screen and (max-width: 1200px) {
   .top-nav span {
@@ -601,3 +610,6 @@ Slider Ends here
   
   }
 }
+/*
+Media screen ends here
+*/
