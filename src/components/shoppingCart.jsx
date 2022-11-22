@@ -2,7 +2,11 @@ import '../css/shoppingCart.css';
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { decreaseCart, removeFromCart, addToCart, clearCart, getTotals } from '../features/cartSlice';
+import { decreaseCart, 
+        removeFromCart, 
+        addToCart, 
+        clearCart, 
+        getTotals } from '../features/cartSlice';
 import {useEffect} from "react";
 
 const ShoppingCart= () => {
@@ -42,7 +46,7 @@ const ShoppingCart= () => {
                         <div className="start-shopping">
                             <Link to="/">
                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" 
+                                    width="18" height="18" 
                                     fill="currentColor"
                                     className="bi bi-arrow-left" 
                                     viewBox="0 0 16 16"
@@ -78,7 +82,7 @@ const ShoppingCart= () => {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="cart-product-price">€{cartItem.price}</div>
+                                    <div className="cart-product-price">€ {cartItem.price}</div>
                                     <div className="cart-product-quantity">
                                         <button onClick= {() => handleDecreaseCart(cartItem)}>
                                           -
@@ -89,7 +93,7 @@ const ShoppingCart= () => {
                                         </button>
                                     </div>
                                     <div className="cart-product-total-price">
-                                        €{cartItem.price * cartItem.cartQuantity}
+                                        € {cartItem.price * cartItem.cartQuantity}
                                     </div>
                                 </div>
                             ))}
@@ -101,7 +105,7 @@ const ShoppingCart= () => {
                             <div className="cart-checkout">
                                 <div className="subtotal">
                                     <span>Yhteensä</span>
-                                    <span classname="amount">€{cart.cartTotalAmount}</span>
+                                    <span classname="amount">€ {cart.cartTotalAmount}</span>
                                 </div>
                                 <p>ALV (24%) sisältyy hintaan</p>
                                 <button>Kassalle</button>
