@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {toast} from "react-toastify";
 
 const initialState = {
     cartItems: localStorage.getItem("cartItems") 
@@ -17,9 +18,20 @@ const cartSlice = createSlice({
             );
             if (itemIndex >= 0) {
                 state.cartItems[itemIndex].cartQuantity += 1;
+                
             } else {
                 const tempProduct = {...action.payload, cartQuantity: 1 };
                 state.cartItems.push(tempProduct);
+                toast.info('Tuote lisätty ostoskoriin.', {
+                    position: "bottom-right",
+                    autoClose: 1500,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             };
 
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -31,6 +43,16 @@ const cartSlice = createSlice({
 
             state.cartItems = nextCartItems;
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+            toast.error('Tuote poistettu ostoskorista.', {
+                position: "bottom-left",
+                autoClose: 1500,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         },
         decreaseCart(state, action) {
             const itemIndex = state.cartItems.findIndex(
@@ -45,6 +67,16 @@ const cartSlice = createSlice({
                 );
 
                 state.cartItems = nextCartItems;
+                toast.error('Tuote poistettu ostoskorista.', {
+                    position: "bottom-left",
+                    autoClose: 1500,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
         },

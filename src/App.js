@@ -1,4 +1,5 @@
 import './App.css';
+import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route } from "react-router-dom"
 import Navbar from './components/navbar';
 import Home from './components/home';
@@ -13,6 +14,7 @@ import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faBars,faCaretDown} from '@fortawesome/free-solid-svg-icons'
 import {faFacebook,faSquareInstagram,faYoutube,faTwitter} from '@fortawesome/free-brands-svg-icons'
+import {ToastContainer} from "react-toastify";
 
 library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown)
 
@@ -21,6 +23,7 @@ library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShop
 function App() {
   return (
     <>
+    <ToastContainer/>
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>}></Route>
