@@ -45,14 +45,6 @@ function Navbar() {
 
             </div>
             <div className="bottom-nav">
-<<<<<<< HEAD
-                <ul>
-                    <li>Tuotteet</li>
-                    <li>
-                    <Link style={{textDecoration: 'none', color: 'white'}} to="/booking">Huolto</Link>
-                    </li>
-                </ul>
-=======
                 <div className="dropdown-tuote mx-2">
                     <button onClick={handleOpen}><FontAwesomeIcon icon="fa-solid fa-bars" size="lg" /> {open ? "Sulje" : "Tuotealueet"}</button>
                     <div className="dropdown-contents">
@@ -72,12 +64,11 @@ function Navbar() {
                     {openHuolto && (
                         <>
                             <DropwDown  items={array} heading="Komponentit"/>
-                            <h5>Ajanvaraus</h5>
+                            <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5>Ajanvaraus</h5></Link>
                         </>
                     )}
                     </div>
                 </div>
->>>>>>> 28f06b4c7049e8b3d7204412cf63f938407cd312
             </div>
         </header>
     )

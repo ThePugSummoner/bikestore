@@ -31,12 +31,9 @@ function App() {
       <Route path="/regform" element={<RegForm/>}></Route>
       <Route path="/rules" element={<Rules/>}></Route>
       <Route path="/account" element={<Account/>}></Route>
-<<<<<<< HEAD
       <Route path="/booking" element={<Booking/>}></Route>
-=======
-      <Route path={"/category"}element={<Category/>}></Route>
+      <Route path="/category"element={<Category/>}></Route>
       
->>>>>>> 28f06b4c7049e8b3d7204412cf63f938407cd312
     </Routes>
     <Footer/>
     </>
