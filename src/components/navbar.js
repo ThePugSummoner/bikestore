@@ -5,7 +5,6 @@ import searchLogo from "../images/spanner 2.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState} from "react"
 import DropwDown from "./dropdown"
-import uuid from 'react-uuid';
 
 
 const linkStyle = {
@@ -65,7 +64,7 @@ function Navbar() {
                     {openHuolto && (
                         <>
                             <DropwDown  items={array} heading="Komponentit"/>
-                            <h5>Ajanvaraus</h5>
+                            <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5>Ajanvaraus</h5></Link>
                         </>
                     )}
                     </div>
