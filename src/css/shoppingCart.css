@@ -15,8 +15,6 @@
     width: 250px;
     max-width: 100%;
     height: 400px;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
-      2px 2px 5px rgba(94, 104, 121, 0.3);
     background-color: white; /* --------------- MUISTA ------------------ */
   }
   .product h3 {
@@ -51,9 +49,9 @@
     outline: none;
     cursor: pointer;
   }
-  /* Tuotekortin css loppuu */
+  /* Tuotekortin css loppuu -------------------------------------------------------------------------------------------------------------------------- */
 
-  /* Ostoskori css */
+  /* Ostoskori css ----------------------------------------------------------------------------------------------------------------------------------- */
   .cart-background {
     background-image: url(../images/SnowyMountainBike.jpg);
     background-size: cover;
@@ -82,31 +80,34 @@
     display: grid;
     align-items: center;
     grid-template-columns: 3fr 1fr 1fr 1fr;
-    column-gap: 0.5rem;
+    column-gap: 0.4rem;
   }
   .cart-item {
     border: 0.2px solid;
     border-color: #2c4c84;
     border-radius: 3px;
-    padding: 1rem 4rem;
+    padding: 1rem 1.5rem;
     background-color: white;
     column-gap: 4px;
     margin-bottom: 10px;
   }
   .cart-container .titles .product-title {
-    padding-left: 4.5rem;
+    padding-left: 5.2rem;
   }
   .cart-container .titles .total {
     padding-right: 3.6rem;
     justify-self: right;
   }
+  .cart-container .titles .quantity {
+    margin-left: 0.8rem;
+  }
   .cart-item .cart-product {
     display: flex;
   }
   .cart-item .cart-product img {
-    width: 100px;
+    width: 170px;
     max-width: 100%;
-    margin-right: 1rem;
+    margin-right: 1.6rem;
   }
   .cart-item .cart-product h3 {
     font-weight: 400;
@@ -147,13 +148,13 @@
     padding: 0.7rem 0;
   }
   .cart-item .cart-product-total-price {
-    padding-right: 0.5rem;
+    padding-right: 3rem;
     justify-self: right;
     font-weight: 700;
   }
-  /* Ostoskori css loppuu */
+  /* Ostoskori css loppuu -------------------------------------------------------------------------------------------------------------------- */
   
-  /* Ostoskorin kokonaisuus */
+  /* Ostoskorin kokonaisuus ------------------------------------------------------------------------------------------------------------------ */
   .cart-summary {
     display: flex;
     justify-content: space-between;
@@ -228,4 +229,33 @@
     flex-direction: column;
     align-items: center;
   }
-  /* Ostoskorin kokonaisuus loppuu */
+  /* Ostoskorin kokonaisuus loppuu ----------------------------------------------------------------------------------------------------------------------------- */
+
+  @media (max-width: 665px) {
+      
+  /* Ostoskorin media hommelit */
+  
+  .cart-container {
+    padding: 2rem;
+  }
+  .cart-container .titles {
+    display: none;
+  }
+  .cart-item,
+  .cart-container .titles {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+  .cart-item .cart-product-total-price {
+    justify-self: left;
+  }
+  .cart-summary {
+    flex-direction: column;
+  }
+  .cart-summary .clear-btn {
+    margin-bottom: 2rem;
+  }
+
+  /* Ostoskorin media hommelit loppuu -------------------------------------------------------------------------------------------------------------------------- */
+
+}
