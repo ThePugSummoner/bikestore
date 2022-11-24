@@ -5,6 +5,7 @@ import searchLogo from "../images/spanner 2.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState} from "react"
 import DropwDown from "./dropdown"
+import uuid from 'react-uuid';
 
 
 const linkStyle = {
@@ -17,7 +18,38 @@ const linkStyle = {
 function Navbar() {
     const [open, setOpen] = useState(false)
     const [array,setArray]=useState([])
-    const [array2,setArray2]=useState([])
+    const [testi,setTesti]=useState([
+        {
+            heading:"Maastopyörä",
+            items:["Sokkelia","item2","item3","item4"]
+
+    },
+    {
+        heading:"Sähköpyörät",
+        items:["item1","item2","item3","Rokkelia"]
+
+},   
+{
+    heading:"Maantiepyörät",
+    items:["Tottelia","item2","item3","item4"]
+
+},   
+{
+    heading:"Lastenpyörät",
+    items:["item1","item2","Hokkelia","item4"]
+
+},  
+ {
+    heading:"Tarvikkeet",
+    items:["item1","Kokkelia","item3","item4"]
+
+},
+{
+    heading:"Huolto",
+    items:["Jarrut","Johdot ja akut","Kampisarjat","Kasetit","Keskiöt","Ketjut","Kiekot","Klossit","Navat","Osasarjat","Polkimet","Vaihdevivut","Vaihtajat","Vaijerit ja kuoret","Vanteet","Varaosat DT"]
+
+}
+])
     function handleOpen() {
         setOpen(!open)
 
@@ -26,11 +58,10 @@ function Navbar() {
     function handleOpenHuolto() {
         setOpenHuolto(!openHuolto)
 
-    }useEffect(()=>{
+    }
+    useEffect(()=>{
         setArray(["Jarrut","Johdot ja akut","Kampisarjat","Kasetit","Keskiöt","Ketjut","Kiekot","Klossit","Navat","Osasarjat","Polkimet","Vaihdevivut","Vaihtajat","Vaijerit ja kuoret","Vanteet","Varaosat DT"])
-        setArray2(["item1","item2","item3","item4"])
     },[])
-    
     return (
         <header>
             <div className="top-nav">
@@ -50,11 +81,7 @@ function Navbar() {
                     <div className="dropdown-contents">
                         {open && (
                             <>
-                                <DropwDown items={array2} heading="Maastopyörät" />
-                                <DropwDown items={array2} heading="Sähköpyörät" />
-                                <DropwDown items={array2} heading="Maantiepyörät" />
-                                <DropwDown items={array2} heading="Lastenpyörät" />
-                                <DropwDown items={array2} heading="Tarvikkeet" />
+                              {testi.map(test => <DropwDown key={uuid()} item={test} />)}
                             </>
                         )}
                     </div>
@@ -63,7 +90,7 @@ function Navbar() {
                 <div style={open ? {left:140}:{left:-10}} className="dropdown-contents-huolto">
                     {openHuolto && (
                         <>
-                            <DropwDown  items={array} heading="Komponentit"/>
+                            <DropwDown  item={testi[5]} />
                             <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5>Ajanvaraus</h5></Link>
                         </>
                     )}
