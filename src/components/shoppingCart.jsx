@@ -105,7 +105,7 @@ const ShoppingCart= () => {
                             <div className="cart-checkout">
                                 <div className="subtotal">
                                     <span>Yhteensä</span>
-                                    <span classname="amount">€ {cart.cartTotalAmount}</span>
+                                    <span className="amount">€ {cart.cartTotalAmount}</span>
                                 </div>
                                 <p>ALV (24%) sisältyy hintaan</p>
                                 <button>Kassalle</button>
