@@ -89,7 +89,8 @@ Navbar css starts here
   position: absolute;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 40px;
   background-color: rgba(30, 37, 115, 0.8);
   width:100%;
   user-select: none;
@@ -111,6 +112,7 @@ Navbar css starts here
   font-size: 18px;
   padding: 4px;
   cursor: pointer;
+  border-bottom: 1px solid rgb(228, 227, 227);
 }
 
 .dropdown-item-list ul {
@@ -118,6 +120,7 @@ Navbar css starts here
   cursor: pointer;
   line-height: 30px;
   padding-left: 18px;
+ 
 
 }
 
@@ -132,6 +135,7 @@ Navbar css starts here
 
 .dropdown-item-list>ul>li:hover{
   color: rgb(207, 57, 157);
+  text-decoration: underline;
 
 }
 
