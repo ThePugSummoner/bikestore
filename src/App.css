@@ -74,6 +74,8 @@ Navbar css starts here
 .dropdown-tuote {
   position: relative;
   z-index: 10;
+  width: 100%;
+  
 
 }
 
@@ -85,34 +87,33 @@ Navbar css starts here
 
 .dropdown-contents {
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   background-color: rgba(30, 37, 115, 0.8);
-  border-radius: 0px 0px 10px 0px;
-  width: 150px;
+  width:100%;
   user-select: none;
   color: white;
-  left: -10px;
+  left: -0.5px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s;   
 }
 
-.dropdown-contents-huolto {
-  position: absolute;
-  background-color: rgba(30, 37, 115, 0.8);
-  border-radius: 0px 0px 10px 0px;
-  width: 150px;
-  user-select: none;
-  color: white;
-
+.dropdown-item-list{
+  display: flex;
+  flex-direction: column;
+  
 }
 
-.dropdown-contents h5,
-.dropdown-contents-huolto h5 {
+.dropdown-contents h5 {
   line-height: 25px;
   font-size: 18px;
   padding: 4px;
   cursor: pointer;
 }
 
-.dropdown-contents ul,
-.dropdown-contents-huolto ul {
+.dropdown-contents ul {
   list-style: none;
   cursor: pointer;
   line-height: 30px;
@@ -125,13 +126,11 @@ Navbar css starts here
   font-size: 1.4em;
 }
 
-.dropdown-contents h5:hover,
-.dropdown-contents-huolto h5:hover {
+.dropdown-contents h5:hover {
   color: rgb(207, 57, 157);
 }
 
-.dropdown-contents>ul>li:hover,
-.dropdown-contents-huolto>ul>li:hover {
+.dropdown-contents>ul>li:hover{
   color: rgb(207, 57, 157);
 
 }
@@ -423,6 +422,14 @@ Footer css ends here
 Media screen starts here
 */
 @media screen and (max-width: 1200px) {
+  .dropdown-contents {
+    flex-direction: column;
+    width: 60%;
+    border-radius:0 0 10px 0  ;
+    
+    
+  }
+  
   .top-nav span {
     display: none;
   }

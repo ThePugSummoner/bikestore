@@ -54,11 +54,6 @@ function Navbar() {
         setOpen(!open)
 
     }
-    const [openHuolto, setOpenHuolto] = useState(false)
-    function handleOpenHuolto() {
-        setOpenHuolto(!openHuolto)
-
-    }
     useEffect(()=>{
         setArray(["Jarrut","Johdot ja akut","Kampisarjat","Kasetit","Keskiöt","Ketjut","Kiekot","Klossit","Navat","Osasarjat","Polkimet","Vaihdevivut","Vaihtajat","Vaijerit ja kuoret","Vanteet","Varaosat DT"])
     },[])
@@ -76,25 +71,16 @@ function Navbar() {
 
             </div>
             <div className="bottom-nav">
-                <div className="dropdown-tuote mx-2">
+                <div className="dropdown-tuote">
                     <button onClick={handleOpen}><FontAwesomeIcon icon="fa-solid fa-bars" size="lg" /> {open ? "Sulje" : "Tuotealueet"}</button>
-                    <div className="dropdown-contents">
+                    <div className="dropdown-contents" style={{maxHeight: open && '700px'}}>
                         {open && (
                             <>
                               {testi.map(test => <DropwDown key={uuid()} item={test} />)}
+                              <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5>Ajanvaraus</h5></Link>
                             </>
                         )}
-                    </div>
-                
-                <button onClick={handleOpenHuolto}><FontAwesomeIcon icon="fa-solid fa-screwdriver-wrench" /> {openHuolto ? "Sulje" : "Huolto"}</button>
-                <div style={open ? {left:140}:{left:-10}} className="dropdown-contents-huolto">
-                    {openHuolto && (
-                        <>
-                            <DropwDown  item={testi[5]} />
-                            <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5>Ajanvaraus</h5></Link>
-                        </>
-                    )}
-                    </div>
+                    </div> 
                 </div>
             </div>
         </header>
