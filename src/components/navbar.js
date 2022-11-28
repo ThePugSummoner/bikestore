@@ -45,7 +45,7 @@ function Navbar() {
 
 },
 {
-    heading:"Huolto",
+    heading:"Komponentit",
     items:["Jarrut","Johdot ja akut","Kampisarjat","Kasetit","Keskiöt","Ketjut","Kiekot","Klossit","Navat","Osasarjat","Polkimet","Vaihdevivut","Vaihtajat","Vaijerit ja kuoret","Vanteet","Varaosat DT"]
 
 }
@@ -53,6 +53,9 @@ function Navbar() {
     function handleOpen() {
         setOpen(!open)
 
+    }
+    function closeOpen(){
+        setOpen(false)
     }
     useEffect(()=>{
         setArray(["Jarrut","Johdot ja akut","Kampisarjat","Kasetit","Keskiöt","Ketjut","Kiekot","Klossit","Navat","Osasarjat","Polkimet","Vaihdevivut","Vaihtajat","Vaijerit ja kuoret","Vanteet","Varaosat DT"])
@@ -77,7 +80,7 @@ function Navbar() {
                         {open && (
                             <>
                               {testi.map(test => <DropwDown key={uuid()} item={test} />)}
-                              <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5>Ajanvaraus</h5></Link>
+                              <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5 onClick={closeOpen}>Huollon ajanvaraus</h5></Link>
                             </>
                         )}
                     </div> 

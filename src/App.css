@@ -106,14 +106,14 @@ Navbar css starts here
   
 }
 
-.dropdown-contents h5 {
+.dropdown-item-list h5 {
   line-height: 25px;
   font-size: 18px;
   padding: 4px;
   cursor: pointer;
 }
 
-.dropdown-contents ul {
+.dropdown-item-list ul {
   list-style: none;
   cursor: pointer;
   line-height: 30px;
@@ -126,11 +126,11 @@ Navbar css starts here
   font-size: 1.4em;
 }
 
-.dropdown-contents h5:hover {
+.dropdown-item-list h5:hover {
   color: rgb(207, 57, 157);
 }
 
-.dropdown-contents>ul>li:hover{
+.dropdown-item-list>ul>li:hover{
   color: rgb(207, 57, 157);
 
 }
