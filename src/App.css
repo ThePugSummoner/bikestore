@@ -430,7 +430,7 @@ Media screen starts here
     flex-direction: column;
     width: 60%;
     border-radius:0 0 10px 0  ;
-    
+    gap:5px;
     
   }
   
