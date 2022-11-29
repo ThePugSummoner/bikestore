@@ -80,17 +80,25 @@ Navbar css starts here
     flex-direction: row;
     justify-content: center;
     gap: 40px;
-    background-color: rgba(30, 37, 115, 0.8);
-    width:100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    width:100.13%;
     user-select: none;
     color: white;
-    left: -0.5px;
+    left: -1px;
     overflow: hidden;
     max-height: 0;
     transition: max-height 1s;   
   }
-  
-  
+  .dropdown-contents h5 {
+    line-height: 25px;
+    font-size: 18px;
+    padding: 4px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(228, 227, 227);
+  }
+  .dropdown-contents h5:hover {
+    color: rgb(207, 57, 157);
+  }
   
   
   /*
