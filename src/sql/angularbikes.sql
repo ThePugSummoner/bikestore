@@ -48,3 +48,25 @@ INSERT INTO tilaus (tila, tilauspvm, summa, palautus) VALUES ('Käsittelyssä', 
 DROP TABLE asiakas;
 
 
+CREATE TABLE tuotteet (
+    tuotenro INT PRIMARY KEY AUTO_INCREMENT,
+    nimi VARCHAR(100) not null,
+    hinta (10,2) DECIMAL,
+    trnro VARCHAR (30)
+    image VARCHAR(50),
+);
+
+    INSERT INTO tuotteet(tuotenro, nimi, hinta, trnro, image) VALUES ('Maastopyörä');
+
+    INSERT INTO tuotteet(tuotenro, nimi, hinta, trnro, image) VALUES ('Sähköpyörät');
+
+    INSERT INTO tuotteet(tuotenro, nimi, hinta, trnro, image) VALUES ('Maantiepyörät');
+
+    INSERT INTO tuotteet(tuotenro, nimi, hinta, trnro, image) VALUES ('Lastenpyörät');
+
+    INSERT INTO tuotteet(tuotenro, nimi, hinta, trnro, image) VALUES ('Tarvikkeet');
+
+    INSERT INTO tuotteet(tuotenro, nimi, hinta, trnro, image) VALUES ('Komponentit');
+
+    
+
