@@ -1,0 +1,129 @@
+/*
+Slider starts here
+*/
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-slide {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 40px 20px 40px;
+    max-width: 1180px;
+    min-width: 300px;
+    margin: auto;
+  
+  }
+  
+  .button-container {
+    position: relative;
+    display: flex;
+    top: -150px;
+  }
+  
+  .carousel-control-prev {
+    height: 40px;
+    width: 40px;
+    left: -40px;
+  }
+  
+  .carousel-control-next {
+    height: 40px;
+    width: 40px;
+    right: -40px;
+  
+  }
+  
+  .carousel-control-prev-icon {
+    background-color: #7584B4;
+  }
+  
+  .carousel-control-next-icon {
+    background-color: #7584B4;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    background-color: white;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel-item {
+    display: block;
+    margin-right: 0;
+    flex: 0 0 calc(100% / 6);
+    margin-left: 0;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .carousel-slide h3 {
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, transparent 14%, black 8%, black 40%, black 50%) 10;
+  
+  }
+  
+  /*
+  Slider Ends here
+  */
+  @media screen and (max-width: 1200px) {
+
+    .carousel-slide {
+      max-width: 750px;
+    }
+  
+    .carousel-item {
+      flex: 0 0 calc(100% / 4);
+  
+    }
+
+  }
+  
+  @media screen and (max-width: 800px) {
+
+    .carousel-slide {
+      max-width: 575px;
+    }
+  
+    .carousel-item {
+      flex: 0 0 calc(100% / 3);
+  
+    }
+
+  }
+  
+  @media screen and (max-width: 600px) {
+
+    .carousel-slide {
+      max-width: 500px;
+    }
+  
+    .carousel-item {
+      flex: 0 0 calc(100% / 3);
+  
+    }
+
+    
+  }
+  
+  @media screen and (max-width: 525px) {
+
+    .carousel-slide {
+      max-width: 200px;
+    }
+  
+    .carousel-item {
+      flex: 0 0 calc(100% / 2);
+  
+    }
+
+    
+  }
+  
+  
+  
+  /*
+  Media screen ends here
+  */

@@ -2,6 +2,7 @@ import React from "react"
 import{useState} from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import uuid from 'react-uuid';
+import "./dropdown.css"
 
 
 function DropwDown(props){
@@ -12,13 +13,13 @@ function DropwDown(props){
         }
 
 return(
-<>
-                    <h5 onClick={handleOpen}>{props.heading} <FontAwesomeIcon icon="fa-solid fa-caret-down" size="lg"/></h5>
+<div className="dropdown-item-list">
+                    <h5 onClick={handleOpen}>{props.item.heading} <FontAwesomeIcon icon="fa-solid fa-caret-down" size="lg"/></h5>
                     {open&&(<ul>
-                        {props.items.map(item => <li key={uuid()}>{item}</li>)}
+                        {props.item.items.map(item => <li key={uuid()}>{item}</li>)}
                     </ul>)}
 
-</>
+</div>
 )
 }
 

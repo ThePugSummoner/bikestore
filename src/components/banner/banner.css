@@ -1,0 +1,12 @@
+/*
+banner css starts here
+*/
+.front {
+    background-image: url(../../images/snow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  /*
+  banner css ends here
+  */

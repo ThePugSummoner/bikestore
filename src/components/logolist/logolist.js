@@ -1,10 +1,11 @@
 import React from "react"
-import cannondale from "../images/cannondale.png"
-import cube from "../images/cube.png"
-import haibike from "../images/haibike.png"
-import orbea from "../images/orbea.png"
-import schwalbe from "../images/schwalbe.png"
-import shimano from "../images/shimano.png"
+import cannondale from "../../images/cannondale.png"
+import cube from "../../images/cube.png"
+import haibike from "../../images/haibike.png"
+import orbea from "../../images/orbea.png"
+import schwalbe from "../../images/schwalbe.png"
+import shimano from "../../images/shimano.png"
+import "./logolist.css"
 
 
 function LogoList(){

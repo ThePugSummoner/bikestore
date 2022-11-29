@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect} from 'react';
-import Card from './card';
+import Card from '../card/card';
+import "./slider.css"
 
 
 function Slider() {

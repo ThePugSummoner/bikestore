@@ -1,0 +1,60 @@
+/*
+Navbar css starts here
+*/
+
+  
+  .dropdown-item-list{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .dropdown-item-list h5{
+    line-height: 25px;
+    font-size: 18px;
+    padding: 4px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(228, 227, 227);
+  }
+  
+  .dropdown-item-list ul {
+    list-style: none;
+    cursor: pointer;
+    line-height: 30px;
+    padding-left: 18px;
+   
+  
+  }
+  
+  .fa-caret-down {
+    float: right;
+    font-size: 1.4em;
+  }
+  
+  .dropdown-item-list h5:hover {
+    color: rgb(207, 57, 157);
+  }
+  
+  .dropdown-item-list>ul>li:hover{
+    color: rgb(207, 57, 157);
+    text-decoration: underline;
+  
+  }
+  
+  
+  /*
+  Navbar css ends here
+  */
+
+
+  
+  
+
+  @media screen and (max-width: 350px) {
+
+    .fa-caret-down {
+      font-size: 1.2em;
+    }
+  
+
+  }
