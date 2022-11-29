@@ -1,6 +1,6 @@
 <?php
 
-function DbConnection() {
+function dbConnection() {
 
     $ini = parse_ini_file('myconf.ini');
 

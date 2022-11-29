@@ -50,6 +50,14 @@ function RegForm() {
         }).catch(error => {
           console.log(error.response ? error.response.data.error : error)
           alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
+          setNewName('')
+          setNewLname('')
+          setNewEmail('')
+          setNewPnum('')
+          setNewPassword('')
+          setNewLetter('')
+          setIsChecked(false)
+          setIsCheckedTwo(false)
         })
 
       }

@@ -9,6 +9,7 @@ import RegForm from './components/regform';
 import Rules from './components/rules';
 import Account from './components/account';
 import Booking from './components/booking';
+import MyOrders from './components/myorders';
 import axios from 'axios';
 import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -31,12 +32,9 @@ function App() {
       <Route path="/regform" element={<RegForm/>}></Route>
       <Route path="/rules" element={<Rules/>}></Route>
       <Route path="/account" element={<Account/>}></Route>
-<<<<<<< HEAD
-      <Route path="/booking" element={<Booking/>}></Route>
-=======
       <Route path={"/category"}element={<Category/>}></Route>
-      
->>>>>>> 28f06b4c7049e8b3d7204412cf63f938407cd312
+      <Route path="/booking" element={<Booking/>}></Route>
+      <Route path="/myorders" element={<MyOrders/>}></Route>
     </Routes>
     <Footer/>
     </>

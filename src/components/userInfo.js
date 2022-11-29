@@ -1,10 +1,10 @@
 
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Account from "./account";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 const styles = {
     width: '500px',
@@ -72,15 +72,14 @@ function User() {
             }
           })
             .then((response) => {
-                if(response.data == 'Data Matched'){
-                    console.log("Correct");
+                if(response.data === 'Data Matched'){
+                    //console.log("Correct");
                     navigate("/account");     
                 } else {
                     //localStorage.clear();
                     localStorage.setItem("sposti", JSON.stringify(""))
                     localStorage.setItem("salasana", JSON.stringify(""))
                     alert("Käyttäjätunnus/salasana on virhellinen");
-                    navigate("/userinfo");
                 }
         }).catch(error => {
             console.log(error.response ? error.response.data.error : error)
