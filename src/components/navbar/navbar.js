@@ -1,11 +1,12 @@
 import React, { useEffect } from "react"
-import logo from "../images/AngularBikes3.png"
+import logo from "../../images/AngularBikes3.png"
 import { Link } from "react-router-dom"
-import searchLogo from "../images/spanner 2.png"
+import searchLogo from "../../images/spanner 2.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState} from "react"
-import DropwDown from "./dropdown"
-import uuid from 'react-uuid';
+import DropwDown from "../dropdown/dropdown"
+import uuid from 'react-uuid'
+import "./navbar.css"
 
 
 const linkStyle = {

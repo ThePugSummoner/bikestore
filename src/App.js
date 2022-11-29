@@ -1,11 +1,11 @@
 import './App.css';
 import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route } from "react-router-dom"
-import Navbar from './components/navbar';
+import Navbar from './components/navbar/navbar';
 import Home from './components/home';
 import User from './components/userInfo';
 import ShoppingCart from './components/shoppingCart';
-import Footer from './components/footer';
+import Footer from './components/footer/footer';
 import RegForm from './components/regform';
 import Rules from './components/rules';
 import Account from './components/account';

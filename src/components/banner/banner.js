@@ -1,8 +1,9 @@
 import React from "react"
-import Slider from "./slider"
-import {useGetAllProductsQuery} from "../features/productsAPI";
+import Slider from "../slider/slider"
+import {useGetAllProductsQuery} from "../../features/productsAPI";
 import {useDispatch} from "react-redux";
-import {addToCart} from "../features/cartSlice";
+import {addToCart} from "../../features/cartSlice";
+import "./banner.css"
 
 
 

@@ -1,12 +1,13 @@
 import React, { useState } from "react"
-import mountainbike from "../images/maastopyora.png"
-import electricbike from "../images/sahkopyora.png"
-import racingbike from "../images/maantiepyora.png"
-import kidsbike from "../images/lastenpyora.png"
-import tarvikeet from "../images/tarvikkeet.png"
-import huolto from "../images/tarvikkeet.jpg"
+import mountainbike from "../../images/maastopyora.png"
+import electricbike from "../../images/sahkopyora.png"
+import racingbike from "../../images/maantiepyora.png"
+import kidsbike from "../../images/lastenpyora.png"
+import tarvikeet from "../../images/tarvikkeet.png"
+import huolto from "../../images/tarvikkeet.jpg"
 import ImageContainer from "./imagecontainer"
-import uuid from 'react-uuid';
+import uuid from 'react-uuid'
+import "./imageframe.css"
 
 
 function ImageFrame() {

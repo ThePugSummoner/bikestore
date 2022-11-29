@@ -1,6 +1,7 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import logo from "../images/AngularBikes4.png"
+import logo from "../../images/AngularBikes4.png"
+import "./footer.css"
 
 function Footer() {
     return (

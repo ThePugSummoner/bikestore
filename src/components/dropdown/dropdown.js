@@ -2,6 +2,7 @@ import React from "react"
 import{useState} from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import uuid from 'react-uuid';
+import "./dropdown.css"
 
 
 function DropwDown(props){
