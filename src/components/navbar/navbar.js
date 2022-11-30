@@ -7,6 +7,7 @@ import { useState} from "react"
 import DropwDown from "../dropdown/dropdown"
 import uuid from 'react-uuid'
 import "./navbar.css"
+import axios from "axios"
 
 
 const linkStyle = {
@@ -15,42 +16,34 @@ const linkStyle = {
     color: 'black',
     textAlign: 'center'
 };
-
+const URL = 'http://localhost/angularbikes/'
 function Navbar() {
     const [open, setOpen] = useState(false)
-    const [array,setArray]=useState([])
-    const [testi,setTesti]=useState([
-        {
-            heading:"Maastopyörä",
-            items:["Sokkelia","item2","item3","item4"]
+    const [categories,setCategories] = useState([])
+    const [subCategories,setSubCategories] = useState([])
 
-    },
-    {
-        heading:"Sähköpyörät",
-        items:["item1","item2","item3","Rokkelia"]
+    useEffect(() => {
+      axios.get(URL + 'getCategories.php')
+        .then((response) => {
+          const json = response.data;
+          setCategories(json);
+        }).catch (error => {
+          alert(error.response === undefined ? error : error.response.data.error);
+        })
+    }, [])
 
-},   
-{
-    heading:"Maantiepyörät",
-    items:["Tottelia","item2","item3","item4"]
+    useEffect(() => {
+        axios.get(URL + 'getSubCategories.php')
+          .then((response) => {
+            const json = response.data;
+            setSubCategories(json);
+          }).catch (error => {
+            alert(error.response === undefined ? error : error.response.data.error);
+          })
+      }, [])
 
-},   
-{
-    heading:"Lastenpyörät",
-    items:["item1","item2","Hokkelia","item4"]
 
-},  
- {
-    heading:"Tarvikkeet",
-    items:["item1","Kokkelia","item3","item4"]
 
-},
-{
-    heading:"Komponentit",
-    items:["Jarrut","Johdot ja akut","Kampisarjat","Kasetit","Keskiöt","Ketjut","Kiekot","Klossit","Navat","Osasarjat","Polkimet","Vaihdevivut","Vaihtajat","Vaijerit ja kuoret","Vanteet","Varaosat DT"]
-
-}
-])
     function handleOpen() {
         setOpen(!open)
 
@@ -58,9 +51,7 @@ function Navbar() {
     function closeOpen(){
         setOpen(false)
     }
-    useEffect(()=>{
-        setArray(["Jarrut","Johdot ja akut","Kampisarjat","Kasetit","Keskiöt","Ketjut","Kiekot","Klossit","Navat","Osasarjat","Polkimet","Vaihdevivut","Vaihtajat","Vaijerit ja kuoret","Vanteet","Varaosat DT"])
-    },[])
+
     return (
         <header>
             <div className="top-nav">
@@ -77,10 +68,10 @@ function Navbar() {
             <div className="bottom-nav">
                 <div className="dropdown-tuote">
                     <button onClick={handleOpen}><FontAwesomeIcon icon="fa-solid fa-bars" size="lg" /> {open ? "Sulje" : "Tuotealueet"}</button>
-                    <div className="dropdown-contents" style={{maxHeight: open && '700px'}}>
+                    <div className="dropdown-contents" style={{maxHeight: open && '1500px'}}>
                         {open && (
                             <>
-                              {testi.map(test => <DropwDown key={uuid()} item={test} />)}
+                              {categories.map(test => <DropwDown key={uuid()} item={test} subCate={subCategories} />)}
                               <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5 onClick={closeOpen}>Huollon ajanvaraus</h5></Link>
                             </>
                         )}
