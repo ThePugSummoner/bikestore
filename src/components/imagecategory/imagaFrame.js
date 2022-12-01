@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState,useEffect } from "react"
 import mountainbike from "../../images/maastopyora.png"
 import electricbike from "../../images/sahkopyora.png"
 import racingbike from "../../images/maantiepyora.png"
@@ -8,42 +8,58 @@ import huolto from "../../images/tarvikkeet.jpg"
 import ImageContainer from "./imagecontainer"
 import uuid from 'react-uuid'
 import "./imageframe.css"
+import axios from "axios"
 
+const URL = 'http://localhost/angularbikes/'
 
 function ImageFrame() {
+const [categories,setCategories] = useState([])
 const [testi,setTesti]=useState([
     {
-        category:"Maastopyörä",
+        id:1,
         img:mountainbike
     },
     {
-        category:"Sähköpyörät",
+        id:2,
         img:electricbike
     },
     {
-        category:"Maantiepyörät",
+       id:3,
         img:racingbike
     },
     {
-        category:"Lastenpyörät",
+        id:4,
         img:kidsbike
     },
     {
-        category:"Huolto",
+        id:5,
         img:huolto
     },
     {
-        category:"Tarvikkeet",
+        id:6,
         img:tarvikeet
     },
 ])
+
+
+
+useEffect(() => {
+  axios.get(URL + 'getCategories.php')
+    .then((response) => {
+      const json = response.data;
+      setCategories(json);
+    }).catch (error => {
+      alert(error.response === undefined ? error : error.response.data.error);
+    })
+}, [])
+
 
 
     return (
 
         <div className="container mx-auto ">
             <div className="row  image-row mb-4">
-               {testi.map(test => <ImageContainer key={uuid()} item={test} />)}
+               {categories.map(category => <ImageContainer key={uuid()} bikeCategory={category} item={testi} />)}
             </div>
         </div>
 

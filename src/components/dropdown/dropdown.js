@@ -11,12 +11,12 @@ function DropwDown(props){
     function handleOpen (){
         setOpen(!open)
         }
-
+console.log()
 return(
 <div className="dropdown-item-list">
-                    <h5 onClick={handleOpen}>{props.item.heading} <FontAwesomeIcon icon="fa-solid fa-caret-down" size="lg"/></h5>
+                    <h5 onClick={handleOpen}>{props.item.trnimi} <FontAwesomeIcon icon="fa-solid fa-caret-down" size="lg"/></h5>
                     {open&&(<ul>
-                        {props.item.items.map(item => <li key={uuid()}>{item}</li>)}
+                        {props.subCate.map(sub => props.item.trnro===sub.trnro && <li key={uuid()}>{sub.alakategoria}</li>)}
                     </ul>)}
 
 </div>
