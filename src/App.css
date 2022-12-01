@@ -8,4 +8,41 @@ body {
 .main {
   min-height: 100vh;
 }
+.category-div{
+  position:relative;
+  background-image: url("./images/mountain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+}
 
+.category-center-heading{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(245, 255, 151);
+  text-shadow: 2px 2px 4px #000000;
+}
+.category-subcategories h3{
+  padding-bottom: 10px;
+  text-decoration: underline;
+  font-size: 35px;
+}
+.category-subcategories ul{
+list-style: none;
+display: flex;
+justify-content: center;
+gap: 40px;
+font-size: 25px;
+}
+.category-subcategories ul li:hover{
+  color: rgb(255, 0, 221);
+  cursor: pointer;
+}
+.product-container{
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
