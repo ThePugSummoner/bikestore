@@ -36,17 +36,20 @@ function RegForm() {
           }
         })
         .then(response => {
+        if (response.data === 'Antamasi tiedot ovat virhellisiä') {
+            alert ("Antamasi tiedot ovat virhellisiä")
+            setNewName('')
+            setNewLname('')
+            setNewEmail('')
+            setNewPnum('')
+            setNewPassword('')
+            setNewLetter('')
+            setIsChecked(false)
+            setIsCheckedTwo(false)
+        } else {
           setAsiakas(asiakas => [...asiakas,response.data])
-          //setNewName('')
-          //setNewLname('')
-          //setNewEmail('')
-          //setNewPnum('')
-          //setNewPassword('')
-          //setNewLetter('')
-          //setIsChecked(false)
-          //setIsCheckedTwo(false)
           alert ("Olet nyt rekisteröinyt")
-          navigate("/userinfo")
+          navigate("/userinfo") }
         }).catch(error => {
           console.log(error.response ? error.response.data.error : error)
           alert('Häiriö järjestelmässä, yritä kohta uudelleen!')

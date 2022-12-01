@@ -74,8 +74,13 @@ function User() {
             .then((response) => {
                 if(response.data === 'Data Matched'){
                     //console.log("Correct");
-                    navigate("/account");     
-                } else {
+                    navigate("/account");   
+                }
+                else if (response.data === 'Admin logged in!') {
+                    console.log(response.data)
+                    navigate("/admin")
+                }         
+                else {
                     //localStorage.clear();
                     localStorage.setItem("sposti", JSON.stringify(""))
                     localStorage.setItem("salasana", JSON.stringify(""))

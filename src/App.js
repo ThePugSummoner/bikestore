@@ -18,6 +18,7 @@ import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShoppi
 import {faFacebook,faSquareInstagram,faYoutube,faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {ToastContainer} from "react-toastify";
 import Category from './components/category';
+import Admin from './components/admin';
 
 library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown)
 
@@ -38,6 +39,7 @@ function App() {
       <Route path="/booking" element={<Booking/>}></Route>
       <Route path="/category"element={<Category/>}></Route>
       <Route path="/myorders" element={<MyOrders/>}></Route>
+      <Route path="/admin" element={<Admin/>}></Route>
     </Routes>
     <Footer/>
     </>
