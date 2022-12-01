@@ -25,8 +25,8 @@ INSERT INTO ajanvaraus (etunimi, sukunimi, sposti, puhnro, pnimi, merkki, pvm, a
 
 -- Tästä alkaa tuoteryhmien vientilausekkeet
 INSERT into tuoteryhma (trnimi) VALUES ("Maastopyörät"),("Sähköpyörät"),("Maantiepyörät"),("Lastenpyörät"),("Tarvikkeet"),("Komponentit");
---Tähän loppuu tuoteryhmien vientilausekkeet
---Tästä alkaa tuotteet vientilausekkeet
+-- Tähän loppuu tuoteryhmien vientilausekkeet
+-- Tästä alkaa tuotteet vientilausekkeet
 -- Maastopyörät
 insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("Serious Rockville 20 Lite","Urheilullinen Rockville 27,5 -versio on erinomainen maastopyörä lähtötasolle. Kevyessä alumiinirungossa on tasapainoinen varustelu ja urheilullisen raikas mutta ajaton muotoilu.Rockville on sekä vapaa-ajan että arjen maastopyörä, joka tarjoaa erinomaista vastinetta rahalle. Rockvillen laadukkaat ja monipuoliset komponentit tarkoittavat, että pyörä voidaan todella käyttää monenlaisilla pinnoilla.",219,1,"Etujousto","maastopyörä kuva"),
@@ -47,7 +47,7 @@ insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 3669,1,"Maastopyörä 27.5","maastopyörä kuva");
 -- Maastopyörät loppuu
 
---Sähköpyörät alkaa
+-- Sähköpyörät alkaa
 insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("Orbea Wild FS H20","Ota villiytymisesi haltuun!
 Suurten seikkailujen aika. Ota vaatteet mukaan ja nouse pyörän selkään. Olipa edessäsi mitä haasteita tahansa, tänään voit hallita ne. Koska Wild FS avaa täysin uusia mahdollisuuksia. Tämä pyörä vie mahdollisuutesi ja valikoimasi uudelle tasolle. Sen avulla voit kiivetä jyrkimmätkin rampit ja luottaa maksimaaliseen pitoon. Älykkään muotoilun ja hienostuneen alustan ansiosta voit keskittyä täysin retkellesi. Wild FS tukee ponnistelujasi ja avaa sinulle täysin uusia metsästysalueita. Ota hallinta takaisin ja löydä peli(t) sisältäsi!",6299,2,"Sähkömaastopyörä","Sähköpyörä kuva"),
@@ -66,8 +66,8 @@ Suurten seikkailujen aika. Ota vaatteet mukaan ja nouse pyörän selkään. Olip
 ("Ortler Bozen Graveler","The Ortler Bolzano women's model with wave frame and Bosch Active Plus 400 electric drive and 9-speed derailleur is a 28-inch trekking pedelec in a class of its own. Consistently high quality equipment and thought through down to the last detail and always sovereign: the heart of the Ortler Bozen Bosch is its intelligent new BOSCH electric drive.The efficient 250 watt motor offers optimum power development and propulsion on the mountai without ifs or buts. 80 % recharged in just under 2.5 hours, thanks to modern E-Power, even long distances and demanding tours with many metres of altitude can be covered.",1519,2,"Gravel","Sähköpyörä kuva"),
 
 ("HAIBIKE Trekking 6 Hi-Step","Etsitkö mukavaa sähköistä trekking-pyörää ostosreissulle kaupungin läpi, päivittäiselle työmatkalle tai jopa pidemmille viikonloppumatkoille? Silloin uusi Trekking 6 LOW on ihanteellinen sähköpyörä sinulle! Erittäin matala sisäänkäynti ja pystyasento takaavat, että voit nousta kyytiin ja poistua siitä nopeasti milloin tahansa ja pysyä aina hallinnassa liikenteessä. Vakiovarusteena on tavarateline, tehokas valaistusjärjestelmä ja potkulaite, joten sinulla on kaikki, mitä tarvitset turvalliseen liikenteeseen. Ja kun tie muuttuu jyrkemmäksi tai matkatavarat ovat hieman painavampia, Yamaha PW-ST -moottori tarjoaa voimakasta tukea.",2669,2,"Gravel","Sähköpyörä kuva");
---Sähköpyörät loppuu
---Maantiepyörät alkaa
+-- Sähköpyörät loppuu
+-- Maantiepyörät alkaa
 insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("Cannondale CAAD Optimo 4","Exceptional Aluminum PerformanceEverything Cannondale know about aluminum road bikes in one space – refined tube profiles, precision butting, and double-pass welds create frames that are lighter and ride better than the competitors’ high-ticket alloy offerings.",879,3,"Katumaantiepyörä","Maantiepyörä kuva"),
 
@@ -85,8 +85,8 @@ insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("Vitus Razor Dupa Depa.","Feeling a road bike surge forward when you press on the pedals and the excitement that comes from the ease of acceleration - that’s how road cycling should feel. Whether you are stepping over your first road bike or pulling away from lights on a regular commute, the Vitus Razor delivers that same sensation of speed and freedom. And it never gets old.",759,3,"CYCLOCROSSIT","Maantiepyörä kuva"),
 
 ("BMC Teammachine TRL 99","-kisojen voittanut malli. Sekoita se parhaiden kanssa heidän huippuluokan kilpa-autollaan. Se on rakennettu aggressiivisen hiilialustan ympärille, ja sen paino on pidetty ehdottoman pienenä. Sram Force One -ryhmäsarjaa ja siihen sopivaa hiilivaihteista kampiakselia, Hunt 4 Season -vanteita ja Ritchey 4-Axis -viimeistelysarjaa käyttävä hiilipyörä Tension on podium-valmis. Kapean vaihteiston ja nopeiden Challenge Grifo -renkaiden ansiosta se on suunniteltu niin, että sinulla on riittävästi energiaa loppusprinttiin.",4999,3,"CYCLOCROSSIT","Maantiepyörä kuva");
---Maantiepyörät loppuu
---Lastenpolkupyörät alkaa
+-- Maantiepyörät loppuu
+-- Lastenpolkupyörät alkaa
 
 insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("Vermont Girly 18","Röyhkeille tytöille Vermontin Girly-lastenpyörä on juuri sopiva! Pyörä on todellinen katseenvangitsija ja myös erittäin turvallinen, joten jokainen henkeäsalpaava kiertotie on hauskaa pienelle pyöräilijälle.Lastenpyörä tekee vaikutuksen paitsi rohkealla ulkonäöllään myös ennen kaikkea laadullaan ja hyödyllisillä yksityiskohdillaan. Girly-lastenpyörässä on matalalla sisääntulolla varustetun rungon lisäksi tukevat alumiinivanteet, takajarrut ja etujarrut, joissa on lapsiystävällinen jarruvipu, sekä varretyyny. Toinen kohokohta on ohjaustangossa oleva tyylikäs kori, johon mahtuu kaikki, mitä kireät tytöt tarvitsevat. Vermont Girlyn turvallisuusominaisuudet, kuten heijastimet edessä, polkimissa ja tavaratelineessä, kello, kaksoispultatut apupyörät ja turvakahvat, täydentävät Vermont Girlyn.",99,4,"Lasten polkupyörät 12-18","Lastenpyörä kuva"),
@@ -97,9 +97,9 @@ insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 Innokkaat nuoret pyöräilijät nauttivat Bricktownin hyvän ulkonäön lisäksi myös sen tarjoamasta mukavasta pyöräilykokemuksesta. Se on paras ja turvallisin ratsastusvaihtoehto sekä vapaa-aikaan että koulumatkalle.",309,4,"Lasten polkupyörät 20","Lastenpyörä kuva"),
 
 ("Cobra Jura Cobra 20","With the luxuriously equipped Cobra Jura, the offspring, who should measure between 120 and 135 centimeters, can really have fun off-road. This is ensured by a solid but lightweight aluminum frame and Shimano 8-speed gears. In combination with a 11-32er cassette the youngest just fly up the climbs and hydraulic disc brakes bring the kids downhill again safely to a halt. 56 millimeter wide, treaded tires provide decent grip even on rough terrain and hollow rims provide stability.If your child wants to ride the bike to school and be on the road in the dark, mobile lights must be attached - and the all-rounder is ready.",459,4,"Lasten polkupyörät 20","Lastenpyörä kuva");
---Lastenpolkupyörät loppuu
+-- Lastenpolkupyörät loppuu
 
---Tarvikkeet alkavat
+-- Tarvikkeet alkavat
 insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("SKS Beavertail Lokasuojat setti 26-28","Monipuolinen paikoilleen napsautetava lokasuoja innovatiivisella muotoilulla. Optimaalinen liansuojaus, sopii myös joustohaarukoihin. Vankka teräksinen kiinnike turvallista ja helppoa asennusta varten. Renkaan leveys max. 54 mm.",19,5,"Lokasuoja","Tarvike kuva"),
 
@@ -116,9 +116,9 @@ insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("Red Cycling Products Ultimate Kickstand Sivuseisontatuki","RCP:n tukeva ja säädettävä seisontatuki on uudempi versio klassisesta mallista. Jalka asennetaan pyörään keskiölaakerin taakse. Jalan pituuden voi säätää sopivaksi kaikkiin 24-29 kokoisiin renkaisiin. Se sopii siis sekä kaupunkipyöriin että myös suurirenkaisiin maastopyöriin. Jalka on erityisen tukeva ja sen vuoksi se sopii myös sähköpyörissä käytettäväksi.",12,5,"Seisontatuki","Tarvike kuva"),
 
 ("XLC KS-S01 Sivuseisontatuki 24-28","Tämä vakaa potkuteline kiinnitetään pohjakiinnikkeen alle, ja se sopii pyöriin, joiden pyörät ovat 24-28 tuumaa. Erittäin suuri kumijalka takaa turvallisen jalustan.Pituussäädettävä tekniikka:Nämä jalustat ovat helposti säädettävissä, ja niitä voidaan käyttää eri pyörä- ja runkokokoja varten, joten sahaaminen jalan lyhentämiseksi ei ole enäätarpeen.",16,5,"Seisontatuki","Tarvike kuva");
---Tarvikkeet loppuvat
+-- Tarvikkeet loppuvat
 
---Komponentit alkavat
+-- Komponentit alkavat
 insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("DARTMOOR Stream Polkimet","Kevyt ja vakaa. Valetut alumiinipolkimet Stream Pro takaavat parhaan pidon 10 nastalla.",38,6,"Polkimet","Komponentti kuva"),
 
@@ -127,4 +127,4 @@ insert into tuotteet (nimi,kuvaus,hinta,trnro,alakategoria,image) VALUES
 ("Eclat Stroke Ketju","Eclat Stroke Ketju musta",29,6,"Ketjut","Komponentti kuva"),
 
 ("KMC X9SL Polkupyörän ketju 9-vaihteinen","Hopeanvärisellä 9-vaihteisella X9SL-ketjulla KMC esittelee erittäin kevyen (SL), ruosteenestoisen ja erittäin kestävän kilpapyörä- ja maastoketjun Shimanon, Campagnolon ja SRAMin 9-vaihteisille vaihteistoille.",38,6,"Ketjut","Komponentti kuva");
---Komponentit loppuvat
+-- Komponentit loppuvat
