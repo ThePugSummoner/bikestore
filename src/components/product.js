@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 import valiaikakuva from "../images/AngularBikes4.png"
+import ToTop from "./toTop"
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -58,6 +59,7 @@ function Product(){
                 </div>
 
             </div>
+            <ToTop/>
         </div>
     )
 }
