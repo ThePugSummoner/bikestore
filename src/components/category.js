@@ -60,7 +60,7 @@ function Category(props) {
 
                 {products.products?.map(product =>
 
-                    <div className="col-4 card-item">
+                    <div key={product.tuotenro} className="col-4 card-item">
                         <Link to={`/category/${product.trnro}/${product.tuotenro}`}>
                             <div className="card-image-container">
                                 <img src={bike} alt="bike"></img>
