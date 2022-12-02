@@ -4,6 +4,7 @@ import ToTop from "./toTop"
 import axios from "axios"
 import uuid from 'react-uuid'
 import bike from "../images/Rectangle 28.png"
+import { Link } from "react-router-dom"
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -56,21 +57,23 @@ function Category(props) {
                 </div>
             </div>
             <div className="row product-container">
-                
-                    {products.products?.map(product =>
 
-                        <div className="col-4 card-item">
+                {products.products?.map(product =>
+
+                    <div className="col-4 card-item">
+                        <Link to={`/category/${product.trnro}/${product.tuotenro}`}>
                             <div className="card-image-container">
                                 <img src={bike} alt="bike"></img>
                             </div>
                             <div className="card-body">
                                 <h5>{product.nimi}</h5>
                             </div>
-                            <div className="card-footer">
-                                <span>{product.hinta}</span>
-                            </div>
-                        </div>)}
-                
+                        </Link>
+                        <div className="card-footer">
+                            <span>{product.hinta}</span>
+                        </div>
+                    </div>)}
+
             </div>
             <ToTop />
         </div>
