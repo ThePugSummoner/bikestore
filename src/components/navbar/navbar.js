@@ -71,7 +71,7 @@ function Navbar() {
                     <div className="dropdown-contents" style={{maxHeight: open && '1500px'}}>
                         {open && (
                             <>
-                              {categories.map(test => <DropwDown key={uuid()} item={test} subCate={subCategories} />)}
+                              {categories.map(test => <DropwDown key={uuid()} handleClose={closeOpen} item={test} subCate={subCategories} />)}
                               <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5 onClick={closeOpen}>Huollon ajanvaraus</h5></Link>
                             </>
                         )}

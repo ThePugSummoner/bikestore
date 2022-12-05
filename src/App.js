@@ -20,6 +20,7 @@ import {ToastContainer} from "react-toastify";
 import Category from './components/category';
 import Admin from './components/admin';
 import Product from './components/product';
+import SubCategory from './components/subCategory';
 
 library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown)
 
@@ -39,7 +40,8 @@ function App() {
       <Route path="/account" element={<Account/>}></Route>
       <Route path="/booking" element={<Booking/>}></Route>
       <Route path="/category/:id"element={<Category/>}></Route>
-      <Route path="/category/:id/:productId" element={<Product/>}></Route>
+      <Route path="/category/:id/:subCategoryId" element={<SubCategory/>}></Route>
+      <Route path="/product/:productId" element={<Product/>}></Route>
       <Route path="/myorders" element={<MyOrders/>}></Route>
       <Route path="/admin" element={<Admin/>}></Route>
     </Routes>

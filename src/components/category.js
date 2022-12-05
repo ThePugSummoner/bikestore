@@ -52,7 +52,7 @@ function Category(props) {
                 <div className="col category-subcategories">
                     <h3 className="text-center">{data} kategoriat</h3>
                     <ul>
-                        {products.subcategories?.map(subcate => <li key={uuid()}>{subcate.alakategoria}</li>)}
+                        {products.subcategories?.map(subcate => <Link className="link-items-category" key={uuid()} to={`/category/${products.products[0].trnro}/${subcate.alakategoria}`}><li>{subcate.alakategoria}</li></Link>)}
                     </ul>
                 </div>
             </div>
@@ -60,8 +60,8 @@ function Category(props) {
 
                 {products.products?.map(product =>
 
-                    <div key={product.tuotenro} className="col-4 card-item">
-                        <Link to={`/category/${product.trnro}/${product.tuotenro}`}>
+                    <div key={uuid()} className="col-4 card-item">
+                        <Link to={`/product/${product.tuotenro}`}>
                             <div className="card-image-container">
                                 <img src={bike} alt="bike"></img>
                             </div>
