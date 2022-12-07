@@ -37,7 +37,7 @@ function Category(props) {
                     <div className="category-center-heading"><h1>{data}</h1></div>
                 </div>
             </div>
-            <div className="row pb-3">
+            {/*<div className="row pb-3">
                 <div className="col text-center">
                     <h3 className="py-3 fs-2"> Maastopyöriä joka lähtöön etsittely hommaa. Tehtävä erillinen teksti vielä tuonne backendille</h3>
                     <p className="mx-4"> jotain tekstiä tähänki ja samalla tavalla laittaa backendille.Päällystettyjen katujen loppuessa maastopyöräilijöiden seikkailut ja hauskanpito alkavat.
@@ -47,7 +47,7 @@ function Category(props) {
                         Se on täysjoustoon verrattuna kevyempi, edullisempi ja helppohuoltoisempi. Vaativiin maastoihin suuntaavan kannattaa panostaa kunnollisiin levyjarruihin,
                         joustohaarukkaan ja laadukkaisiin vaihteisiin. Kiekkojen ja rungon koko kannattaa valita oman pituuden ja ajotyylin mukaan.</p>
                 </div>
-            </div>
+    </div>*/}
             <div className="row pb-3">
                 <div className="col category-subcategories">
                     <h3 className="text-center">{data} kategoriat</h3>

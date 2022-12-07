@@ -22,7 +22,7 @@ import AdminOrders from './components/adminOrders';
 import AdminCategories from './components/adminCategories';
 import AdminItems from './components/adminItems';
 import Dbmanagement from './components/dbmanagement'
-import Admin from './components/admin';
+//import Admin from './components/admin';
 import Product from './components/product';
 import SubCategory from './components/subCategory';
 
