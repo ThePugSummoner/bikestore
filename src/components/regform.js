@@ -87,7 +87,7 @@ function RegForm() {
                 <input type="phone" className="form-control" id="inputPhone" placeholder="Puhelinnumero" value={newPnum} onChange={e => setNewPnum(e.target.value)}/>
             </div>
             <div className="col-md-12">
-                <label style={{marginLeft:10}} htmlFor="inputPAsword4" className="form-label">Salasana*</label>
+                <label style={{marginLeft:10}} htmlFor="inputPassword4" className="form-label">Salasana*</label>
                 <input type="password" className="form-control" id="inputPassword4" placeholder="Salasana" value={newPassword} onChange={e => setNewPassword(e.target.value)}/>
             </div>
             <div className="col-6">

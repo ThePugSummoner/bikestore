@@ -12,6 +12,7 @@ function returnError(PDOException $pdoex) {
     echo json_encode($error);
     exit;
 }
+
 function selectAsJson(object $db,string $sql): void {
     $query = $db->query($sql);
     $results = $query->fetchAll(PDO::FETCH_ASSOC);

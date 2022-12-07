@@ -13,8 +13,8 @@ import axios from "axios"
 const URL = 'http://localhost/angularbikes/'
 
 function ImageFrame() {
-const [categories,setCategories] = useState([])
-const [testi,setTesti]=useState([
+const [categories, setCategories] = useState([])
+const [testi, setTesti]=useState([
     {
         id:1,
         img:mountainbike
@@ -46,6 +46,7 @@ const [testi,setTesti]=useState([
 useEffect(() => {
   axios.get(URL + 'getCategories.php')
     .then((response) => {
+        //console.log(response.data);
       const json = response.data;
       setCategories(json);
     }).catch (error => {
@@ -59,7 +60,9 @@ useEffect(() => {
 
         <div className="container mx-auto ">
             <div className="row  image-row mb-4">
-               {categories.map(category => <ImageContainer key={uuid()} bikeCategory={category} item={testi} />)}
+               {categories.map(category => (
+               <ImageContainer key={uuid()} bikeCategory={category} item={testi}/>
+               ))}
             </div>
         </div>
 

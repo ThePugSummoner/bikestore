@@ -18,7 +18,10 @@ import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShoppi
 import {faFacebook,faSquareInstagram,faYoutube,faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {ToastContainer} from "react-toastify";
 import Category from './components/category';
-import Admin from './components/admin';
+import AdminOrders from './components/adminOrders';
+import AdminCategories from './components/adminCategories';
+import AdminItems from './components/adminItems';
+import Dbmanagement from './components/dbmanagement'
 
 library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown)
 
@@ -39,8 +42,11 @@ function App() {
       <Route path="/booking" element={<Booking/>}></Route>
       <Route path="/category/:id"element={<Category/>}></Route>
       <Route path="/myorders" element={<MyOrders/>}></Route>
-      <Route path="/admin" element={<Admin/>}></Route>
-    </Routes>
+      <Route path="/adminOrders" element={<AdminOrders/>}></Route>
+      <Route path="/adminItems" element={<AdminItems/>}></Route>
+      <Route path="/adminCategories" element={<AdminCategories/>}></Route>
+      <Route path='/dbmanagement' element={<Dbmanagement/>}></Route>
+     </Routes>
     <Footer/>
     </>
 

@@ -21,13 +21,13 @@ export default function Table({ columns, data }) {
           padding: 5
         },
         td: {
-          padding: "10px",
+          padding: 15,
           borderBottom: "1px solid lightgrey"
         },
       };
 
   return (
-    <table {...getTableProps()} style={{margin:'auto', textAlign: 'center', width: 1000}}>
+    <table {...getTableProps()} style={{margin:'auto', textAlign: 'center', width: 'fit-content'}}>
         <thead style={styles.thead}>
         {headerGroups.map ((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>

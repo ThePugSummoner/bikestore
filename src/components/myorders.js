@@ -189,7 +189,7 @@ function MyOrders() {
         <h1 style={{margin:15}}>Käyttäjätilini</h1>
         <ol>
           <ul style={{padding: 0}}>
-            <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}} type="button" className="btn btn-dark mb-2" onClick={handleUser}>Tietoni</button>
+            <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}} type="button" className="btn btn-dark mb-1" onClick={handleUser}>Tietoni</button>
           </ul>
           <ul style={{padding: 0}}>
           <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleOrder}>Tilaukseni</button>

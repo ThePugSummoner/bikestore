@@ -14,17 +14,18 @@ const styles = {
 
 const URL = 'http://localhost/angularbikes/'
 
-function Admin() {
+function AdminCategories() {
 
-    //const [tilaus, setTilaus] = useState([])
+    
     const [data, setData] = useState([])
-    //const getEmail = localStorage.getItem('sposti')
-    //const getPwd = localStorage.getItem('salasana')
-    //const [user, setUser] = useState([])
     const navigate = useNavigate()
 
 
-    /*const columns = useMemo (() => [
+    const columns = useMemo (() => [
+        /*{
+            Header: "Asiakastunnus",
+            accessor: "astunnus"
+        },
         {
             Header: "Tilausnumero",
             accessor: "tilausnro"
@@ -36,19 +37,19 @@ function Admin() {
         {
             Header: "Summa",
             accessor: "summa"
+        },*/
+        {
+            Header: "Numero",
+            accessor: "trnro"
         },
         {
-            Header: "Toimituksen tila",
-            accessor: "tila"
-        },
-        {
-            Header: "Vaihto ja palautus",
-            accessor: "palautus"
+            Header: "Kategoria",
+            accessor: "trnimi"
         }
     ],
-    []);*/
+    []);
 
-    const columns = useMemo (() => [
+    /*const columns = useMemo (() => [
         {
           Header: "Asiakasnro",
           accessor: "astunnus"
@@ -70,12 +71,12 @@ function Admin() {
           accessor: "puhnro"
       }
   ],
-  []);
+  []);*/
 
     useEffect(() => {
-        const getEmail = JSON.parse(localStorage.getItem("sposti"));
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'user.php', json, {
+        //const getEmail = JSON.parse(localStorage.getItem("sposti"));
+        //const json = JSON.stringify({email: getEmail})
+        axios.post(URL + 'admincategories.php', {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -159,34 +160,48 @@ function Admin() {
         })
       }*/
 
-      const handleOrder = (e) => {
-        navigate("/myorders")
+      const handleCategories = (e) => {
+        navigate("/adminCategories")
       }
 
-      const handleUser = (e) => {
-        navigate("/account")
+      const handleItems = (e) => {
+        navigate("/adminItems")
       }
-    
+
+      const handleOrders = (e) => {
+        navigate("/adminOrders")
+      }
+      
+      const handleManagement = (e) => {
+        navigate("/dbmanagement")
+      }
     
   return (
     <div style={{display: 'flex'}} className="main">
       <aside style={{width: 300, textAlign: 'left', margin: 30}}>
-        <h1 style={{margin:15}}>Käyttäjätilini</h1>
+        <h1 style={{margin:15}}>Asetukset</h1>
         {/*{data?.map(data => (
         <h4 key={data.astunnus}style={{margin:15}}>Asiakasnumero: {data.astunnus}</h4>))}*/}
         <ol>
           <ul style={{padding: 0}}>
-            <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}} type="button" className="btn btn-dark mb-2" onClick={handleUser}>Tietoni</button>
+            <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}} type="button" className="btn btn-dark mb-1" onClick={handleCategories}>Tuotekategoriat</button>
           </ul>
           <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleOrder}>Tilaukseni</button>
+          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleItems}>Tuotteet</button>
+          </ul>
+          <ul style={{padding: 0}}>
+          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleOrders}>Tilaukset</button>
+          </ul>
+          <ul style={{padding: 0}}>
+          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleManagement}>Hallinta</button>
           </ul>
         </ol>
         <button style={{width:250, textAlign: "center", fontSize: '1.5em', marginTop: '15px'}} type="button" className="btn btn-dark mb-3" onClick={handleLogout}>Kirjaudu ulos</button>
       </aside>
       <div style={{width: 1000, textAlign:'center', marginTop: 30, marginLeft: 70}}>
-      {data?.map(data => (
-        <h1 key={data.astunnus} style={{margin:15}}>Hei {data.etunimi}!</h1>))}
+      {/*{data?.map(data => (
+        <h1 key={data.astunnus} style={{margin:15}}>Hei {data.etunimi}!</h1>))}*/}
+        <h1 style={{margin: 15}}>Kategoriat</h1>
             <Table columns={columns} data={data}/>
         </div>
         
@@ -211,4 +226,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default AdminCategories

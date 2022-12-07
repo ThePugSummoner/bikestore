@@ -53,13 +53,18 @@ CREATE TABLE tuoteryhma(
     trnimi varchar(60)
 );
 
-CREATE TABLE tuotteet (
+CREATE TABLE tuote (
     tuotenro INT PRIMARY KEY AUTO_INCREMENT,
-    nimi VARCHAR(100) not null,
-    kuvaus text,
+    nimi VARCHAR(100) NOT NULL,
+    kuvaus TEXT,
     hinta DECIMAL(10,2) ,
-    trnro int ,
+    trnro INT ,
     alakategoria varchar(40),
-    image VARCHAR(50),
-    FOREIGN KEY (trnro) REFERENCES tuoteryhma(trnro)
+    kuva VARCHAR(50),
+    saldo SMALLINT,
+    koko VARCHAR(10),
+    FOREIGN KEY (trnro) 
+        REFERENCES tuoteryhma(trnro)
 );
+
+DROP TABLE tuotteet;

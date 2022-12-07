@@ -3,11 +3,8 @@ require_once './inc/functions.php';
 require_once './inc/headers.php';
 
 try {
-  $db = openDb();
-  selectAsJson($db,'SELECT trnro , alakategoria FROM
-  tuote
-  GROUP by alakategoria
-  ORDER by trnro');
+  $dbcon = openDb();
+  selectAsJson($dbcon,'SELECT * FROM tuoteryhma');
 }
 catch (PDOException $pdoex) {
   returnError($pdoex);

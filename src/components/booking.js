@@ -160,8 +160,8 @@ function Booking () {
         <option>Kausihuolto</option>
         <option>Perushuolto</option>
         <option>Täyshuolto</option>
-        <option>Rengastyöt</option>
-        <option>Pikahuolto</option>
+        <option>Etu-/takarenkaan vaihto</option>
+        <option>Renkaiden vaihto (eteen ja taakse)</option>
       </select>
       
     </div>
