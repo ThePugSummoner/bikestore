@@ -9,11 +9,11 @@ $category_id=$parameters[1];
 
 try{
     $db=openDb();
-    $sql="SELECT * FROM tuotteet WHERE alakategoria='$subCategory'";
+    $sql="SELECT * FROM tuote WHERE alakategoria='$subCategory'";
     $query=$db->query($sql);
     $subCategoryProducts=$query->fetchAll(PDO::FETCH_ASSOC);
 
-    $sql="SELECT alakategoria FROM tuotteet WHERE trnro=$category_id GROUP BY alakategoria";
+    $sql="SELECT alakategoria FROM tuote WHERE trnro=$category_id GROUP BY alakategoria";
     $query=$db->query($sql);
     $subCategories=$query->fetchAll(PDO::FETCH_ASSOC);
 
