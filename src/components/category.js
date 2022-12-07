@@ -4,6 +4,7 @@ import ToTop from "./toTop"
 import axios from "axios"
 import uuid from 'react-uuid'
 import bike from "../images/Rectangle 28.png"
+import { Link } from "react-router-dom"
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -51,26 +52,28 @@ function Category(props) {
                 <div className="col category-subcategories">
                     <h3 className="text-center">{data} kategoriat</h3>
                     <ul>
-                        {products.subcategories?.map(subcate => <li key={uuid()}>{subcate.alakategoria}</li>)}
+                        {products.subcategories?.map(subcate => <Link className="link-items-category" key={uuid()} to={`/category/${products.products[0].trnro}/${subcate.alakategoria}`}><li>{subcate.alakategoria}</li></Link>)}
                     </ul>
                 </div>
             </div>
             <div className="row product-container">
-                
-                    {products.products?.map(product =>
 
-                        <div className="col-4 card-item" key={product.tuotenro}>
+                {products.products?.map(product =>
+
+                    <div key={uuid()} className="col-4 card-item">
+                        <Link to={`/product/${product.tuotenro}`}>
                             <div className="card-image-container">
                                 <img src={bike} alt="bike"></img>
                             </div>
                             <div className="card-body">
                                 <h5>{product.nimi}</h5>
                             </div>
-                            <div className="card-footer">
-                                <span>{product.hinta}</span>
-                            </div>
-                        </div>)}
-                
+                        </Link>
+                        <div className="card-footer">
+                            <span>{product.hinta}</span>
+                        </div>
+                    </div>)}
+
             </div>
             <ToTop />
         </div>

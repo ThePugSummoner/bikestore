@@ -8,6 +8,9 @@ body {
 .main {
   min-height: 100vh;
 }
+/*
+Categoryn alkaa tästä
+*/
 .category-div{
   position:relative;
   background-image: url("./images/mountain.jpg");
@@ -37,12 +40,61 @@ justify-content: center;
 gap: 40px;
 font-size: 25px;
 }
-.category-subcategories ul li:hover{
-  color: rgb(255, 0, 221);
-  cursor: pointer;
+.link-items-category:hover{
+  color: rgb(207, 57, 157);
+  text-decoration: underline;
+
+}
+.link-items-category{
+  text-decoration: none;
+  color: black;
 }
 .product-container{
   display: flex;
   justify-content: space-evenly;
   cursor: pointer;
 }
+/*
+Tähän loppuu category
+*/
+ /*
+ Tästä alkaa product
+ */
+
+
+.product-info{
+  display: flex;
+  flex-direction: column;
+
+}
+.product-info ul{
+  list-style: none;
+  padding-left: 0;
+  padding-top: 15px;
+}
+.product-info span{
+  font-size: 30px;
+  color: red;
+  margin-left: auto;
+}
+.product-info button{
+  justify-self: center;
+  align-self:flex-end;
+  width: 200px;
+
+}
+.product-info-varasto{
+  display: flex;
+  flex-direction: column;
+}
+.varasto-container{
+margin-left: auto;
+}
+.product-info-varasto span{
+  color: #000000;
+  font-size: 20px;
+}
+/*
+Tähän loppuu product
+*/
+
