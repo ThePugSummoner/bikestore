@@ -51,11 +51,11 @@ function SubCategory() {
                                     <img src={bike} alt="bike"></img>
                                 </div>
                                 <div className="card-body">
-                                    <h5>{product.nimi}</h5>
+                                    <h5>{product?.nimi}</h5>
                                 </div>
                             </Link>
                             <div className="card-footer">
-                                <span>{product.hinta}</span>
+                                <span>{product?.hinta}</span>
                             </div>
                         </div>)}
 
