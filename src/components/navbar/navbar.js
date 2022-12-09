@@ -8,6 +8,8 @@ import DropwDown from "../dropdown/dropdown"
 import uuid from 'react-uuid'
 import "./navbar.css"
 import axios from "axios"
+import ShoppingCartBox from "../shoppingCartBox" 
+import { useSelector } from "react-redux";
 
 
 const linkStyle = {
@@ -42,7 +44,11 @@ function Navbar() {
           })
       }, [])
 
-
+    const {cartTotalQuantity} = useSelector(state => state.cart)
+    const [openKori, setOpenKori] = useState(false)
+    function handleOpenKori() {
+        setOpenKori(!openKori)
+    }
 
     function handleOpen() {
         setOpen(!open)
@@ -62,7 +68,20 @@ function Navbar() {
                     <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
                 </div>
                 <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span>Oma tili</span></Link>
-                <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg" /><span>Ostoskärry</span></Link>
+                <div className="cart-preview">
+                    <FontAwesomeIcon style={{cursor: "pointer"}} icon="fa-solid fa-cart-shopping" size="lg" onClick={handleOpenKori} />
+                    <span className="cart-quantity">
+                        <span>{cartTotalQuantity}</span>
+                    </span>
+                    <span style={{cursor: "pointer"}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
+                    <div style={{position: "absolute", top: 70, right: 8}} className="cart-dropdown">
+                        {openKori && (
+                            <div>
+                                <ShoppingCartBox handleClose={handleOpenKori}/>
+                            </div>                          
+                        )}
+                    </div>
+                </div>
 
             </div>
             <div className="bottom-nav">
