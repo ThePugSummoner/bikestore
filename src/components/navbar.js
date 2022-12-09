@@ -5,6 +5,9 @@ import searchLogo from "../images/spanner 2.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState} from "react"
 import DropwDown from "./dropdown"
+import { useSelector } from "react-redux";
+import ShoppingCartBox from "./shoppingCartBox" 
+
 
 
 const linkStyle = {
@@ -13,8 +16,8 @@ const linkStyle = {
     color: 'black',
     textAlign: 'center'
 };
-
 function Navbar() {
+    const {cartTotalQuantity} = useSelector(state => state.cart)
     const [open, setOpen] = useState(false)
     const [array,setArray]=useState([])
     const [array2,setArray2]=useState([])
@@ -22,6 +25,11 @@ function Navbar() {
         setOpen(!open)
 
     }
+    const [openKori, setOpenKori] = useState(false)
+    function handleOpenKori() {
+        setOpenKori(!openKori)
+    }
+    
     const [openHuolto, setOpenHuolto] = useState(false)
     function handleOpenHuolto() {
         setOpenHuolto(!openHuolto)
@@ -33,7 +41,7 @@ function Navbar() {
     
     return (
         <header>
-            <div className="top-nav">
+            <div style={{position: "relative"}} className="top-nav">
                 <Link to="/"><img className="logo-img" src={logo} alt="logo"></img></Link>
                 <span>Angular Bikes</span>
                 <div className="search-container">
@@ -41,8 +49,20 @@ function Navbar() {
                     <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
                 </div>
                 <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span>Oma tili</span></Link>
-                <Link style={linkStyle} to="/shoppingcart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" size="lg" /><span>Ostoskärry</span></Link>
-
+                <div className="cart-preview">
+                    <FontAwesomeIcon style={{cursor: "pointer"}} icon="fa-solid fa-cart-shopping" size="lg" onClick={handleOpenKori} />
+                    <span className="cart-quantity">
+                        <span>{cartTotalQuantity}</span>
+                    </span>
+                    <span style={{cursor: "pointer"}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
+                    <div style={{position: "absolute", top: 70, right: 8}} className="cart-dropdown">
+                        {openKori && (
+                            <div>
+                                <ShoppingCartBox handleClose={handleOpenKori}/>
+                            </div>                          
+                        )}
+                    </div>
+                </div>
             </div>
             <div className="bottom-nav">
                 <div className="dropdown-tuote mx-2">
@@ -75,6 +95,4 @@ function Navbar() {
 }
 
 
-
-
-export default Navbar
+export default Navbar;

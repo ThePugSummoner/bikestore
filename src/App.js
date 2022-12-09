@@ -13,12 +13,12 @@ import Booking from './components/booking';
 import axios from 'axios';
 import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faBars,faCaretDown} from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faBars,faCaretDown, faX, faTrashCan} from '@fortawesome/free-solid-svg-icons'
 import {faFacebook,faSquareInstagram,faYoutube,faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {ToastContainer} from "react-toastify";
 import Category from './components/category';
 
-library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown)
+library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown, faX, faTrashCan)
 
 
 
