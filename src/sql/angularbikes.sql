@@ -1,4 +1,4 @@
--- Active: 1669136402829@@127.0.0.1@3306@angularbikes
+-- Active: 1669139412209@@127.0.0.1@3306@angularbikes
 DROP DATABASE IF EXISTS angularbikes;
 
 CREATE DATABASE angularbikes;
@@ -17,10 +17,6 @@ CREATE TABLE asiakas (
 ) AUTO_INCREMENT = 100;
 
 
-
-INSERT INTO asiakas (etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VALUES ('Enimi', 'Snimi', 'sposti@sposti.fi', '0441234567', 'SALASANA', NULL);
-INSERT INTO asiakas (etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VALUES ('Erkki', 'Esimmerkki', 'erkkiesim@sposti.fi', '0449876543', 'teSTTesT', 'K');
-
 CREATE TABLE tilaus (
     astunnus INT(10),
     tilausnro SMALLINT PRIMARY KEY AUTO_INCREMENT,
@@ -33,18 +29,42 @@ CREATE TABLE tilaus (
         ON DELETE CASCADE
 ) AUTO_INCREMENT = 1000;
 
-INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (100, 'Käsittelyssä', '2022-11-12', 150.45, 'Palauta tuote');
+CREATE TABLE palvelu (
+    ptunnus INT(10) PRIMARY KEY AUTO_INCREMENT,
+    pnimi VARCHAR(255),
+    hinta DECIMAL(10,2)
+);
 
-INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (101, 'Toimitettu', '2021-8-18', 99.90, 'Palautus ei onnistu');
+CREATE TABLE ajanvaraus (
+    vartunnus INT(10) PRIMARY KEY AUTO_INCREMENT,
+    etunimi VARCHAR(255),
+    sukunimi VARCHAR(255),
+    sposti VARCHAR(255),
+    puhnro VARCHAR(255),
+    pnimi VARCHAR(255),
+    merkki VARCHAR(255),
+    pvm DATETIME,
+    aika TIME
+    );
 
-INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (102, 'Matkalla', '2019-2-12', 599.90, 'Palautus ei onnistu');
 
-INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (103, 'Toimitettu', '2020-4-15', 12599.90, 'Palautus ei onnistu');
+CREATE TABLE tuoteryhma(
+    trnro INT PRIMARY KEY AUTO_INCREMENT,
+    trnimi varchar(60)
+);
 
-INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (104, 'Toimitettu', '2018-12-20', 1299, 'Palautus ei onnistu');
+CREATE TABLE tuote (
+    tuotenro INT PRIMARY KEY AUTO_INCREMENT,
+    nimi VARCHAR(100) NOT NULL,
+    kuvaus TEXT,
+    hinta DECIMAL(10,2) ,
+    trnro INT ,
+    alakategoria varchar(40),
+    kuva VARCHAR(50),
+    saldo SMALLINT,
+    koko VARCHAR(10),
+    FOREIGN KEY (trnro) 
+        REFERENCES tuoteryhma(trnro)
+);
 
-INSERT INTO tilaus (tila, tilauspvm, summa, palautus) VALUES ('Käsittelyssä', '2022-11-14', 325.55, 'Palauta tuote');
-
-DROP TABLE asiakas;
-
-
+DROP TABLE tuotteet;

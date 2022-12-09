@@ -1,7 +1,7 @@
 import React from "react"
-import Banner from "./banner"
-import ImageFrame from "./imagaFrame"
-import LogoList from "./logolist"
+import Banner from "./banner/banner"
+import ImageFrame from "./imagecategory/imageFrame"
+import LogoList from "./logolist/logolist"
 
 function Home(){
 

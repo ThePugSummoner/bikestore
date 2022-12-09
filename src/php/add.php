@@ -2,42 +2,33 @@
 
 require_once 'inc/functions.php';
 require_once 'inc/headers.php';
+//require('dbconnection.php');
 
 $input = json_decode(file_get_contents('php://input'));
 //$description = $input ->description;
 $description1 = filter_var($input->description1, FILTER_UNSAFE_RAW);
 $description2 = filter_var($input->description2, FILTER_UNSAFE_RAW);
-$description3 = filter_var($input->description3, FILTER_UNSAFE_RAW, FILTER_SANITIZE_EMAIL);
-$description4 = filter_var($input->description4, FILTER_UNSAFE_RAW, FILTER_SANITIZE_NUMBER_INT);
+$description3 = filter_var($input->description3, FILTER_UNSAFE_RAW);
+$description4 = filter_var($input->description4, FILTER_UNSAFE_RAW);
 $description5 = filter_var($input->description5, FILTER_UNSAFE_RAW);
+$hash_pw = password_hash($description5, PASSWORD_DEFAULT);
 $description6 = filter_var($input->description6, FILTER_UNSAFE_RAW);
+//$description = strp_tags($description);
 
-$description1 = strip_tags($description1);
-$description2 = strip_tags($description2);
-$description3 = strip_tags($description3);
-$description4 = strip_tags($description4);
-$description5 = strip_tags($description5);
-$description6 = strip_tags($description6);
+if (!empty($description1) && !empty($description2) && !empty($description3) && !empty($description4)) {
 
-$description1 = trim($description1);
-$description2 = trim($description2);
-$description3 = trim($description3);
-$description4 = trim($description4);
-$description5 = trim($description5);
-$description6 = trim($description6);
-
-try {
+    try {
     /*$db = new PDO('mysql:host=localhost;dbname=todo;charset=utf8', 'root', '');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);*/
 
     $dbcon = openDb();
 
-    $query = $dbcon->prepare('insert into asiakas(etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) values (:etunimi, :sukunimi, :sposti, :puhnro, :salasana, :uutiskirje)');
+    $query = $dbcon->prepare('INSERT INTO asiakas(etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VALUES (:etunimi, :sukunimi, :sposti, :puhnro, :salasana, :uutiskirje)');
     $query->bindValue(':etunimi', $description1, PDO::PARAM_STR);
     $query->bindValue(':sukunimi', $description2, PDO::PARAM_STR);
     $query->bindValue(':sposti', $description3, PDO::PARAM_STR);
     $query->bindValue(':puhnro', $description4, PDO::PARAM_STR);
-    $query->bindValue(':salasana', $description5, PDO::PARAM_STR);
+    $query->bindValue(':salasana', $hash_pw, PDO::PARAM_STR);
     $query->bindValue(':uutiskirje', $description6, PDO::PARAM_STR);
     $query->execute();
 
@@ -47,8 +38,8 @@ try {
     print json_encode($data);
 
 } catch (PDOException $pdoex) {
-    /*header('HTTP/1.1 500 Internal Server Error');
-    $error = array('error' => $pdoex->getMessage());
-    print json_encode($error);*/
     returnError($pdoex);
+}
+} else {
+    echo "Antamasi tiedot ovat virhellisiä";
 }

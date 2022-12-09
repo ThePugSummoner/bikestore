@@ -1,5 +1,6 @@
 import React from "react"
-import bike from "../images/Rectangle 28.png"
+import bike from "../../images/Rectangle 28.png"
+import"./card.css"
 
 
 
