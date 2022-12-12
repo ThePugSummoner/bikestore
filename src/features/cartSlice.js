@@ -14,7 +14,7 @@ const cartSlice = createSlice({
     reducers: {
         addToCart(state, action) {
             const itemIndex = state.cartItems.findIndex(
-                (item) => item.id === action.payload.id
+                (item) => item.tuotenro === action.payload.tuotenro
             );
             if (itemIndex >= 0) {
                 state.cartItems[itemIndex].cartQuantity += 1;
@@ -38,7 +38,7 @@ const cartSlice = createSlice({
         },
         removeFromCart(state, action) {
             const nextCartItems = state.cartItems.filter(
-                (cartItem) => cartItem.id !== action.payload.id
+                (cartItem) => cartItem.tuotenro !== action.payload.tuotenro
             );
 
             state.cartItems = nextCartItems;
@@ -56,14 +56,14 @@ const cartSlice = createSlice({
         },
         decreaseCart(state, action) {
             const itemIndex = state.cartItems.findIndex(
-                (cartItem) => cartItem.id === action.payload.id
+                (cartItem) => cartItem.tuotenro === action.payload.tuotenro
             );
 
             if (state.cartItems[itemIndex].cartQuantity > 1) {
                 state.cartItems[itemIndex].cartQuantity -= 1;
             } else if (state.cartItems[itemIndex].cartQuantity === 1) {
                 const nextCartItems = state.cartItems.filter(
-                    (cartItem) => cartItem.id !== action.payload.id
+                    (cartItem) => cartItem.tuotenro !== action.payload.tuotenro
                 );
 
                 state.cartItems = nextCartItems;
@@ -98,8 +98,8 @@ const cartSlice = createSlice({
         getTotals(state, action) {
             let {total, quantity} = state.cartItems.reduce(
                 (cartTotal, cartItem) => {
-                    const {price, cartQuantity} = cartItem;
-                    const itemTotal = price*cartQuantity;
+                    const {hinta, cartQuantity} = cartItem;
+                    const itemTotal = hinta*cartQuantity;
 
                     cartTotal.total += itemTotal;
                     cartTotal.quantity += cartQuantity;

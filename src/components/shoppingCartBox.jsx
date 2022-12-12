@@ -49,17 +49,17 @@ function ShoppingCartBox(props) {
                     <div>
                         <div className="cart-items-box">
                             {cart.cartItems?.map(cartItem => (
-                                <div className="cart-item-box" key={cartItem.id}>
+                                <div className="cart-item-box" key={cartItem.tuotenro}>
                                     <div className="cart-product-box">
-                                        <img src={cartItem.image} alt={cartItem.name} />
+                                        <img src={require(`../tuotekuvat/${cartItem.kuva}`)} alt={cartItem.nimi} />
                                         <div>
-                                            <h3>{cartItem.name}</h3>
+                                            <h3>{cartItem.nimi}</h3>
                                             <button onClick={() => handleRemoveFromCart(cartItem)}>
                                                 <FontAwesomeIcon icon="fa-solid fa-trash-can" />
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="cart-product-price-box">€ {cartItem.price}</div>
+                                    <div className="cart-product-price-box">€ {cartItem.hinta}</div>
                                     <div className="cart-product-quantity-box">
                                         <button onClick= {() => handleDecreaseCart(cartItem)}>
                                           -
@@ -70,7 +70,7 @@ function ShoppingCartBox(props) {
                                         </button>
                                     </div>
                                     <div className="cart-product-total-price-box">
-                                        € {cartItem.price * cartItem.cartQuantity}
+                                        € {cartItem.hinta * cartItem.cartQuantity}
                                     </div>
                                 </div>
                             ))}
