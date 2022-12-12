@@ -64,10 +64,7 @@ function Navbar() {
             <div className="top-nav">
                 <Link to="/" style={{textDecoration:'none', color: 'antiquewhite'}} ><img className="logo-img" src={logo} alt="logo"></img>Angular Bikes</Link>
                 {/*<span>Angular Bikes</span>*/}
-                <div className="search-container">
-                    <input className="top-nav-search" type="text" placeholder="Search..."></input>
-                    <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
-                </div>
+                <Search />
                 <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span>Oma tili</span></Link>
                 <div className="cart-preview">
                     <FontAwesomeIcon style={{cursor: "pointer"}} icon="fa-solid fa-cart-shopping" size="lg" onClick={handleOpenKori} />
