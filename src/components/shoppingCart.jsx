@@ -72,18 +72,18 @@ const ShoppingCart= () => {
                         </div>
                         <div className="cart-items">
                             {cart.cartItems?.map(cartItem => (
-                                <div className="cart-item" key={cartItem.id}>
+                                <div className="cart-item" key={cartItem.tuotenro}>
                                     <div className="cart-product">
-                                        <img src={cartItem.image} alt={cartItem.name} />
+                                        <img src={require(`../tuotekuvat/${cartItem.kuva}`)} alt={cartItem.nimi} />
                                         <div>
-                                            <h3>{cartItem.name}</h3>
-                                            <p>{cartItem.desc}</p>
+                                            <h3>{cartItem.nimi}</h3>
+                                        
                                             <button onClick={() => handleRemoveFromCart(cartItem)}>
                                                 <FontAwesomeIcon icon="fa-solid fa-trash-can" />
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="cart-product-price">€ {cartItem.price}</div>
+                                    <div className="cart-product-price">€ {cartItem.hinta}</div>
                                     <div className="cart-product-quantity">
                                         <button onClick= {() => handleDecreaseCart(cartItem)}>
                                           -
@@ -94,7 +94,7 @@ const ShoppingCart= () => {
                                         </button>
                                     </div>
                                     <div className="cart-product-total-price">
-                                        € {cartItem.price * cartItem.cartQuantity}
+                                        € {cartItem.hinta * cartItem.cartQuantity}
                                     </div>
                                 </div>
                             ))}
