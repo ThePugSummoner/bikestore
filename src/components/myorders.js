@@ -12,6 +12,16 @@ const styles = {
     textAlign: 'center'
 }
 
+const ulstyle = {
+  padding: 0
+}
+
+const btnstyle = { 
+  backgroundColor: 'transparent', 
+  color: 'black', 
+  border: 'none'
+}
+
 const URL = 'http://localhost/angularbikes/'
 
 function MyOrders() {
@@ -188,11 +198,11 @@ function MyOrders() {
       <aside style={{width: 300, textAlign: 'left', margin: 30}}>
         <h1 style={{margin:15}}>Käyttäjätilini</h1>
         <ol>
-          <ul style={{padding: 0}}>
-            <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}} type="button" className="btn btn-dark mb-1" onClick={handleUser}>Tietoni</button>
+          <ul style={ulstyle}>
+            <button style={btnstyle} type="button" className="btn5 btn-dark mb-2" onClick={handleUser}>Tietoni</button>
           </ul>
-          <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleOrder}>Tilaukseni</button>
+          <ul style={ulstyle}>
+            <button style={btnstyle} type="button" className="btn6 btn-dark mb-1" onClick={handleOrder}>Tilaukseni</button>
           </ul>
         </ol>
         <button style={{width:250, textAlign: "center", fontSize: '1.5em', marginTop: '15px'}} type="button" className="btn btn-dark mb-3" onClick={handleLogout}>Kirjaudu ulos</button>
