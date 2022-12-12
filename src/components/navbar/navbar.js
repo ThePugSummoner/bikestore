@@ -18,6 +18,7 @@ const linkStyle = {
     color: 'black',
     textAlign: 'center'
 };
+
 const URL = 'http://localhost/angularbikes/'
 function Navbar() {
     const [open, setOpen] = useState(false)
