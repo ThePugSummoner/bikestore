@@ -5,13 +5,16 @@ import Table from "./table";
 import MyOrders from "./myorders";
 import axios from "axios";
 
-
-
-const styles = {
-    margin: 'auto',
-    textAlign: 'center'
+const ulstyle = {
+  padding: 0
 }
 
+const btnstyle = {
+  fontSize: '1.2em', 
+  backgroundColor: 'transparent', 
+  color: 'black', 
+  border: 'none'
+}
 const URL = 'http://localhost/angularbikes/'
 
 function AdminOrders() {
@@ -94,18 +97,18 @@ function AdminOrders() {
         <h1 style={{margin:15}}>Asetukset</h1>
         {/*{data?.map(data => (
         <h4 key={data.astunnus}style={{margin:15}}>Asiakasnumero: {data.astunnus}</h4>))}*/}
-        <ol>
-          <ul style={{padding: 0}}>
-            <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}} type="button" className="btn btn-dark mb-1" onClick={handleCategories}>Tuotekategoriat</button>
+         <ol>
+          <ul style={ulstyle}>
+            <button style={btnstyle} type="button" className="btn1 btn-dark mb-1" onClick={handleCategories}>Tuotekategoriat</button>
           </ul>
-          <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleItems}>Tuotteet</button>
+          <ul style={ulstyle}>
+          <button style={btnstyle}type="button" className="btn2 btn-dark mb-1" onClick={handleItems}>Tuotteet</button>
           </ul>
-          <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleOrders}>Tilaukset</button>
+          <ul style={ulstyle}>
+          <button style={btnstyle}type="button" className="btn3 btn-dark mb-1" onClick={handleOrders}>Tilaukset</button>
           </ul>
-          <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleManagement}>Hallinta</button>
+          <ul style={ulstyle}>
+          <button style={btnstyle}type="button" className="btn4 btn-dark mb-1" onClick={handleManagement}>Hallinta</button>
           </ul>
         </ol>
         <button style={{width:250, textAlign: "center", fontSize: '1.5em', marginTop: '15px'}} type="button" className="btn btn-dark mb-3" onClick={handleLogout}>Kirjaudu ulos</button>

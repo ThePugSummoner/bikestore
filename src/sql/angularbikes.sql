@@ -66,5 +66,3 @@ CREATE TABLE tuote (
     FOREIGN KEY (trnro) 
         REFERENCES tuoteryhma(trnro)
 );
-
-DROP TABLE tuotteet;

@@ -1,0 +1,38 @@
+.userinfo {
+    background-image: url("../images/bicycle-1869176_1920.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}
+
+.login {
+    margin: auto;
+    width: 500px;
+    background-color:  #7584b493;
+    padding: 10px;
+    position: center;
+    border-radius: 10px;
+    margin-top: 180px !important;
+}
+
+.btn {
+    width: 400px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.regform {
+    color: black;
+    text-decoration: none;
+}
+
+.regform:hover {
+    color: white;
+}
+
+.loginh1 {
+    margin-top: 10px;
+}

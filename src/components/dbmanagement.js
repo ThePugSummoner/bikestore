@@ -7,9 +7,15 @@ import axios from "axios";
 
 
 
-const styles = {
-    margin: 'auto',
-    textAlign: 'center'
+const ulstyle = {
+    padding: 0
+}
+
+const btnstyle = {
+    fontSize: '1.2em', 
+    backgroundColor: 'transparent', 
+    color: 'black', 
+    border: 'none'
 }
 
 const URL = 'http://localhost/angularbikes/'
@@ -33,56 +39,6 @@ function Dbmanagement() {
     const [newCat, setNewCat] = useState('')
     const navigate = useNavigate()
 
-
-    /*const columns = useMemo (() => [
-        {
-            Header: "Tuotenro",
-            accessor: "tuotenro"
-        },
-        {
-            Header: "Tuotenimi",
-            accessor: "nimi"
-        },
-        {
-            Header: "Kuvaus",
-            accessor: "kuvaus"
-        },
-        {
-            Header: "Hinta",
-            accessor: "hinta"
-        },
-        {
-            Header: "Kategorianro",
-            accessor: "trnro"
-        },
-        {
-            Header: "Alakategoria",
-            accessor: "alakategoria"
-        },
-        {
-            Header: "Kuva",
-            accessor: "image"
-        }
-    ],
-    []);*/
-
-
-    /*useEffect(() => {
-        const getEmail = JSON.parse(localStorage.getItem("sposti"));
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'adminitems.php', json, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then((response) => {
-          setData(response.data)
-          //console.log(response.data)
-        }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen')
-        })
-      }, [])*/
 
       const saveItem = (e) => {
         e.preventDefault()
@@ -258,17 +214,17 @@ function Dbmanagement() {
         {/*{data?.map(data => (
         <h4 key={data.astunnus}style={{margin:15}}>Asiakasnumero: {data.astunnus}</h4>))}*/}
         <ol>
-          <ul style={{padding: 0}}>
-            <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}} type="button" className="btn btn-dark mb-1" onClick={handleCategories}>Tuotekategoriat</button>
+          <ul style={ulstyle}>
+            <button style={btnstyle} type="button" className="btn1 btn-dark mb-1" onClick={handleCategories}>Tuotekategoriat</button>
           </ul>
-          <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleItems}>Tuotteet</button>
+          <ul style={ulstyle}>
+          <button style={btnstyle}type="button" className="btn2 btn-dark mb-1" onClick={handleItems}>Tuotteet</button>
           </ul>
-          <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleOrders}>Tilaukset</button>
+          <ul style={ulstyle}>
+          <button style={btnstyle}type="button" className="btn3 btn-dark mb-1" onClick={handleOrders}>Tilaukset</button>
           </ul>
-          <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleManagement}>Hallinta</button>
+          <ul style={ulstyle}>
+          <button style={btnstyle}type="button" className="btn4 btn-dark mb-1" onClick={handleManagement}>Hallinta</button>
           </ul>
         </ol>
         <button style={{width:250, textAlign: "center", fontSize: '1.5em', marginTop: '15px'}} type="button" className="btn btn-dark mb-3" onClick={handleLogout}>Kirjaudu ulos</button>

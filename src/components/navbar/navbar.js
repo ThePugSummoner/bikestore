@@ -55,8 +55,8 @@ function Navbar() {
     return (
         <header>
             <div className="top-nav">
-                <Link to="/"><img className="logo-img" src={logo} alt="logo"></img></Link>
-                <span>Angular Bikes</span>
+                <Link to="/" style={{textDecoration:'none', color: 'antiquewhite'}} ><img className="logo-img" src={logo} alt="logo"></img>Angular Bikes</Link>
+                {/*<span>Angular Bikes</span>*/}
                 <div className="search-container">
                     <input className="top-nav-search" type="text" placeholder="Search..."></input>
                     <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
