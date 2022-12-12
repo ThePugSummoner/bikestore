@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
-import valiaikakuva from "../images/AngularBikes4.png"
 import ToTop from "./toTop"
 
 const URL = 'http://localhost/angularbikes/'
@@ -28,7 +27,7 @@ function Product(){
         <div className="container">
             <div className="row py-5">
                 <div className="col-12 col-lg-7">
-                <img src={valiaikakuva} alt="logokuva"></img>
+                {product.length>0 && <img src={require(`../tuotekuvat/${product[0]?.kuva}`)} alt="logokuva"></img>}
                 </div>
                 <div className="col  product-info">
                 <h3>{product[0]?.nimi}</h3>
