@@ -10,7 +10,6 @@ const ulstyle = {
 }
 
 const btnstyle = {
-  fontSize: '1.2em', 
   backgroundColor: 'transparent', 
   color: 'black', 
   border: 'none'
@@ -60,14 +59,12 @@ function AdminOrders() {
         })
         .then((response) => {
           setData(response.data)
-        
         }).catch(error => {
           console.log(error.response ? error.response.data.error : error)
           alert('Häiriö järjestelmässä, yritä kohta uudelleen')
         })
       }, [])
-
-    
+   
 
       const handleLogout = () => {
         localStorage.clear();

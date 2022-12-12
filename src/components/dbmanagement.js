@@ -11,8 +11,7 @@ const ulstyle = {
     padding: 0
 }
 
-const btnstyle = {
-    fontSize: '1.2em', 
+const btnstyle = { 
     backgroundColor: 'transparent', 
     color: 'black', 
     border: 'none'
