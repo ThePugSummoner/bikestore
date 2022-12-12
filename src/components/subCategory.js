@@ -48,7 +48,7 @@ function SubCategory() {
                         <div key={uuid()} className="col-4 card-item">
                             <Link to={`/product/${product.tuotenro}`}>
                                 <div className="card-image-container">
-                                    <img src={bike} alt="bike"></img>
+                                    <img style={{height:120}} src={require(`../tuotekuvat/${product.kuva}`)} alt="bike"></img>
                                 </div>
                                 <div className="card-body">
                                     <h5>{product?.nimi}</h5>

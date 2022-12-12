@@ -8,6 +8,7 @@ import { decreaseCart,
         clearCart, 
         getTotals } from '../features/cartSlice';
 import {useEffect} from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ShoppingCart= () => {
     
@@ -16,7 +17,7 @@ const ShoppingCart= () => {
 
     useEffect(() => {
         dispatch(getTotals());
-    }, [cart]);
+    }, [cart, dispatch]);
 
     const handleRemoveFromCart = (cartItem) => {
         dispatch(removeFromCart(cartItem));
@@ -78,7 +79,7 @@ const ShoppingCart= () => {
                                             <h3>{cartItem.name}</h3>
                                             <p>{cartItem.desc}</p>
                                             <button onClick={() => handleRemoveFromCart(cartItem)}>
-                                              Poista
+                                                <FontAwesomeIcon icon="fa-solid fa-trash-can" />
                                             </button>
                                         </div>
                                     </div>

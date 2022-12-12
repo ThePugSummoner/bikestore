@@ -82,6 +82,16 @@ const cartSlice = createSlice({
         },
         clearCart(state, action) {
             state.cartItems = [];
+            toast.error('Ostoskori tyhjennetty!', {
+                position: "bottom-left",
+                autoClose: 1500,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
 
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
         },
