@@ -34,15 +34,15 @@ function Product(){
                 <ul>
                         <li>Ominaisuudet</li>
                         <li>Väri</li>
-                        <li>rungon koko</li>
+                        <li>rungon koko: {product[0]?.koko}</li>
                         <li>Yksityiskohtia</li>
                     </ul>
                 <span>{product[0]?.hinta}€</span>
                 <button>Lisää koriin</button>
                 <div className="product-info-varasto py-2">
                 <div className="varasto-container">
-                <span>Varastossa</span>
-                <span>ehkä, ehkä ei</span>
+                <span>Varastossa </span>
+                <span>{product[0]?.saldo} kpl</span>
                 </div>
                 <div className="varasto-container">
                     <span>Toimitus 6-8 arkipäivää</span>

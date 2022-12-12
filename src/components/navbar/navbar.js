@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import logo from "../../images/AngularBikes3.png"
 import { Link } from "react-router-dom"
-import searchLogo from "../../images/spanner 2.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState} from "react"
 import DropwDown from "../dropdown/dropdown"
@@ -10,6 +9,7 @@ import "./navbar.css"
 import axios from "axios"
 import ShoppingCartBox from "../shoppingCartBox" 
 import { useSelector } from "react-redux";
+import Search from "./search"
 
 
 const linkStyle = {
@@ -63,10 +63,8 @@ function Navbar() {
             <div className="top-nav">
                 <Link to="/"><img className="logo-img" src={logo} alt="logo"></img></Link>
                 <span>Angular Bikes</span>
-                <div className="search-container">
-                    <input className="top-nav-search" type="text" placeholder="Search..."></input>
-                    <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
-                </div>
+
+            <Search />
                 <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span>Oma tili</span></Link>
                 <div className="cart-preview">
                     <FontAwesomeIcon style={{cursor: "pointer"}} icon="fa-solid fa-cart-shopping" size="lg" onClick={handleOpenKori} />
