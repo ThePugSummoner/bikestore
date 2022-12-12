@@ -8,7 +8,7 @@ import { decreaseCart,
         getTotals } from '../features/cartSlice';
 import {useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+const URL = 'http://localhost/angularbikes/'
 
 function ShoppingCartBox(props) {
 
@@ -51,7 +51,7 @@ function ShoppingCartBox(props) {
                             {cart.cartItems?.map(cartItem => (
                                 <div className="cart-item-box" key={cartItem.tuotenro}>
                                     <div className="cart-product-box">
-                                        <img src={require(`../tuotekuvat/${cartItem.kuva}`)} alt={cartItem.nimi} />
+                                        <img src={URL +"tuotekuvat/"+cartItem.kuva} alt={cartItem.nimi} />
                                         <div>
                                             <h3>{cartItem.nimi}</h3>
                                             <button onClick={() => handleRemoveFromCart(cartItem)}>

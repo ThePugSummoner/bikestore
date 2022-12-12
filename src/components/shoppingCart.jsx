@@ -10,6 +10,8 @@ import { decreaseCart,
 import {useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const URL = 'http://localhost/angularbikes/'
+
 const ShoppingCart= () => {
     
     const cart = useSelector((state) => state.cart);
@@ -74,7 +76,7 @@ const ShoppingCart= () => {
                             {cart.cartItems?.map(cartItem => (
                                 <div className="cart-item" key={cartItem.tuotenro}>
                                     <div className="cart-product">
-                                        <img src={require(`../tuotekuvat/${cartItem.kuva}`)} alt={cartItem.nimi} />
+                                        <img src={URL +"tuotekuvat/"+cartItem.kuva} alt={cartItem.nimi} />
                                         <div>
                                             <h3>{cartItem.nimi}</h3>
                                         

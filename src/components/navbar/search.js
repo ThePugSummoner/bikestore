@@ -38,7 +38,7 @@ function handleSearch(){
                 <Link style={{textDecoration:"none",color:"black"}} key={uuid()} to={`/product/${product.tuotenro}`} onClick={handleSearch}>
                     <div className="search-product">
                         <div>
-                            <img style={{ height: 80 }} src={require(`../../tuotekuvat/${product.kuva}`)} alt="Product"></img>
+                            <img style={{ height: 80 }} src={URL +"tuotekuvat/"+product.kuva} alt="Product"></img>
                         </div>
                         <div>
                             <h3 style={{fontSize:20}}>{product.nimi}</h3>
