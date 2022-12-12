@@ -12,6 +12,16 @@ const styles = {
     textAlign: 'center'
 }
 
+const ulstyle = {
+  padding: 0
+}
+
+const btnstyle = { 
+  backgroundColor: 'transparent', 
+  color: 'black', 
+  border: 'none'
+}
+
 const URL = 'http://localhost/angularbikes/'
 
 function Account() {
@@ -175,11 +185,11 @@ function Account() {
         {/*{data?.map(data => (
         <h4 key={data.astunnus}style={{margin:15}}>Asiakasnumero: {data.astunnus}</h4>))}*/}
         <ol>
-          <ul style={{padding: 0}}>
-            <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}} type="button" className="btn btn-dark mb-2" onClick={handleUser}>Tietoni</button>
+          <ul style={ulstyle}>
+            <button style={btnstyle} type="button" className="btn btn-dark mb-2" onClick={handleUser}>Tietoni</button>
           </ul>
-          <ul style={{padding: 0}}>
-          <button style={{backgroundColor: 'transparent', color: 'black', border: 'none'}}type="button" className="btn btn-dark mb-1" onClick={handleOrder}>Tilaukseni</button>
+          <ul style={ulstyle}>
+            <button style={btnstyle} type="button" className="btn btn-dark mb-1" onClick={handleOrder}>Tilaukseni</button>
           </ul>
         </ol>
         <button style={{width:250, textAlign: "center", fontSize: '1.5em', marginTop: '15px'}} type="button" className="btn btn-dark mb-3" onClick={handleLogout}>Kirjaudu ulos</button>

@@ -10,7 +10,6 @@ const ulstyle = {
 }
 
 const btnstyle = {
-  fontSize: '1.2em', 
   backgroundColor: 'transparent', 
   color: 'black', 
   border: 'none'

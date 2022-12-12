@@ -24,6 +24,7 @@ function Navbar() {
     const [open, setOpen] = useState(false)
     const [categories,setCategories] = useState([])
     const [subCategories,setSubCategories] = useState([])
+    const [user, setUser] = useState('')
 
     useEffect(() => {
       axios.get(URL + 'getCategories.php')
@@ -43,6 +44,23 @@ function Navbar() {
           }).catch (error => {
             alert(error.response === undefined ? error : error.response.data.error);
           })
+      }, [])
+
+      useEffect(() => {
+        const getEmail = JSON.parse(localStorage.getItem("sposti"));
+        const json = JSON.stringify({email: getEmail})
+        axios.post(URL + 'user.php', json, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then((response) => {
+          setUser(response.data)
+          //console.log(response.data)
+        }).catch(error => {
+          console.log(error.response ? error.response.data.error : error)
+          alert('Häiriö järjestelmässä, yritä kohta uudelleen')
+        })
       }, [])
 
     const {cartTotalQuantity} = useSelector(state => state.cart)
