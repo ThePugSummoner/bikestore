@@ -51,8 +51,14 @@ font-size: 25px;
 }
 .product-container{
   display: flex;
-  justify-content: space-evenly;
+  gap: 40px;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
   cursor: pointer;
+  margin-left: auto;
+ 
+  
 }
 /*
 Tähän loppuu category

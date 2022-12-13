@@ -4,6 +4,7 @@ import searchLogo from "../../images/spanner 2.png"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import uuid from 'react-uuid'
+import e from "cors"
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -24,7 +25,12 @@ function Search() {
 function handleSearch(){
     setSearchText("")
 }
+function handleSearchPage(event){
 
+    searchText==="" ? event.preventDefault() : setSearchText("")
+    
+    
+}
 
     console.log(searchText, "Tuotehakenunimi")
     console.log(product, "Tuotteet")
@@ -32,7 +38,7 @@ function handleSearch(){
     return (
         <div className="search-container">
             <input className="top-nav-search" type="text" placeholder="Search..." value={searchText} onChange={e => setSearchText(e.target.value)}></input>
-            <button className="search-button"><img src={searchLogo} alt="search logo"></img></button>
+            <Link onClick={handleSearchPage} to={"search/"+searchText}><button className="search-button" ><img src={searchLogo} alt="search logo"></img></button></Link>
             <div style={{display:product.length>0 && "block"}} className="product-list">
                 {product.length > 0 && product?.map(product =>
                 <Link style={{textDecoration:"none",color:"black"}} key={uuid()} to={`/product/${product.tuotenro}`} onClick={handleSearch}>
