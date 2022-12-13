@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { useLocation, useParams } from "react-router-dom"
-import ToTop from "./toTop"
+import ToTop from "../toTop"
 import axios from "axios"
 import uuid from 'react-uuid'
 import { Link } from "react-router-dom"
-import Card from "./card/card"
+import Card from "../card/card"
+import "./category.css"
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -40,14 +41,18 @@ function Category(props) {
                       
             :    
     
-        <div style={{scrollBehavior:"none"}} className="container-fluid">
+        <div className="container-fluid mb-4">
             <div className="row">
                 <div style={{backgroundImage:`url(${URL + "kategoriakuvat/" + products.category[0].trkuva})`}} className="col category-div">
+                <ul className="page-navigation">
+                    <Link style={{textDecoration: "none",color:"yellow"}} to={"/"}><li>Etusivu</li> </Link>              
+                    <li>{data}</li>  
+                </ul>
                     <div className="category-center-heading"><h1>{data}</h1></div>
                 </div>
             </div>
             <div className="row pb-3">
-                <div className="col text-center">
+                <div className="col category-info">
                     <h3 className="py-3 fs-2"> {products.category[0].trotsikko}</h3>
                     <p className="mx-4">{products.category[0].trkuvaus} </p>
                 </div>

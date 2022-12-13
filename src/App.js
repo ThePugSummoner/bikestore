@@ -17,7 +17,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faBars,faCaretDown, faX, faTrashCan,faBasketShopping} from '@fortawesome/free-solid-svg-icons'
 import {faFacebook,faSquareInstagram,faYoutube,faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {ToastContainer} from "react-toastify";
-import Category from './components/category';
+import Category from './components/categoryPage/category';
 import AdminOrders from './components/adminOrders';
 import AdminCategories from './components/adminCategories';
 import AdminItems from './components/adminItems';
