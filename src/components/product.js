@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 import ToTop from "./toTop"
-import {useDispatch} from "react-redux";
-import {addToCart} from "../features/cartSlice";
+import {useSelector, useDispatch} from "react-redux";
+import {addToCart, getTotals} from "../features/cartSlice";
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -11,6 +11,7 @@ function Product() {
     const [product, setProduct] = useState([])
     const params = useParams()
 
+    const cart = useSelector((state) => state.cart);
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
     }
@@ -25,7 +26,8 @@ function Product() {
                 console.log(error.response === undefined ? error : error.response.data.error)
                 alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
             })
-    }, [params])
+            dispatch(getTotals());
+    }, [params, cart, dispatch])
 
     console.log(product)
     console.log(URL + "product.php/" + params.productId)
