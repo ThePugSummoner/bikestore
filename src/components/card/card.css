@@ -6,8 +6,10 @@ card item css starts here
     width: 300px;
     text-align: center;
     margin: 0;
-    max-width: 120px;
   
+  }
+  .card-item:hover{
+  box-shadow:0px 0px 2px 1px #888888 ;
   }
   
   .card-item h5 {
@@ -35,11 +37,12 @@ card item css starts here
     margin-bottom: 5px;
   }
   
-  .card-footer button {
+  .card-item button {
     background-color: black;
     color: white;
     border-radius: 10px;
     height: 40px;
+    width: 80px;
   }
   
   /*

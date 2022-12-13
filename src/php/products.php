@@ -16,10 +16,15 @@ try{
     $query=$db->query($sql);
     $subCategories=$query->fetchAll(PDO::FETCH_ASSOC);
 
+    $sql="select* from tuoteryhma WHERE trnro=$category_id";
+    $query=$db->query($sql);
+    $Category=$query->fetchAll(PDO::FETCH_ASSOC);
+
 header("HTTP/1.1 200 OK");
 echo json_encode(array(
     "products"=>$products,
-    "subcategories"  => $subCategories 
+    "subcategories"  => $subCategories,
+    "category" =>$Category
 ));
 
 }

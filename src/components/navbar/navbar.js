@@ -80,7 +80,7 @@ function Navbar() {
     return (
         <header>
             <div className="top-nav">
-                <Link to="/" style={{textDecoration:'none', color: 'antiquewhite'}} ><img className="logo-img" src={logo} alt="logo"></img>Angular Bikes</Link>
+                <Link to="/" style={{textDecoration:'none', color: 'antiquewhite'}} ><img className="logo-img" src={logo} alt="logo"></img><span>Angular Bikes</span></Link>
                 {/*<span>Angular Bikes</span>*/}
                 <Search />
                 <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span>Oma tili</span></Link>

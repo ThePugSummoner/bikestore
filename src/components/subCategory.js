@@ -4,6 +4,7 @@ import axios from "axios"
 import uuid from 'react-uuid'
 import bike from "../images/Rectangle 28.png"
 import { Link } from "react-router-dom"
+import Card from "./card/card"
 
 
 const URL = 'http://localhost/angularbikes/'
@@ -45,20 +46,8 @@ function SubCategory() {
 
                     {product.products?.map(product =>
 
-                        <div key={uuid()} className="col-4 card-item">
-                            <Link to={`/product/${product.tuotenro}`}>
-                                <div className="card-image-container">
-                                    <img style={{height:120}} src={require(`../tuotekuvat/${product.kuva}`)} alt="bike"></img>
-                                </div>
-                                <div className="card-body">
-                                    <h5>{product?.nimi}</h5>
-                                </div>
-                            </Link>
-                            <div className="card-footer">
-                                <span>{product?.hinta}</span>
-                            </div>
-                        </div>)}
-
+                    <Card key={uuid()} product={product} width={200} height={150}/>)}
+                    
                 </div>
             </div>
         </div>

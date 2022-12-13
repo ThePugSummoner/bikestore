@@ -35,7 +35,7 @@ function Product() {
         <div className="container">
             <div className="row py-5">
                 <div className="col-12 col-lg-7">
-                    {product.length > 0 && <img src={require(`../tuotekuvat/${product[0]?.kuva}`)} alt="logokuva"></img>}
+                    {product.length > 0 && <img src={URL + "tuotekuvat/" + product[0].kuva} alt="logokuva"></img>}
                 </div>
                 <div className="col  product-info">
                     <h3>{product[0]?.nimi}</h3>
