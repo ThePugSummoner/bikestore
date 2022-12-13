@@ -90,7 +90,7 @@ function Navbar() {
                         <span>{cartTotalQuantity}</span>
                     </span>
                     <span style={{cursor: "pointer"}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
-                    <div style={{position: "absolute", top: 70, right: 8}} className="cart-dropdown">
+                    <div style={{position: "absolute", top: 70, right: 8, zIndex:2}} className="cart-dropdown">
                         {openKori && (
                             <div>
                                 <ShoppingCartBox handleClose={handleOpenKori}/>
