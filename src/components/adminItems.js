@@ -4,9 +4,6 @@ import { useMemo, useEffect, useState } from "react";
 import Table from "./table";
 import MyOrders from "./myorders";
 import axios from "axios";
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import './dbmanagement.css'
 
 const ulstyle = {

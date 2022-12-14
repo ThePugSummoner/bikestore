@@ -6,6 +6,9 @@ import uuid from 'react-uuid'
 import { Link } from "react-router-dom"
 import Card from "../card/card"
 import "./category.css"
+import {useDispatch, useSelector } from "react-redux";
+import {getTotals} from "../../features/cartSlice";
+
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -17,6 +20,9 @@ function Category() {
     /* console.log(props, " props"); Tarkastelua varten mitä antavat tuloksina.
      console.log(location, " useLocation Hook");*/
     const params = useParams()
+    
+    const cart = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         axios.get(URL + "products.php/" + params.id)
@@ -28,7 +34,8 @@ function Category() {
                 console.log(error.response === undefined ? error : error.response.data.error)
                 alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
             })
-    }, [params])
+            dispatch(getTotals());
+    }, [params, cart, dispatch])
  
     console.log(products, "Urli homma")
 

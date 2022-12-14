@@ -39,19 +39,11 @@
   text-decoration: underline;
   text-align: center;
 }
-.cart-container-box .titles-box {
-  margin: 2rem 0 1rem 0;
-}
-.cart-container-box .titles-box h3 {
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
 .cart-item-box,
 .cart-container-box .titles-box {
   display: grid;
   align-items: center;
-  grid-template-columns: 4fr 1fr 2fr 1fr;
+  grid-template-columns: 3fr 1fr 2fr 1fr;
 }
 .cart-item-box {
   border: 0.2px solid;
@@ -62,16 +54,6 @@
   column-gap: 0px;
   margin-bottom: 3px;
 }
-.cart-container-box .titles-box .product-title-box {
-  padding-left: 5.2rem;
-}
-.cart-container-box .titles-box .total-box {
-  padding-right: 3.6rem;
-  justify-self: right;
-}
-.cart-container-box .titles-box .quantity-box {
-  margin-left: 0.8rem;
-}
 .cart-item-box .cart-product-box {
   display: flex;
 }
@@ -81,14 +63,14 @@
   margin-right: 0.7rem;
 }
 .cart-item-box .cart-product-box h3 {
-  font-weight: 400;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 16px;
   position: absolute;
 }
 .cart-item-box .cart-product-box button {
   border: none;
   outline: none;
-  margin-top: 2.1rem;
+  margin-top: 4.5rem;
   padding-left: 0px;
   cursor: pointer;
   background: none;
@@ -98,7 +80,6 @@
   color: #001d4e;
 }
 .cart-item-box .cart-product-price-box {
-  margin-left: 0px;
   margin-top: 1.5rem;
 }
 .cart-item-box .cart-product-quantity-box {
@@ -110,6 +91,7 @@
   border: 1px solid rgb(177, 177, 177);
   border-radius: 5px;
   margin-top: 1.5rem;
+  margin-left: 1.2rem;
 }
 .cart-item-box .cart-product-quantity-box button {
   border: none;
@@ -127,6 +109,7 @@
   justify-self: right;
   font-weight: 700;
   margin-top: 1.6rem; 
+  margin-right: 0.5rem;
 }
 .cart-summary-box {
   display: flex;
@@ -175,22 +158,6 @@
   outline: none;
   cursor: pointer;
   margin-top: 5px;
-}
-.start-shopping-box {
-  margin-top: 1rem;
-}
-.continue-shopping-box a,
-.start-shopping-box a {
-  color: rgb(32, 32, 32);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-}
-.continue-shopping-box a span,
-.start-shopping-box a span {
-  margin-left: 0.5rem;
-  color: rgb(61, 61, 61);
 }
 .cart-empty-box {
   font-size: 20px;

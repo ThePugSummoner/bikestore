@@ -29,17 +29,6 @@ CREATE TABLE tilaus (
         ON DELETE CASCADE
 ) AUTO_INCREMENT = 1000;
 
-CREATE TABLE tilausrivi (
-    tilausnro SMALLINT,
-    rivinro INT(5),
-    tuotenro INT,
-    kpl SMALLINT,
-    FOREIGN KEY (tilausnro)
-        REFERENCES tilaus(tilausnro),
-    FOREIGN KEY (tuotenro)
-        REFERENCES tuote(tuotenro)
-);
-
 CREATE TABLE palvelu (
     ptunnus INT(10) PRIMARY KEY AUTO_INCREMENT,
     pnimi VARCHAR(255),
@@ -79,6 +68,16 @@ CREATE TABLE tuote (
     koko VARCHAR(10),
     FOREIGN KEY (trnro) 
         REFERENCES tuoteryhma(trnro)
+);
+CREATE TABLE tilausrivi (
+    tilausnro SMALLINT,
+    rivinro INT(5),
+    tuotenro INT,
+    kpl SMALLINT,
+    FOREIGN KEY (tilausnro)
+        REFERENCES tilaus(tilausnro),
+    FOREIGN KEY (tuotenro)
+        REFERENCES tuote(tuotenro)
 );
 
 DROP TABLE tuoteryhma;
