@@ -6,6 +6,8 @@ import uuid from 'react-uuid'
 import { Link } from "react-router-dom"
 import Card from "../card/card"
 import "./category.css"
+import {useDispatch, useSelector } from "react-redux";
+import {getTotals} from "../../features/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { getTotals } from '../../features/cartSlice';
 
