@@ -112,11 +112,11 @@ function Navbar() {
     function closeOpen(){
         setOpen(false)
     }
-
+console.log(subCategories)
     return (
         <header>
             <div className="top-nav">
-                <Link to="/" style={{textDecoration:'none', color: 'antiquewhite'}} ><img className="logo-img" src={logo} alt="logo"></img>Angular Bikes</Link>
+                <Link to="/" style={{textDecoration:'none', color: 'antiquewhite'}} ><img className="logo-img" src={logo} alt="logo"></img><span>Angular Bikes</span></Link>
                 {/*<span>Angular Bikes</span>*/}
                 <Search />
                 <button style={{backgroundColor: 'transparent', border: 'none'}} onClick={handleUser}><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span style={{marginLeft:3, color: 'antiquewhite'}}>{etunimi}</span></button>
@@ -125,8 +125,8 @@ function Navbar() {
                     <span className="cart-quantity">
                         <span>{cartTotalQuantity}</span>
                     </span>
-                    <span style={{cursor: "pointer", color: 'antiquewhite'}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
-                    <div style={{position: "absolute", top: 70, right: 8}} className="cart-dropdown">
+                    <span style={{cursor: "pointer"}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
+                    <div style={{position: "absolute", top: 70, right: 8, zIndex:2}} className="cart-dropdown">
                         {openKori && (
                             <div>
                                 <ShoppingCartBox handleClose={handleOpenKori}/>
@@ -142,7 +142,7 @@ function Navbar() {
                     <div className="dropdown-contents" style={{maxHeight: open && '1500px'}}>
                         {open && (
                             <>
-                              {categories.map(test => <DropwDown key={uuid()} handleClose={closeOpen} item={test} subCate={subCategories} />)}
+                              {categories.map(category => <DropwDown key={uuid()} handleClose={closeOpen} category={category} subCate={subCategories} />)}
                               <Link style={{textDecoration: 'none', color: 'white'}} to="/booking"><h5 onClick={closeOpen}>Huollon ajanvaraus</h5></Link>
                             </>
                         )}

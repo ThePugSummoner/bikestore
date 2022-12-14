@@ -61,7 +61,10 @@ CREATE TABLE ajanvaraus (
 
 CREATE TABLE tuoteryhma(
     trnro INT PRIMARY KEY AUTO_INCREMENT,
-    trnimi varchar(60)
+    trnimi varchar(60),
+    trkuva VARCHAR(50),
+    trkuvaus TEXT,
+    trotsikko VARCHAR(60)
 );
 
 CREATE TABLE tuote (
@@ -77,3 +80,5 @@ CREATE TABLE tuote (
     FOREIGN KEY (trnro) 
         REFERENCES tuoteryhma(trnro)
 );
+
+DROP TABLE tuotteet;
