@@ -13,9 +13,11 @@ try{
     $query=$db->query($sql);
     $subCategoryProducts=$query->fetchAll(PDO::FETCH_ASSOC);
 
-    $sql="SELECT alakategoria FROM tuote WHERE trnro=$category_id GROUP BY alakategoria";
+    $sql="select DISTINCT alakategoria from tuote inner join tuoteryhma on tuote.trnro=tuoteryhma.trnro where trnimi='$category_id'";
     $query=$db->query($sql);
     $subCategories=$query->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 
 header("HTTP/1.1 200 OK");
