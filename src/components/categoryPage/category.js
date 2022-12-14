@@ -8,8 +8,7 @@ import Card from "../card/card"
 import "./category.css"
 import {useDispatch, useSelector } from "react-redux";
 import {getTotals} from "../../features/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { getTotals } from '../../features/cartSlice';
+
 
 const URL = 'http://localhost/angularbikes/'
 
