@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import logo from "../../images/AngularBikes3.png"
-import { Link } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState} from "react"
 import DropwDown from "../dropdown/dropdown"
@@ -20,11 +20,46 @@ const linkStyle = {
 };
 
 const URL = 'http://localhost/angularbikes/'
+
 function Navbar() {
+
     const [open, setOpen] = useState(false)
     const [categories,setCategories] = useState([])
     const [subCategories,setSubCategories] = useState([])
-    const [user, setUser] = useState('')
+    //const [path, setPath] = useState('')
+    const navigate = useNavigate()
+
+    //const [user, setUser] = useState('')
+
+
+    const user = JSON.parse(localStorage.getItem("sposti"))
+
+    var etunimi = ""
+    //var way = ""
+
+    if (user === "") {
+       etunimi = "Oma tili"
+       //way = "/userinfo"
+    } else {
+       etunimi = "Käyttäjätilini"
+       //way = "/account"
+    }
+
+    const handleUser = (e) => {
+      const user = JSON.parse(localStorage.getItem("sposti"))
+      if (user === "") {
+        navigate("/userinfo")
+        window.location.reload(false)  
+      }
+      else if (user === "admin@admin.com") {
+        navigate ("/adminOrders")
+        window.location.reload(false)  
+      }
+      else {
+        navigate("/account")
+        window.location.reload(false)  
+      }
+    }
 
     useEffect(() => {
       axios.get(URL + 'getCategories.php')
@@ -46,7 +81,7 @@ function Navbar() {
           })
       }, [])
 
-      useEffect(() => {
+     /* useEffect(() => {
         const getEmail = JSON.parse(localStorage.getItem("sposti"));
         const json = JSON.stringify({email: getEmail})
         axios.post(URL + 'user.php', json, {
@@ -56,15 +91,16 @@ function Navbar() {
         })
         .then((response) => {
           setUser(response.data)
-          //console.log(response.data)
+          console.log(response.data)
         }).catch(error => {
           console.log(error.response ? error.response.data.error : error)
           alert('Häiriö järjestelmässä, yritä kohta uudelleen')
         })
-      }, [])
+      }, [])*/
 
     const {cartTotalQuantity} = useSelector(state => state.cart)
     const [openKori, setOpenKori] = useState(false)
+    
     function handleOpenKori() {
         setOpenKori(!openKori)
     }
@@ -83,13 +119,13 @@ function Navbar() {
                 <Link to="/" style={{textDecoration:'none', color: 'antiquewhite'}} ><img className="logo-img" src={logo} alt="logo"></img>Angular Bikes</Link>
                 {/*<span>Angular Bikes</span>*/}
                 <Search />
-                <Link style={linkStyle} to="/userinfo"><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span>Oma tili</span></Link>
+                <button style={{backgroundColor: 'transparent', border: 'none'}} onClick={handleUser}><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span style={{marginLeft:3, color: 'antiquewhite'}}>{etunimi}</span></button>
                 <div className="cart-preview">
                     <FontAwesomeIcon style={{cursor: "pointer"}} icon="fa-solid fa-cart-shopping" size="lg" onClick={handleOpenKori} />
                     <span className="cart-quantity">
                         <span>{cartTotalQuantity}</span>
                     </span>
-                    <span style={{cursor: "pointer"}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
+                    <span style={{cursor: "pointer", color: 'antiquewhite'}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
                     <div style={{position: "absolute", top: 70, right: 8}} className="cart-dropdown">
                         {openKori && (
                             <div>

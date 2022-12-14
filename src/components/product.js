@@ -13,6 +13,7 @@ function Product() {
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
+        window.location.reload(false)   
     }
     const dispatch = useDispatch();
 

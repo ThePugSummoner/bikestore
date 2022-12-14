@@ -26,11 +26,7 @@ const URL = 'http://localhost/angularbikes/'
 
 function MyOrders() {
 
-    //const [tilaus, setTilaus] = useState([])
     const [data, setData] = useState([])
-    //const getEmail = localStorage.getItem('sposti')
-    //const getPwd = localStorage.getItem('salasana')
-    //const [user, setUser] = useState([])
     const navigate = useNavigate()
 
 
@@ -115,6 +111,7 @@ function MyOrders() {
       const handleLogout = () => {
         localStorage.clear();
         navigate('/userinfo')
+        window.location.reload(false)
       }
 
       useEffect(() => {

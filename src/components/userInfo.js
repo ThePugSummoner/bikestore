@@ -19,6 +19,8 @@ function User() {
     const [pwd, setPwd] = useState("");
     const navigate = useNavigate();
 
+    localStorage.setItem("user", JSON.stringify(""))
+
     useEffect(() => { 
         
         localStorage.setItem("sposti", JSON.stringify(email))
@@ -39,11 +41,12 @@ function User() {
           })
             .then((response) => {
                 if(response.data === 'Data Matched'){
-                    //console.log("Correct");
-                    navigate("/account");   
+                    //console.log(response.data);
+                    navigate("/account");
+                    window.location.reload(false)   
                 }
                 else if (response.data === 'Admin logged in!') {
-                    console.log(response.data)
+                    //console.log(response.data)
                     navigate("/adminOrders")
                 }         
                 else {
