@@ -32,7 +32,13 @@ function SubCategory() {
     return (
         <div className="container-fluid">
             <div className="row">
+            <ul style={{paddingLeft:20}} className="page-navigation">
+                    <Link style={{textDecoration: "none",color:"black"}} to={`/`}><li>Etusivu</li></Link>
+                        <Link style={{textDecoration: "none",color:"black"}} to={`/category/${params.id}`}><li>{params.id}</li></Link>
+                        <li style={{color:"black"}}>{params.subCategoryId}</li>
+                    </ul>
                 <div className="col py-5">
+           
                     <h4>{params.subCategoryId}</h4>
                     <p>Lorem liipalaapapal jotain sinnepäin niin ja näin tänne voidaan kirjoittaa tekstiä . Tai sitten eivoida kirjoittaa yhtään mitään tekstiä.
                         Mietitään yhdessä. Liipa laapa.

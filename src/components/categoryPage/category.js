@@ -10,11 +10,10 @@ import "./category.css"
 const URL = 'http://localhost/angularbikes/'
 
 
-function Category(props) {
+function Category() {
     const [products, setProducts] = useState([])
-    const [loaded, setLoaded] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
     const location = useLocation()
-    const data = location.state.name
     /* console.log(props, " props"); Tarkastelua varten mitä antavat tuloksina.
      console.log(location, " useLocation Hook");*/
     const params = useParams()
@@ -24,7 +23,7 @@ function Category(props) {
             .then((response) => {
                 const json = response.data
                 setProducts(json)
-                setLoaded(true)
+                setIsLoading(false)
             }).catch(error => {
                 console.log(error.response === undefined ? error : error.response.data.error)
                 alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
@@ -32,23 +31,23 @@ function Category(props) {
     }, [params])
  
     console.log(products, "Urli homma")
-    return (
-        <>
-            {loaded===false ? 
+
+    if(isLoading){
+        return (        
             <div className="min-vh-100">
                 
-            </div>  
-                      
-            :    
-    
+            </div>  )
+    }
+              
+    return(
         <div className="container-fluid mb-4">
             <div className="row">
                 <div style={{backgroundImage:`url(${URL + "kategoriakuvat/" + products.category[0].trkuva})`}} className="col category-div">
                 <ul className="page-navigation">
                     <Link style={{textDecoration: "none",color:"yellow"}} to={"/"}><li>Etusivu</li> </Link>              
-                    <li>{data}</li>  
+                    <li>{products.category[0].trnimi}</li>  
                 </ul>
-                    <div className="category-center-heading"><h1>{data}</h1></div>
+                    <div className="category-center-heading"><h1>{products.category[0].trnimi}</h1></div>
                 </div>
             </div>
             <div className="row pb-3">
@@ -59,9 +58,9 @@ function Category(props) {
             </div>
             <div className="row pb-3">
                 <div className="col category-subcategories">
-                    <h3 className="text-center">{data} kategoriat</h3>
+                    <h3 className="text-center">{products.category[0].trnimi} kategoriat</h3>
                     <ul>
-                        {products.subcategories?.map(subcate => <Link className="link-items-category" key={uuid()} to={`/category/${products.products[0].trnro}/${subcate.alakategoria}`}><li>{subcate.alakategoria}</li></Link>)}
+                        {products.subcategories?.map(subcate => <Link className="link-items-category" key={uuid()} to={`/category/${products.products[0].trnimi}/${subcate.alakategoria}`}><li>{subcate.alakategoria}</li></Link>)}
                     </ul>
                 </div>
             </div>
@@ -72,10 +71,7 @@ function Category(props) {
             </div>
             <ToTop />
         </div>
-                }
-
-                </>
-
+                
     )
 }
 

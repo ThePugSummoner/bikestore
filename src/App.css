@@ -17,6 +17,7 @@ body {
 .product-info{
   display: flex;
   flex-direction: column;
+  
 
 }
 .product-info ul{
@@ -49,4 +50,9 @@ margin-left: auto;
 /*
 Tähän loppuu product
 */
-
+.page-navigation{
+  color: yellow;
+  list-style:none;
+  display: flex;
+  gap: 20px;
+}
