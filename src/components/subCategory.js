@@ -45,7 +45,7 @@ function SubCategory() {
                     </p>
                 </div>
             </div>
-            <div className="row">
+            <div className="row pb-4">
             <h3>{params.subCategoryId}</h3>
                 <div className="col product-container">
                     
