@@ -125,7 +125,7 @@ function Booking () {
       <div style={{textAlign:'center', marginTop: 30}}>
         <h1 style={{margin:15}}>Hinnasto</h1>
             <Table columns={columns} data={data}/>
-    </div>
+      </div>
     <div style={{marginTop: 30}}>
       <p>* Sähköpyörien huoltopaketit +20€</p>
       <p>** Tavara- ja erikoispyörien huolto +100%</p>

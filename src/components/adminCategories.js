@@ -4,6 +4,7 @@ import { useMemo, useEffect, useState } from "react";
 import Table from "./table";
 import MyOrders from "./myorders";
 import axios from "axios";
+import './dbmanagement.css'
 
 
 
@@ -114,6 +115,7 @@ function AdminCategories() {
       const handleLogout = () => {
         localStorage.clear();
         navigate('/userinfo')
+        window.location.reload(false)
       }
 
       /*useEffect(() => {
@@ -198,6 +200,11 @@ function AdminCategories() {
           <button style={btnstyle}type="button" className="btn3 btn-dark mb-1" onClick={handleOrders}>Tilaukset</button>
           </ul>
           <ul style={ulstyle}>
+          {/*<DropdownButton as={ButtonGroup} title="Hallinta">
+            <Dropdown.Item eventKey="1" onClick={handleManagement} >Tuotteet</Dropdown.Item>
+            <Dropdown.Item eventKey="2">Tuotekategoriat</Dropdown.Item>
+            <Dropdown.Item eventKey="3">Tilaukset</Dropdown.Item>
+            </DropdownButton>*/}
           <button style={btnstyle}type="button" className="btn4 btn-dark mb-1" onClick={handleManagement}>Hallinta</button>
           </ul>
         </ol>
@@ -209,6 +216,7 @@ function AdminCategories() {
         <h1 style={{margin: 15}}>Kategoriat</h1>
             <Table columns={columns} data={data}/>
         </div>
+        
         
         {/*<div>
             <button style={{width:300, textAlign: "center", fontSize: '1.5em', marginTop: '15px'}} type="button" className="btn btn-dark mb-3" onClick={handleLogout}>Kirjaudu ulos</button>

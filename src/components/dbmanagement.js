@@ -4,6 +4,7 @@ import { useMemo, useEffect, useState } from "react";
 import Table from "./table";
 import MyOrders from "./myorders";
 import axios from "axios";
+import './dbmanagement.css'
 
 
 
@@ -111,6 +112,7 @@ function Dbmanagement() {
       const handleLogout = () => {
         localStorage.clear();
         navigate('/userinfo')
+        window.location.reload(false)
       }
 
       /*useEffect(() => {
@@ -223,6 +225,12 @@ function Dbmanagement() {
           <button style={btnstyle}type="button" className="btn3 btn-dark mb-1" onClick={handleOrders}>Tilaukset</button>
           </ul>
           <ul style={ulstyle}>
+          {/*<DropdownButton as={ButtonGroup} title="Hallinta">
+            <Dropdown.Item eventKey="1" onClick={handleManagement} >Tuotteet</Dropdown.Item>
+            <Dropdown.Item eventKey="2">Tuotekategoriat</Dropdown.Item>
+            <Dropdown.Item eventKey="3">Tilaukset</Dropdown.Item>
+        </DropdownButton>*/}
+
           <button style={btnstyle}type="button" className="btn4 btn-dark mb-1" onClick={handleManagement}>Hallinta</button>
           </ul>
         </ol>

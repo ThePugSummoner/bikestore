@@ -4,6 +4,7 @@ import axios from "axios"
 import ToTop from "./toTop"
 import {useSelector, useDispatch} from "react-redux";
 import {addToCart, getTotals} from "../features/cartSlice";
+import { Link } from "react-router-dom"
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -14,6 +15,7 @@ function Product() {
     const cart = useSelector((state) => state.cart);
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
+        window.location.reload(false)   
     }
     const dispatch = useDispatch();
 
@@ -33,7 +35,13 @@ function Product() {
     console.log(URL + "product.php/" + params.productId)
     return (
         <div className="container">
-            <div className="row py-5">
+            <div  className="row">
+            <ul className="page-navigation py-2">
+                    <Link style={{textDecoration: "none",color:"black"}} to={`/`}><li>Etusivu</li></Link>
+                        <Link style={{textDecoration: "none",color:"black"}} to={`/category/${product[0]?.trnimi}`}><li>{product[0]?.trnimi}</li></Link>
+                        <Link style={{textDecoration: "none",color:"black"}} to={`/category/${product[0]?.trnimi}/${product[0]?.alakategoria}`}><li>{product[0]?.alakategoria}</li></Link>
+                        <li style={{color:"black"}}>{product[0]?.nimi}</li>
+                    </ul>
                 <div className="col-12 col-lg-7">
                     {product.length > 0 && <img src={URL + "tuotekuvat/" + product[0].kuva} alt="logokuva"></img>}
                 </div>

@@ -15,9 +15,9 @@ function DropwDown(props){
 console.log()
 return(
 <div className="dropdown-item-list">
-                    <h5 onClick={handleOpen}>{props.item.trnimi} <FontAwesomeIcon icon="fa-solid fa-caret-down" size="lg"/></h5>
+                    <h5 onClick={handleOpen}>{props.category.trnimi} <FontAwesomeIcon icon="fa-solid fa-caret-down" size="lg"/></h5>
                     {open&&(<ul>
-                        {props.subCate.map(sub => props.item.trnro===sub.trnro && <Link className="link-items"  key={uuid()} onClick={props.handleClose} to={`/category/${props.item.trnro}/${sub.alakategoria}`}><li>{sub.alakategoria}</li></Link>)}
+                        {props.subCate.map(sub => props.category.trnro===sub.trnro && <Link className="link-items"  key={uuid()} onClick={props.handleClose} to={`/category/${props.category.trnimi}/${sub.alakategoria}`}><li>{sub.alakategoria}</li></Link>)}
                     </ul>)}
 
 </div>

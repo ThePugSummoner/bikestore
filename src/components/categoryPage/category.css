@@ -1,0 +1,133 @@
+/*
+Categoryn alkaa tästä
+*/
+.category-div{
+    position:relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+  }
+  .page-navigation{
+    color: yellow;
+    list-style:none;
+    display: flex;
+    gap: 20px;
+    padding-left:10px ;
+  }
+  .category-center-heading{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(245, 255, 151);
+    text-shadow: 2px 2px 4px #000000;
+  }
+  .category-info{
+    text-align: center;
+  }
+  .category-subcategories{
+    background-color: #7584B4;
+  }
+  .category-subcategories h3{
+    padding-bottom: 10px;
+    text-decoration: underline;
+    font-size: 35px;
+  }
+  .category-subcategories ul{
+  list-style: none;
+  display: flex;
+  justify-content:center;
+  gap: 100px;
+  font-size: 25px;
+  }
+  .link-items-category:hover{
+    color: rgb(207, 57, 157);
+    text-decoration: underline;
+  
+  }
+  .link-items-category{
+    text-decoration: none;
+    color: black;
+  }
+  .product-container{
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    cursor: pointer;
+    margin-left: auto;
+   
+    
+  }
+  /*
+  Tähän loppuu category
+  */
+  @media screen and (max-width: 1200px) {
+    .category-info p{
+        text-align: left;
+      }
+      .category-subcategories ul{
+        flex-wrap: wrap;
+        gap: 40px;
+        font-size: 20px;
+        }
+        .product-container{
+            gap: 40px;
+            justify-content:flex-start;
+            margin-left: 30px;      
+          }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .category-subcategories ul{
+       display: grid;
+       grid-template-rows:25px;
+       grid-template-columns: 250px 250px;
+       justify-content: center;
+       font-size: 22px;
+        }
+        .category-subcategories h3{
+           font-size: 25px;
+            }
+  }
+  
+  @media screen and (max-width: 600px) {
+
+    
+  }
+  
+  @media screen and (max-width: 525px) {
+    .category-subcategories ul{
+        grid-template-rows:15px;
+        grid-template-columns: auto auto;
+        padding: 0;
+        justify-content: center;
+        font-size: 18px;
+         }
+         .product-container{
+            justify-content:center;
+            padding: 0;
+            margin: 0;
+               
+          }
+    
+  }
+  
+  @media screen and (max-width: 350px) {
+    .category-subcategories ul{
+        grid-template-rows:15px;
+        grid-template-columns: auto;
+        padding: 0;
+        justify-content: center;
+        font-size: 18px;
+         }
+         .product-container{
+            justify-content:center;
+            padding: 0;
+            margin: 0;
+               
+          }
+  
+  }

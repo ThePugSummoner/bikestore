@@ -1,0 +1,22 @@
+.dropdown {
+    background-color: transparent !important;
+    color: black !important;
+    border: none !important;
+    width: auto !important;
+    font-size: 1em !important;
+}
+
+.dropdown-toggle {
+    background-color: transparent !important;
+    color: black !important;
+    border: none !important;
+    width: auto !important;
+    font-size: 1em !important;
+    padding-top: 1px !important;
+    padding-left: 6px !important;
+    padding-bottom: 1px !important;
+}
+
+.dropdown-item:active {
+    background-color: #7584B4  !important;
+}

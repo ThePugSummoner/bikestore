@@ -4,7 +4,7 @@ import searchLogo from "../../images/spanner 2.png"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import uuid from 'react-uuid'
-import e from "cors"
+import "./navbar.css"
 
 const URL = 'http://localhost/angularbikes/'
 

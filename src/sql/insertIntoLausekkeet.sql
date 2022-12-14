@@ -3,7 +3,6 @@ INSERT INTO asiakas (etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VA
 
 INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (100, 'Käsittelyssä', '2022-11-12', 150.45, 'Palauta tuote');
 
-
 INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (101, 'Käsittelyssä', '2022-11-14', 325.55, 'Palauta tuote');
 
 INSERT INTO palvelu (pnimi, hinta) VALUES ('Ensihuolto', 59.90);

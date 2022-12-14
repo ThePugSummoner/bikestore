@@ -33,31 +33,6 @@ function Account() {
     //const [user, setUser] = useState([])
     const navigate = useNavigate()
 
-
-    /*const columns = useMemo (() => [
-        {
-            Header: "Tilausnumero",
-            accessor: "tilausnro"
-        },
-        {
-            Header: "Tilauspäivä",
-            accessor: "tilauspvm"
-        },
-        {
-            Header: "Summa",
-            accessor: "summa"
-        },
-        {
-            Header: "Toimituksen tila",
-            accessor: "tila"
-        },
-        {
-            Header: "Vaihto ja palautus",
-            accessor: "palautus"
-        }
-    ],
-    []);*/
-
     const columns = useMemo (() => [
         {
           Header: "Asiakasnro",
@@ -81,6 +56,12 @@ function Account() {
       }
   ],
   []);
+
+  useEffect(() => { 
+        
+    localStorage.setItem("user", JSON.stringify(data))
+
+  }, [data]);
 
     useEffect(() => {
         const getEmail = JSON.parse(localStorage.getItem("sposti"));
@@ -118,6 +99,7 @@ function Account() {
       const handleLogout = () => {
         localStorage.clear();
         navigate('/userinfo')
+        window.location.reload(false)
       }
 
       /*useEffect(() => {

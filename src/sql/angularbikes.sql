@@ -69,5 +69,15 @@ CREATE TABLE tuote (
     FOREIGN KEY (trnro) 
         REFERENCES tuoteryhma(trnro)
 );
+CREATE TABLE tilausrivi (
+    tilausnro SMALLINT,
+    rivinro INT(5),
+    tuotenro INT,
+    kpl SMALLINT,
+    FOREIGN KEY (tilausnro)
+        REFERENCES tilaus(tilausnro),
+    FOREIGN KEY (tuotenro)
+        REFERENCES tuote(tuotenro)
+);
 
 DROP TABLE tuotteet;
