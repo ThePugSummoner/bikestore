@@ -81,4 +81,4 @@ CREATE TABLE tuote (
         REFERENCES tuoteryhma(trnro)
 );
 
-DROP TABLE tuotteet;
+DROP TABLE tuoteryhma;

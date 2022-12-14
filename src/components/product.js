@@ -15,7 +15,7 @@ function Product() {
     const cart = useSelector((state) => state.cart);
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
-        window.location.reload(false)   
+        //window.location.reload(false)   
     }
     const dispatch = useDispatch();
 
