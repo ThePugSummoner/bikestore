@@ -1,5 +1,4 @@
 import React from "react"
-import bike from "../../images/Rectangle 28.png"
 import"./card.css"
 import {useDispatch} from "react-redux";
 import {addToCart} from "../../features/cartSlice";
