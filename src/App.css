@@ -8,6 +8,67 @@ body {
 .main {
   min-height: 100vh;
 }
+.huolto-form{
+  display: grid;
+  grid-template-columns: 350px 350px;
+  gap: 10px;
+  justify-content: center;
+ 
+}
+
+.huolto-form input,select{
+  margin: 0;
+}
+.button-item{
+  grid-area:5/1/6/3;
+}
+.button-item button{
+  width: 600px;
+}
+@media screen and (max-width: 750px) {
+  .huolto-form{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    gap: 10px;
+    justify-content: center;
+   
+  }
+  .button-item button{
+   width: 400px;   
+  }
+   }
+   @media screen and (max-width: 500px) {
+    .huolto-form{
+      display: grid;
+      grid-template-columns: 200px 200px;
+      gap: 5px;
+      justify-content: center;
+     
+    }
+    .button-item button{
+      width: 350px;
+    }
+     }
+     @media screen and (max-width: 350px) {
+      .hinnasto{
+        text-align: center;
+        width: auto;
+      }
+      .huolto-form{
+        text-align: left;
+        display: grid;
+        grid-template-columns:auto;
+        justify-content: center;
+        align-content:center ;
+       
+      }
+      .button-item{
+        grid-area:9/1/10/2;
+      }
+      .button-item button{
+        width: 250px;
+      }
+       }
 
  /*
  Tästä alkaa product

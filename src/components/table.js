@@ -21,7 +21,7 @@ export default function Table({ columns, data }) {
           padding: 5
         },
         td: {
-          padding: 15,
+          padding: 10,
           borderBottom: "1px solid lightgrey"
         },
       };

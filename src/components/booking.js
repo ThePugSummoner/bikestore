@@ -121,39 +121,48 @@ function Booking () {
 
 
   return (
-    <div style={styles} className="main">
-      <div style={{textAlign:'center', marginTop: 30}}>
-        <h1 style={{margin:15}}>Hinnasto</h1>
+<div className="container-fluid  text-center">
+  
+<div className="row">
+<div  className="col-10 my-4 mx-auto hinnasto">
+      <div>
+        <h1>Hinnasto</h1>
             <Table columns={columns} data={data}/>
       </div>
-    <div style={{marginTop: 30}}>
+
+    <div className="col py-4" >
       <p>* Sähköpyörien huoltopaketit +20€</p>
       <p>** Tavara- ja erikoispyörien huolto +100%</p>
     </div>
-        <h1 style={{textAlign:'center', margin: 15, marginTop: 30}}>Ajanvaraus</h1>
-    <form className="row g-3 needs-validation" noValidate onSubmit={save}>
-    <div className="col-md-4">
-      <label style={label} htmlFor="validationCustom01" className="form-label">Etunimi*</label>
+    </div>
+
+</div>
+
+<div className="row my-4 pb-4">
+<h1 >Ajanvaraus</h1>
+    <form className="g-3 needs-validation huolto-form" noValidate onSubmit={save}>
+    <div className="col">
+      <label  htmlFor="validationCustom01" className="form-label">Etunimi*</label>
       <input type="text" className="form-control" id="validationCustom01"  required value={etunimi} onChange={e => setEtunimi(e.target.value)}/>
       
     </div>
-    <div className="col-md-4">
-      <label style={label} htmlFor="validationCustom02" className="form-label">Sukunimi*</label>
+    <div className="col">
+      <label  htmlFor="validationCustom02" className="form-label">Sukunimi*</label>
       <input type="text" className="form-control" id="validationCustom02" required value={sukunimi} onChange={e => setSukunimi(e.target.value)}/>
       
     </div>
-    <div className="col-md-4">
-      <label style={label} htmlFor="validationCustomUsername" className="form-label">Sähköposti*</label>
+    <div className="col">
+      <label  htmlFor="validationCustomUsername" className="form-label">Sähköposti*</label>
         <input type="email" className="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required value={sposti} onChange={e => setSposti(e.target.value)}/>
         
     </div>
-    <div className="col-md-4">
-      <label style={label} htmlFor="validationCustom03" className="form-label">Puhelin*</label>
+    <div className="col">
+      <label  htmlFor="validationCustom03" className="form-label">Puhelin*</label>
       <input type="tel" className="form-control" id="validationCustom03" required value={puhnro} onChange={e => setPuhnro(e.target.value)}/>
       
     </div>
-    <div className="col-md-4">
-      <label style={label} htmlFor="validationCustom04" className="form-label">Huoltopalvelu*</label>
+    <div className="col">
+      <label  htmlFor="validationCustom04" className="form-label">Huoltopalvelu*</label>
       <select className="form-select" id="validationCustom04" required value={pnimi} onChange={e => setPnimi(e.target.value)}>
         <option>Valitse...</option>
         <option>Ensihuolto</option>
@@ -165,13 +174,13 @@ function Booking () {
       </select>
       
     </div>
-    <div className="col-md-4">
-      <label style={label} htmlFor="validationCustom05" className="form-label">Pyörämerkki*</label>
+    <div className="col">
+      <label  htmlFor="validationCustom05" className="form-label">Pyörämerkki*</label>
       <input type="text" className="form-control" id="validationCustom05" required value={merkki} onChange={e => setMerkki(e.target.value)}/>
       
     </div>
-    <div className="col-md-4">
-      <label style={label} htmlFor="datepicker" className="form-label">Päivämäärä*</label>
+    <div className="col">
+      <label  htmlFor="datepicker" className="form-label">Päivämäärä*</label>
       {/*<input type="text" className="form-control" id="datepicker" required value={pvm} onChange={e => setPvm(e.target.value)}/>*/}
       <DatePicker className="form-control" selected={pvm} onChange={(date) => setPvm(date)} shouldCloseOnSelect={false} locale="fi" dateFormat="dd/MM/yyyy" calendarStartDay={1} showWeekNumbers fixedHeight/>
       
@@ -182,8 +191,8 @@ function Booking () {
       <DatePicker selected={aika} onChange={(date) => setAika(date)}  minTime={minTime}
           maxTime={maxTime} showTimeSelect showTimeSelectOnly timeIntervals={15} locale="fi" timeCaption="Time" dateFormat="HH:mm" timeFormat="HH:mm"/>
     </div>*/}
-    <div className="col-md-4">
-      <label style={label} htmlFor="validationCustom05" className="form-label">Kelloaika*</label>
+    <div className="col">
+      <label  htmlFor="validationCustom05" className="form-label">Kelloaika*</label>
       <select className="form-select" id="validationCustom05" required value={aika} onChange={e => setAika(e.target.value)}>
         <option>Valitse...</option>
         <option>08:00</option>
@@ -206,11 +215,16 @@ function Booking () {
       </select>
       
     </div>
-    <div style={{textAlign: 'center'}} className="col-12">
-          <button style={{width: 390, backgroundColor: 'black', textDecoration: 'none', borderColor: 'black', margin: 15, marginBottom: 30}} className="btn btn-primary" type="submit">Varata aika</button>
+    <div  className="col-12 button-item">
+          <button style={{ backgroundColor: 'black', textDecoration: 'none', borderColor: 'black', margin: 15}} className="btn btn-primary" type="submit">Varata aika</button>
     </div>
       </form>
+
 </div>
+        
+
+</div>
+   
   )
 }
 

@@ -6,10 +6,6 @@ import axios from "axios";
 import Account from "./account";
 import "./userInfo.css"
 
-const styles = {
-    textAlign: 'center',
-    margin: 'auto'
-}
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -66,15 +62,15 @@ function User() {
 
 
 return (
-    <div style={styles} className="userinfo">
+    <div  className="userinfo">
         <form onSubmit={handleSubmit} className="login">
         <h1 className="loginh1">Kirjaudu sisään</h1>
-        <div style={styles} className="form-floating mb-3">
+        <div className="form-floating mb-3">
            
             <input  name="sposti" type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)}/>
             <label htmlFor="floatingInput">Sähköposti*</label>
         </div>
-        <div style={styles} className="form-floating mb-3">
+        <div className="form-floating mb-3">
             <input type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={(e) => setPwd(e.target.value)}/>
             <label htmlFor="floatingPassword">Salasana*</label>
         </div>
