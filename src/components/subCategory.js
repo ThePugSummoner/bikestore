@@ -6,6 +6,7 @@ import bike from "../images/Rectangle 28.png"
 import { Link } from "react-router-dom"
 import Card from "./card/card"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import ToTop from "./toTop"
 
 
 const URL = 'http://localhost/angularbikes/'
@@ -64,6 +65,7 @@ function SubCategory() {
 
                 </div>
             </div>
+            <ToTop/>
         </div>
     )
 }
