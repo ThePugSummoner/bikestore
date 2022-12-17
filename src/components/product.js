@@ -44,7 +44,7 @@ function Product() {
                         <li style={{color:"black"}}><FontAwesomeIcon style={{paddingRight:10}} icon="fa-solid fa-angle-right" /> {product[0]?.nimi}</li>
                     </ul>
                 <div className="col-12 col-lg-7">
-                    {product.length > 0 && <img src={URL + "tuotekuvat/" + product[0].kuva} alt="logokuva"></img>}
+                    {product.length > 0 && <img className="img-fluid" src={URL + "tuotekuvat/" + product[0].kuva} alt="logokuva"></img>}
                 </div>
                 <div className="col  product-info">
                     <h3>{product[0]?.nimi}</h3>
