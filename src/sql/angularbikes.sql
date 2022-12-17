@@ -81,3 +81,16 @@ CREATE TABLE tilausrivi (
 );
 
 DROP TABLE tuoteryhma;
+
+CREATE TABLE alennus; (
+    tuotenro INT,
+    nimi VARCHAR(50),
+    kuva VARCHAR(50),
+    hinta DECIMAL(10,2),
+    uusihinta DECIMAL(10,2),
+    alennusprosentti DECIMAL(10,2),
+    FOREIGN KEY (tuotenro)
+        REFERENCES tuote(tuotenro),  
+    FOREIGN KEY (hinta)
+        REFERENCES tuote(hinta)
+);
