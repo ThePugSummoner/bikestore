@@ -17,11 +17,14 @@ Categoryn alkaa tästä
   }
   .category-center-heading{
     position: absolute;
-    top: 25%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(245, 255, 151);
-    text-shadow: 2px 2px 4px #000000;
+    color: rgb(255, 230, 0);
+    text-shadow: 2px 2px 3px #000000;
+    padding: 10px 30px 10px 30px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255,0.4);
   }
   .category-info{
     text-align: center;

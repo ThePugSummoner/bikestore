@@ -5,6 +5,7 @@ import ToTop from "./toTop"
 import {useSelector, useDispatch} from "react-redux";
 import {addToCart, getTotals} from "../features/cartSlice";
 import { Link } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -37,10 +38,10 @@ function Product() {
         <div className="container">
             <div  className="row">
             <ul className="page-navigation py-2">
-                    <Link style={{textDecoration: "none",color:"black"}} to={`/`}><li>Etusivu</li></Link>
-                        <Link style={{textDecoration: "none",color:"black"}} to={`/category/${product[0]?.trnimi}`}><li>{product[0]?.trnimi}</li></Link>
-                        <Link style={{textDecoration: "none",color:"black"}} to={`/category/${product[0]?.trnimi}/${product[0]?.alakategoria}`}><li>{product[0]?.alakategoria}</li></Link>
-                        <li style={{color:"black"}}>{product[0]?.nimi}</li>
+                    <li style={{color:"black"}}><Link style={{textDecoration: "none",color:"black"}} to={`/`}>Etusivu</Link></li>
+                        <li style={{color:"black"}}><FontAwesomeIcon style={{paddingRight:10}} icon="fa-solid fa-angle-right" /> <Link style={{textDecoration: "none",color:"black"}} to={`/category/${product[0]?.trnimi}`}>{product[0]?.trnimi}</Link></li>
+                        <li style={{color:"black"}}><FontAwesomeIcon style={{paddingRight:10}} icon="fa-solid fa-angle-right" /> <Link style={{textDecoration: "none",color:"black"}} to={`/category/${product[0]?.trnimi}/${product[0]?.alakategoria}`}>{product[0]?.alakategoria}</Link></li>
+                        <li style={{color:"black"}}><FontAwesomeIcon style={{paddingRight:10}} icon="fa-solid fa-angle-right" /> {product[0]?.nimi}</li>
                     </ul>
                 <div className="col-12 col-lg-7">
                     {product.length > 0 && <img src={URL + "tuotekuvat/" + product[0].kuva} alt="logokuva"></img>}

@@ -115,5 +115,12 @@ Tähän loppuu product
   color: yellow;
   list-style:none;
   display: flex;
-  gap: 20px;
+}
+.page-navigation li{
+ padding: 0;
+ margin: 0;
+}
+.subcate-info{
+  border-bottom:1px solid black;
+  border-image: linear-gradient(to right, transparent 5%,black 2%, black 95%,transparent 5%) 10;
 }
