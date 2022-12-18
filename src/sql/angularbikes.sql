@@ -82,4 +82,4 @@ CREATE TABLE tilausrivi (
         REFERENCES tuote(tuotenro)
 );
 
-DROP TABLE tuoteryhma;
+--DROP TABLE tuoteryhma;
