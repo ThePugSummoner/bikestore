@@ -80,8 +80,6 @@ CREATE TABLE tilausrivi (
         REFERENCES tuote(tuotenro)
 );
 
-DROP TABLE tuoteryhma;
-
 CREATE TABLE alennus; (
     tuotenro INT,
     nimi VARCHAR(50),
@@ -94,3 +92,4 @@ CREATE TABLE alennus; (
     FOREIGN KEY (hinta)
         REFERENCES tuote(hinta)
 );
+DROP TABLE tuoteryhma;
