@@ -71,13 +71,15 @@ CREATE TABLE tuote (
 );
 CREATE TABLE tilausrivi (
     tilausnro SMALLINT,
-    rivinro INT(5),
+    rivinro SMALLINT,
     tuotenro INT,
     kpl SMALLINT,
+    PRIMARY KEY (tilausnro, rivinro),
     FOREIGN KEY (tilausnro)
-        REFERENCES tilaus(tilausnro),
+        REFERENCES tilaus(tilausnro)
+        ON DELETE CASCADE,
     FOREIGN KEY (tuotenro)
         REFERENCES tuote(tuotenro)
 );
 
-DROP TABLE tuoteryhma;
+DROP TABLE tilausrivi;

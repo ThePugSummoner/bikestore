@@ -9,10 +9,12 @@ import { decreaseCart,
         getTotals } from '../features/cartSlice';
 import {useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const URL = 'http://localhost/angularbikes/'
 
-const ShoppingCart= () => {
+const ShoppingCart = () => {
     
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
@@ -36,6 +38,36 @@ const ShoppingCart= () => {
     const handleClearCart = () => {
         dispatch(clearCart());
     };
+
+    const navigate = useNavigate()
+
+    localStorage.setItem("amount", JSON.stringify(cart.cartTotalAmount))
+
+    const getUser = JSON.parse(localStorage.getItem("user"))
+   
+    const userId = getUser[0].astunnus
+    const date = new Date()
+    const amount = JSON.parse(localStorage.getItem("amount"))
+    const status = "Tilaus vastaanotettu"
+    
+    const hadleNewOrder = (e) => {
+        const json = JSON.stringify({userId: userId, date: date, amount: amount, status: status})
+        axios.post(URL + 'addneworder.php', json, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }) .then(response => {
+            console.log(response.data)
+            localStorage.setItem("tilaus",  JSON.stringify(response.data))
+            //alert("Tilauksesi on lähetetty!")
+            navigate("/order")
+        }) .catch(error => {
+            console.log(error.response ? error.response.data.error : error)
+            alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
+    })
+    }
+
+
 
     return(
         <><div className="container-fluid cart-background min-vh-100">
@@ -111,7 +143,7 @@ const ShoppingCart= () => {
                                     <span className="amount">€ {cart.cartTotalAmount}</span>
                                 </div>
                                 <p>ALV (24%) sisältyy hintaan</p>
-                                <button>Kassalle</button>
+                                <button style={{backgroundColor: 'black', fontSize: '1em'}} onClick={() => {hadleNewOrder()}}>Lähetä tilaus</button>
                                                                   
                             </div>
                         </div>

@@ -25,6 +25,7 @@ import Dbmanagement from './components/dbmanagement'
 import Product from './components/product';
 import SubCategory from './components/subCategory';
 import SearchPage from './components/searchPage';
+import Order from './components/order';
 
 library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown, faX, faTrashCan,faBasketShopping)
 
@@ -52,6 +53,7 @@ function App() {
       <Route path="/adminItems" element={<AdminItems/>}></Route>
       <Route path="/adminCategories" element={<AdminCategories/>}></Route>
       <Route path='/dbmanagement' element={<Dbmanagement/>}></Route>
+      <Route path='/order' element={<Order/>}></Route>
      </Routes>
     <Footer/>
     </>

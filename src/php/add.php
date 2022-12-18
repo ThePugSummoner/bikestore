@@ -6,16 +6,16 @@ require_once 'inc/headers.php';
 
 $input = json_decode(file_get_contents('php://input'));
 //$description = $input ->description;
-$description1 = filter_var($input->description1, FILTER_UNSAFE_RAW);
-$description2 = filter_var($input->description2, FILTER_UNSAFE_RAW);
-$description3 = filter_var($input->description3, FILTER_UNSAFE_RAW);
-$description4 = filter_var($input->description4, FILTER_UNSAFE_RAW);
-$description5 = filter_var($input->description5, FILTER_UNSAFE_RAW);
-$hash_pw = password_hash($description5, PASSWORD_DEFAULT);
-$description6 = filter_var($input->description6, FILTER_UNSAFE_RAW);
+$fname = filter_var($input->fname, FILTER_UNSAFE_RAW);
+$lname = filter_var($input->lname, FILTER_UNSAFE_RAW);
+$email = filter_var($input->email, FILTER_UNSAFE_RAW);
+$phone = filter_var($input->phone, FILTER_UNSAFE_RAW);
+$password = filter_var($input->password, FILTER_UNSAFE_RAW);
+$hash_pw = password_hash($password, PASSWORD_DEFAULT);
+$subscribe = filter_var($input->subscribe, FILTER_UNSAFE_RAW);
 //$description = strp_tags($description);
 
-if (!empty($description1) && !empty($description2) && !empty($description3) && !empty($description4)) {
+if (!empty($fname) && !empty($lname) && !empty($email) && !empty($phone)) {
 
     try {
     /*$db = new PDO('mysql:host=localhost;dbname=todo;charset=utf8', 'root', '');
@@ -24,17 +24,17 @@ if (!empty($description1) && !empty($description2) && !empty($description3) && !
     $dbcon = openDb();
 
     $query = $dbcon->prepare('INSERT INTO asiakas(etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VALUES (:etunimi, :sukunimi, :sposti, :puhnro, :salasana, :uutiskirje)');
-    $query->bindValue(':etunimi', $description1, PDO::PARAM_STR);
-    $query->bindValue(':sukunimi', $description2, PDO::PARAM_STR);
-    $query->bindValue(':sposti', $description3, PDO::PARAM_STR);
-    $query->bindValue(':puhnro', $description4, PDO::PARAM_STR);
+    $query->bindValue(':etunimi', $fname, PDO::PARAM_STR);
+    $query->bindValue(':sukunimi', $lname, PDO::PARAM_STR);
+    $query->bindValue(':sposti', $email, PDO::PARAM_STR);
+    $query->bindValue(':puhnro', $phone, PDO::PARAM_STR);
     $query->bindValue(':salasana', $hash_pw, PDO::PARAM_STR);
-    $query->bindValue(':uutiskirje', $description6, PDO::PARAM_STR);
+    $query->bindValue(':uutiskirje', $subscribe, PDO::PARAM_STR);
     $query->execute();
 
 
     header('HTTP/1.1 200 OK');
-    $data = array('astunnus' => $dbcon->lastInsertId(), 'etunimi' => $description1, 'sukunimi' => $description2, 'sposti' => $description3, 'puhnro' => $description4, 'salasana' => $description5, 'uutiskirje' => $description6);
+    $data = array('astunnus' => $dbcon->lastInsertId(), 'etunimi' => $fname, 'sukunimi' => $lname, 'sposti' => $email, 'puhnro' => $phone, 'salasana' => $password, 'uutiskirje' => $subscribe);
     print json_encode($data);
 
 } catch (PDOException $pdoex) {
