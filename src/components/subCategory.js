@@ -27,8 +27,6 @@ function SubCategory() {
                 alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
             })
     }, [params])
-    console.log(product)
-    console.log(URL + "subCategoryProducts.php/" + params.id + "/" + params.subCategoryId)
 
 
     return (

@@ -5,16 +5,17 @@ Slider starts here
     display: flex;
     align-items: center;
     justify-content: center;
+   
   }
   
   .carousel-slide {
     background-color: white;
     border-radius: 10px;
-    padding: 20px 40px 20px 40px;
-    max-width: 1180px;
+    padding: 60px 40px 60px 40px;
+    max-width: 800px;
     min-width: 300px;
     margin: auto;
-  
+    border: 1px solid black;
   }
   
   .button-container {
@@ -68,10 +69,12 @@ Slider starts here
   /*
   Slider Ends here
   */
-  @media screen and (max-width: 1200px) {
+
+  
+  @media screen and (max-width: 800px) {
 
     .carousel-slide {
-      max-width: 750px;
+      max-width: 550px;
     }
   
     .carousel-item {
@@ -81,23 +84,10 @@ Slider starts here
 
   }
   
-  @media screen and (max-width: 800px) {
-
-    .carousel-slide {
-      max-width: 575px;
-    }
-  
-    .carousel-item {
-      flex: 0 0 calc(100% / 3);
-  
-    }
-
-  }
-  
   @media screen and (max-width: 600px) {
 
     .carousel-slide {
-      max-width: 500px;
+      max-width: 450px;
     }
   
     .carousel-item {

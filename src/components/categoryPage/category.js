@@ -38,7 +38,7 @@ function Category() {
             dispatch(getTotals());
     }, [params, cart, dispatch])
  
-    console.log(products, "Urli homma")
+
 
     if(isLoading){
         return (        

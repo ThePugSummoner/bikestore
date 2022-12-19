@@ -112,7 +112,7 @@ function Navbar() {
     function closeOpen(){
         setOpen(false)
     }
-console.log(subCategories)
+
     return (
         <header>
             <div className="top-nav">

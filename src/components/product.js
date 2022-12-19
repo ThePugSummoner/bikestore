@@ -33,10 +33,9 @@ function Product() {
             dispatch(getTotals());
     }, [params, cart, dispatch])
 
-    console.log(product)
-    console.log(URL + "product.php/" + params.productId)
+
     return (
-        <div className="container-fluid">
+        <div className="container">
             <div  className="row">
             <ul className="page-navigation py-2">
                     <li style={{color:"black"}}><Link style={{textDecoration: "none",color:"black"}} to={`/`}>Etusivu</Link></li>
@@ -77,7 +76,7 @@ function Product() {
             </div>
             <div className="row">
                 <div style={{height:500}} className="col-12 p-0 slider-container">
-                    {product.length > 0 && <Slider heading={product[0]?.trnimi} category={product[0]?.trnimi}/>}
+                    {product.length > 0 && <Slider  category={product[0]?.trnimi}/>}
                 </div>
             </div>
             <ToTop />

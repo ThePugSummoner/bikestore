@@ -6,6 +6,10 @@ card item css starts here
     width: 300px;
     text-align: center;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
   
   }
   .card-item:hover{
@@ -36,13 +40,14 @@ card item css starts here
     color: red;
     margin-bottom: 5px;
   }
-  
+
   .card-item button {
     background-color: black;
     color: white;
     border-radius: 10px;
     height: 40px;
     width: 80px;
+    
   }
   
   /*

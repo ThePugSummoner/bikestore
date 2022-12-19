@@ -32,9 +32,6 @@ function handleSearchPage(event){
     
 }
 
-    console.log(searchText, "Tuotehakenunimi")
-    console.log(product, "Tuotteet")
-    console.log(URL + 'searchProduct.php/' + { searchText })
     return (
         <div className="search-container">
             <input className="top-nav-search" type="text" placeholder="Search..." value={searchText} onChange={e => setSearchText(e.target.value)}></input>

@@ -25,11 +25,16 @@ function Card(props) {
             <div className="card-body">
                 <h5>{props.product.nimi.split(" ",2).join(" ")}</h5>
             </div>
-            <div className="card-footer">
-                <span>{props.product.hinta}</span>
-            </div>
             </Link>
-            <button onClick={()=> handleAddToCart(props.product)}><FontAwesomeIcon icon="fa-solid fa-basket-shopping" /></button>
+            <div className="card-footer pt-auto">
+                <span>{props.product.hinta}</span>
+                <button onClick={()=> handleAddToCart(props.product)}><FontAwesomeIcon icon="fa-solid fa-basket-shopping" /></button>
+            </div>
+            
+            
+            
+           
+            
         </div>
     )
 }
