@@ -4,14 +4,14 @@ import {useDispatch,useSelector} from "react-redux";
 import {addToCart,getTotals} from "../../features/cartSlice";
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 
 
 
 const URL = 'http://localhost/angularbikes/'
 
 function Card(props) {
-
+const [hide,setHide]=useState(props.hide)
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
     }
@@ -24,10 +24,10 @@ function Card(props) {
 
     return (
 
-        <div style={{maxWidth:props.width}} className="col-4 card-item py-2">
-            <Link to={`/product/${props.product.tuotenro}`}>
+        <div style={{maxWidth:props.maxWidth}} className="col-4 card-item py-2">
+            <Link style={{textDecoration:"none",color:"black"}} to={`/product/${props.product.tuotenro}`}>
             <div className="card-image-container">
-                <img style={{height:props.height,width:80}} src={URL +"tuotekuvat/"+props.product.kuva} alt="bike"></img>
+                <img style={{height:props.height,width:props.width}} src={URL +"tuotekuvat/"+props.product.kuva} alt="bike"></img>
             </div>
             <div className="card-body">
                 <h5>{props.product.nimi.split(" ",2).join(" ")}</h5>
@@ -35,7 +35,7 @@ function Card(props) {
             </Link>
             <div className="card-footer pt-auto">
                 <span>{props.product.hinta}</span>
-                <button onClick={()=> handleAddToCart(props.product)}><FontAwesomeIcon icon="fa-solid fa-basket-shopping" /></button>
+                {hide===false && <button onClick={()=> handleAddToCart(props.product)}><FontAwesomeIcon icon="fa-solid fa-basket-shopping" /></button>}
             </div>
             
             

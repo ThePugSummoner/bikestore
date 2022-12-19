@@ -21,7 +21,7 @@ function SearchPage() {
             })
     }, [param])
 
-    console.log(product, "SearchPagen Produt")
+    
     return (
         <div className="container-fluid py-4">
             {product.length === 0 ?
@@ -35,7 +35,7 @@ function SearchPage() {
                 <div className="row product-container">
                     <h3>Hakusi tuloksia ,{product.length} tuotetta</h3>
                     {product.map(product =>
-                        <Card key={uuid()} product={product} width={200} height={150}/>)}
+                        <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150}/>)}
                 </div>
             }
         </div>

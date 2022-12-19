@@ -75,7 +75,7 @@ function Category() {
             <div className="row product-container">
 
                 {products.products?.map(product =>
-                    <Card key={uuid()} product={product} width={200} height={150} />)}
+                    <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150} />)}
             </div>
             <ToTop />
         </div>

@@ -121,7 +121,7 @@ function Slider(props) {
         <div id="carouselExampleControls" className="carousel-slide py-3" data-bs-ride="carousel">
             <h3>{props.category}</h3>
             <div className="carousel-inner" ref={ref}>
-                {products?.map(product => <Card key={uuid()} product={product} width={120} height={120} />)}
+                {products?.map(product => <Card key={uuid()} hide={true} product={product} width={80} maxWidth={120} height={120} />)}
             </div>
             <div className="button-container">
                 <button onClick={prev} className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
