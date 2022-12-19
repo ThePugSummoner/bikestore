@@ -20,7 +20,7 @@ function Card(props) {
         <div style={{maxWidth:props.width}} className="col-4 card-item py-2">
             <Link to={`/product/${props.product.tuotenro}`}>
             <div className="card-image-container">
-                <img style={{height:props.height}} src={URL +"tuotekuvat/"+props.product.kuva} alt="bike"></img>
+                <img style={{height:props.height,width:80}} src={URL +"tuotekuvat/"+props.product.kuva} alt="bike"></img>
             </div>
             <div className="card-body">
                 <h5>{props.product.nimi.split(" ",2).join(" ")}</h5>

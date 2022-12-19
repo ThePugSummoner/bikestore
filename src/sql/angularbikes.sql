@@ -82,4 +82,12 @@ CREATE TABLE tilausrivi (
         REFERENCES tuote(tuotenro)
 );
 
+CREATE TABLE alennus (
+    id int primary key AUTO_INCREMENT,
+    tuotenro INT,
+    uusihinta DECIMAL(10,2),
+    alennusprosentti DECIMAL(10,2),
+    FOREIGN KEY (tuotenro)
+        REFERENCES tuote(tuotenro)
+);
 --DROP TABLE tuoteryhma;

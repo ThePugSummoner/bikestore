@@ -20,7 +20,7 @@ function Banner(){
       <div className="container-fluid front min-vh-100">
          <div className="row">
             <div className="col-12 p-0 slider-container min-vh-100">
-               {/*<Slider/>*/}{/*  Kortti hommat alkavat tästä ! 
+               <Slider heading="Maastopyörät" category="Maastopyörät"/>{/*  Kortti hommat alkavat tästä ! 
                <div className="home-container">
                   {isLoading? ( /* Tuotteet */}
                   {/*<p>Ladataan...</p>

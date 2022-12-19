@@ -6,6 +6,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {addToCart, getTotals} from "../features/cartSlice";
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Slider from "./slider/slider";
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -35,7 +36,7 @@ function Product() {
     console.log(product)
     console.log(URL + "product.php/" + params.productId)
     return (
-        <div className="container">
+        <div className="container-fluid">
             <div  className="row">
             <ul className="page-navigation py-2">
                     <li style={{color:"black"}}><Link style={{textDecoration: "none",color:"black"}} to={`/`}>Etusivu</Link></li>
@@ -73,7 +74,11 @@ function Product() {
                     <h3 className="text-center">Kuvaus:</h3>
                     <p>{product[0]?.kuvaus}</p>
                 </div>
-
+            </div>
+            <div className="row">
+                <div style={{height:500}} className="col-12 p-0 slider-container">
+                    {product.length > 0 && <Slider heading={product[0]?.trnimi} category={product[0]?.trnimi}/>}
+                </div>
             </div>
             <ToTop />
         </div>
