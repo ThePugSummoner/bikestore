@@ -1,9 +1,12 @@
 import React from "react"
 import"./card.css"
-import {useDispatch} from "react-redux";
-import {addToCart} from "../../features/cartSlice";
+import {useDispatch,useSelector} from "react-redux";
+import {addToCart,getTotals} from "../../features/cartSlice";
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useEffect } from "react";
+
+
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -12,8 +15,12 @@ function Card(props) {
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
     }
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
+    const cart = useSelector((state) => state.cart)
 
+    useEffect(() => {
+            dispatch(getTotals());
+    }, [ cart, dispatch])
 
     return (
 
