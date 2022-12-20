@@ -16,6 +16,20 @@ const btnstyle = {
   color: 'black', 
   border: 'none'
 }
+
+const thstyle = {
+  //border: '2px solid',
+  backgroundColor: 'black',
+  color: 'white',
+  padding: '10px'
+}
+
+const tdstyle = {
+  //border: '2px solid',
+  textAlign: 'center',
+  padding: '10px'
+}
+
 const URL = 'http://localhost/angularbikes/'
 
 function AdminOrders() {
@@ -155,8 +169,9 @@ function AdminOrders() {
         {/*<div>
             <button style={{width:500, textAlign: "center", fontSize: '1.5em'}} type="button" className="btn btn-dark mb-3" onClick={handleOrders}>Tilaukset</button>
   </div>*/}
-  <div style={{width: 1000, textAlign:'center', marginTop: 30, marginLeft: 70, paddingLeft: 5}}>    
-        <ol className="col-12">
+  <div style={{width: 1000, textAlign:'center', marginTop: 30, marginLeft: 70, paddingLeft: 5}}>  
+  <h1 style={{margin: 15}}>Tilaukset</h1>  
+        {/*<ol className="col-12">
             {orders?.map(order => (
                 <li key={order.tilausnro}>
                    
@@ -179,8 +194,43 @@ function AdminOrders() {
                     }
                 </li>
             ))}
-            </ol>
+                  </ol>*/}
+            <table style={{margin: 'auto'}}>
+            <tbody>
+        <tr>
+          <th style={thstyle}>Asiakasnro</th>
+          <th style={thstyle}>Tilausnro</th>
+          <th style={thstyle}>Tilauspvm</th>
+          <th style={thstyle}>Summa</th>
+          <th style={thstyle}>Palautus ja vaihto</th>
+          <th style={thstyle}>Tila</th>
+        </tr>
+        {orders.map((order) => {
+          return (
+            <tr key={order.tilausnro}>
+              <td style={tdstyle}>{order.astunnus}</td>
+              <td style={tdstyle}>{order.tilausnro}</td>
+              <td style={tdstyle}>{order.tilauspvm}</td>
+              <td style={tdstyle}>{order.summa}</td>
+              <td style={tdstyle}>{order.palautus}</td>
+              <td style={tdstyle}>{editOrder?.tilausnro !== order.tilausnro && order.tila}
+                    {editOrder?.tilausnro === order.tilausnro &&
+                    <form onSubmit={update}>
+                    <input style={{margin:5, width: 100, borderRadius: 5}} value={editStatus} onChange={e => setEditStatus(e.target.value)}/>
+                    <button style={{margin:5, fontSize: '0.9em', backgroundColor: 'black', color: 'white', borderRadius: 5}}>Save</button>
+                    <button style={{margin:5, fontSize: '0.9em', backgroundColor: 'black', color: 'white', borderRadius: 5}} type="button" onClick={() => setEditedOrder(null)}>Cancel</button>
+                    </form>
+                    }
+                    {editOrder === null &&
+                    <a style={{margin:5, textDecoration: 'none'}} href="#" className='edit' onClick={() => setEditOrder(order)}>Edit</a>
+                    }</td>
+            </tr>
+          )
+        })}
+        </tbody>
+      </table>
           </div> 
+        
     </div>
   )
 }

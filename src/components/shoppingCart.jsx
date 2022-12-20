@@ -49,9 +49,10 @@ const ShoppingCart = () => {
     const date = new Date()
     const amount = JSON.parse(localStorage.getItem("amount"))
     const status = "Tilaus vastaanotettu"
+    const exchange = "Palautus oikeus 14vrk"
     
     const hadleNewOrder = (e) => {
-        const json = JSON.stringify({userId: userId, date: date, amount: amount, status: status})
+        const json = JSON.stringify({userId: userId, date: date, amount: amount, status: status, exchange: exchange})
         axios.post(URL + 'addneworder.php', json, {
             headers: {
                 'Content-Type': 'application/json'
