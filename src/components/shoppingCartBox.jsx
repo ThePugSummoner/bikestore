@@ -38,9 +38,9 @@ function ShoppingCartBox(props) {
                 <div className="col-12 p-0"></div>
                 <div className="cart-container-box">
                 <h2>Ostoskori</h2>
-                <span style={{position: "absolute", right: 12, top: 3, fontSize: 20, cursor: "pointer"}}>
+                <div className="cart-close" style={{position: "absolute", right: 12, top: 3, fontSize: 20, cursor: "pointer"}}>
                 <FontAwesomeIcon icon="fa-solid fa-x" onClick={props.handleClose}/>
-                </span>
+                </div>
                 {cart.cartItems.length === 0 ? (
                     <div className="cart-empty-box">
                         <p>Ostoskorisi on tyhjä</p>
@@ -78,8 +78,8 @@ function ShoppingCartBox(props) {
                         <div className="cart-summary-box">
                             <div className="cart-checkout-box">
                                 <div className="subtotal-box">
-                                    <span className="amount-text-box">Yhteensä</span>
-                                    <span className="amount-box">€ {cart.cartTotalAmount}</span>
+                                    <div className="amount-text-box">Yhteensä</div>
+                                    <div className="amount-box">€ {cart.cartTotalAmount}</div>
                                 </div>
                                 <button>
                                  <Link style={{textDecoration: "none", color: "white"}} to="/shoppingcart" onClick={props.handleClose}>Ostoskoriin</Link>

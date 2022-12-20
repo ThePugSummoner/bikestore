@@ -122,9 +122,9 @@ console.log(subCategories)
                 <button style={{backgroundColor: 'transparent', border: 'none'}} onClick={handleUser}><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span style={{marginLeft:3, color: 'antiquewhite'}}>{etunimi}</span></button>
                 <div className="cart-preview">
                     <FontAwesomeIcon style={{cursor: "pointer"}} icon="fa-solid fa-cart-shopping" size="lg" onClick={handleOpenKori} />
-                    <span className="cart-quantity">
-                        <span>{cartTotalQuantity}</span>
-                    </span>
+                    <div className="cart-quantity">
+                        <div className="cart-quantity-number">{cartTotalQuantity}</div>
+                    </div>
                     <span style={{cursor: "pointer"}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
                     <div style={{position: "absolute", top: 70, right: 8, zIndex:2}} className="cart-dropdown">
                         {openKori && (
