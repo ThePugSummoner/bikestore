@@ -76,7 +76,7 @@ function Slider(props) {
     };
     // siirretään seuraavalle itemille sliderilla, ottaa huomioon elemententin leveyden.
     function next() {
-        let add = 120
+        let add = 150
         let next = scrollPosition
         if (elementWidth < 250) {
 
@@ -102,14 +102,14 @@ function Slider(props) {
 
     // menee taakse päin niin pitkälle ,että leveys on 0.    
     function prev() {
-        let add = 120
+        let add = 150
         const prev = width - add
         if (prev >= 0) {
             ref.current.scrollTo(prev, 0)
             setWidth(prevWidth => prevWidth - add)
         }
     }
-  
+  console.log(products)
     // for looppi card itemeille testaamista varten + array   
     if (isLoading) {
         return (
@@ -121,7 +121,7 @@ function Slider(props) {
         <div id="carouselExampleControls" className="carousel-slide py-3" data-bs-ride="carousel">
             <h3>{props.category}</h3>
             <div className="carousel-inner" ref={ref}>
-                {products?.map(product => <Card key={uuid()} hide={true} product={product} width={80} maxWidth={120} height={120} />)}
+                {products?.map(product => <Card key={uuid()} hide={true} product={product} width={80} maxWidth={150} height={120} />)}
             </div>
             <div className="button-container">
                 <button onClick={prev} className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
