@@ -53,8 +53,8 @@ function discount(){
                 </div>
             </Link>
             <div className="card-footer pt-auto">
-                <span style={{ textDecoration: props.product.alennus === 1 ? "line-through" : "none", color: props.product.alennus === 1 ? "gray" : "red" }}>{props.product.hinta}</span>
-                {props.product.alennus === 1 && <span>{props.product.uusihinta}</span>}
+                <span style={{ textDecoration: props.product.alennus === 1 ? "line-through" : "none", color: props.product.alennus === 1 ? "gray" : "black" }}>{props.product.hinta}€</span>
+                {props.product.alennus === 1 && <span>{props.product.uusihinta}€</span>}
                 {hide === false && <button onClick={() => handleAddToCart(props.product)}><FontAwesomeIcon icon="fa-solid fa-basket-shopping" /></button>}
             </div>
 
