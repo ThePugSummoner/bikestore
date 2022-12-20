@@ -27,8 +27,6 @@ function SubCategory() {
                 alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
             })
     }, [params])
-    console.log(product)
-    console.log(URL + "subCategoryProducts.php/" + params.id + "/" + params.subCategoryId)
 
 
     return (
@@ -61,7 +59,7 @@ function SubCategory() {
 
                     {product.products?.map(product =>
 
-                        <Card key={uuid()} product={product} width={200} height={150} />)}
+                        <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150} cardHeigh={315} />)}
 
                 </div>
             </div>

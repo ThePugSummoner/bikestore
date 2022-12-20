@@ -66,6 +66,9 @@ CREATE TABLE tuote (
     kuva VARCHAR(50),
     saldo SMALLINT,
     koko VARCHAR(10),
+    alennus boolean,
+    uusihinta decimal(10,2),
+    alennusprosentti DECIMAL (10,2),
     FOREIGN KEY (trnro) 
         REFERENCES tuoteryhma(trnro)
 );
@@ -81,5 +84,13 @@ CREATE TABLE tilausrivi (
     FOREIGN KEY (tuotenro)
         REFERENCES tuote(tuotenro)
 );
-
---DROP TABLE tuoteryhma;
+/*
+CREATE TABLE alennus (
+    id int primary key AUTO_INCREMENT,
+    tuotenro INT,
+    uusihinta DECIMAL(10,2),
+    alennusprosentti DECIMAL(10,2),
+    FOREIGN KEY (tuotenro)
+        REFERENCES tuote(tuotenro)
+);
+--DROP TABLE tuoteryhma;*/

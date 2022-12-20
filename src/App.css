@@ -78,23 +78,23 @@ body {
 .product-info{
   display: flex;
   flex-direction: column;
-  
-
+}
+.product-info-span-container{
+  font-size: 30px;
+  color: red;
+  margin-left: auto;
+  display: flex;
+  gap: 35px;
 }
 .product-info ul{
   list-style: none;
   padding-left: 0;
   padding-top: 15px;
 }
-.product-info span{
-  font-size: 30px;
-  color: red;
-  margin-left: auto;
-}
 .product-info button{
   justify-self: center;
   align-self:flex-end;
-  width: 200px;
+  width: 225px;
 
 }
 .product-info-varasto{
@@ -123,4 +123,11 @@ Tähän loppuu product
 .subcate-info{
   border-bottom:1px solid black;
   border-image: linear-gradient(to right, transparent 5%,black 2%, black 95%,transparent 5%) 10;
+}
+.product-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
 }
