@@ -125,9 +125,9 @@ function Navbar() {
                 <button style={{backgroundColor: 'transparent', border: 'none'}} onClick={handleUser}><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span style={{marginLeft:5, color: 'antiquewhite'}}>{signup}</span></button>
                 <div className="cart-preview">
                     <FontAwesomeIcon style={{cursor: "pointer"}} icon="fa-solid fa-cart-shopping" size="lg" onClick={handleOpenKori} />
-                    <span className="cart-quantity">
-                        <span>{cartTotalQuantity}</span>
-                    </span>
+                    <div className="cart-quantity">
+                        <div>{cartTotalQuantity}</div>
+                    </div>
                     <span style={{cursor: "pointer", marginRight:3, color: 'antiquewhite'}} className="cart-text" onClick={handleOpenKori}>Ostoskori</span>
                     <div style={{position: "absolute", top: 70, right: 8, zIndex:2}} className="cart-dropdown">
                         {openKori && (
