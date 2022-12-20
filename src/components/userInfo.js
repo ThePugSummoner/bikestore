@@ -39,7 +39,7 @@ function User() {
                 if(response.data === 'Data Matched'){
                     //console.log(response.data);
                     navigate("/account");
-                    window.location.reload(false)   
+                    //window.location.reload(false)   
                 }
                 else if (response.data === 'Admin logged in!') {
                     //console.log(response.data)
