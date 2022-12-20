@@ -84,7 +84,7 @@ body {
   color: red;
   margin-left: auto;
   display: flex;
-  gap: 35px;
+  gap: 30px;
 }
 .product-info ul{
   list-style: none;
@@ -94,7 +94,7 @@ body {
 .product-info button{
   justify-self: center;
   align-self:flex-end;
-  width: 225px;
+  width: 240px;
 
 }
 .product-info-varasto{
