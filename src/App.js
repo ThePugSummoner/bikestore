@@ -14,7 +14,7 @@ import MyOrders from './components/myorders';
 import axios from 'axios';
 import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faBars,faCaretDown, faX, faTrashCan,faBasketShopping} from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee,faEnvelope,faPhone,faClock ,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faBars,faCaretDown, faX, faTrashCan,faBasketShopping,faAngleRight} from '@fortawesome/free-solid-svg-icons'
 import {faFacebook,faSquareInstagram,faYoutube,faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {ToastContainer} from "react-toastify";
 import Category from './components/categoryPage/category';
@@ -25,8 +25,9 @@ import Dbmanagement from './components/dbmanagement'
 import Product from './components/product';
 import SubCategory from './components/subCategory';
 import SearchPage from './components/searchPage';
+import Order from './components/order';
 
-library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown, faX, faTrashCan,faBasketShopping)
+library.add(faCheckSquare, faCoffee,faEnvelope,faPhone,faClock,faUser,faCartShopping,faStore,faScrewdriverWrench,faCircleInfo,faFacebook,faSquareInstagram,faYoutube,faTwitter,faBars,faCaretDown, faX, faTrashCan,faBasketShopping,faAngleRight)
 
 
 
@@ -52,6 +53,7 @@ function App() {
       <Route path="/adminItems" element={<AdminItems/>}></Route>
       <Route path="/adminCategories" element={<AdminCategories/>}></Route>
       <Route path='/dbmanagement' element={<Dbmanagement/>}></Route>
+      <Route path='/order' element={<Order/>}></Route>
      </Routes>
     <Footer/>
     </>

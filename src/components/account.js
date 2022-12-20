@@ -26,11 +26,8 @@ const URL = 'http://localhost/angularbikes/'
 
 function Account() {
 
-    //const [tilaus, setTilaus] = useState([])
     const [data, setData] = useState([])
-    //const getEmail = localStorage.getItem('sposti')
-    //const getPwd = localStorage.getItem('salasana')
-    //const [user, setUser] = useState([])
+    
     const navigate = useNavigate()
 
     const columns = useMemo (() => [
@@ -80,76 +77,13 @@ function Account() {
         })
       }, [])
 
-      /*const handleOrders = (e) => {
-        e.preventDefault()
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'order.php', json, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => {
-            setData(response.data);
-        }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
-        })
-      }*/
-
       const handleLogout = () => {
         localStorage.clear();
         navigate('/userinfo')
         window.location.reload(false)
       }
 
-      /*useEffect(() => {
-        (async () => {
-          const result = await axios(URL);
-          setData(result.data);
-        })();
-      }, []);*/
-
-      /*useEffect(() => {
-        (async () => {
-          const result = await axios(URL);
-          setData(result.data);
-        })();
-      }, []);*/
-
-      /*const handleOrder = (e) => {
-        e.preventDefault()
-        navigate("/myorders");
-        const getEmail = JSON.parse(localStorage.getItem("sposti"));
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'order.php', json, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-          .then((response) => {
-            setData(response.data);
-      }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
-        })
-      }
-
-      const handleUser = (e) => {
-        e.preventDefault()
-        const getEmail = JSON.parse(localStorage.getItem("sposti"));
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'user.php', json, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-          .then((response) => {
-            setData(response.data);
-      }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
-        })
-      }*/
+    
 
       const handleOrder = (e) => {
         navigate("/myorders")

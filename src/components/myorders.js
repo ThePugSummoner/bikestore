@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMemo, useEffect, useState } from "react";
 import Table from "./table";
-//import TableUser from "./tableUser";
 import axios from "axios";
 
 
@@ -58,55 +57,6 @@ function MyOrders() {
     ],
     []);
 
-   /* const columns = useMemo (() => [
-        {
-          Header: "Asiakasnro",
-          accessor: "astunnus"
-      },
-      {
-          Header: "Etunimi",
-          accessor: "etunimi"
-      },
-      {
-          Header: "Sukunimi",
-          accessor: "sukunimi"
-      },
-      {
-          Header: "Sähköposti",
-          accessor: "sposti"
-      },
-      {
-          Header: "Puhelin",
-          accessor: "puhnro"
-      }
-  ],
-  []);*/
-
-    /*useEffect(() => {
-        axios.get(URL)
-        .then((response) => {
-          setTilaus(response.data)
-        }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen')
-        })
-      }, [])*/
-
-      /*const handleOrders = (e) => {
-        e.preventDefault()
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'order.php', json, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => {
-            setData(response.data);
-        }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
-        })
-      }*/
 
       const handleLogout = () => {
         localStorage.clear();
@@ -130,56 +80,6 @@ function MyOrders() {
           alert('Häiriö järjestelmässä, yritä kohta uudelleen')
         })
       }, [])
-
-      /*useEffect(() => {
-        (async () => {
-          const result = await axios(URL);
-          setData(result.data);
-        })();
-      }, []);*/
-
-      /*useEffect(() => {
-        (async () => {
-          const result = await axios(URL);
-          setData(result.data);
-        })();
-      }, []);*/
-
-      /*const handleOrder = (e) => {
-        e.preventDefault()
-        const getEmail = JSON.parse(localStorage.getItem("sposti"));
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'order.php', json, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-          .then((response) => {
-            setData(response.data);
-            console.log(response.data)
-      }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
-        })
-      }
-
-      const handleUser = (e) => {
-        e.preventDefault()
-        const getEmail = JSON.parse(localStorage.getItem("sposti"));
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'user.php', json, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-          .then((response) => {
-            setData(response.data);
-            navigate("/account");
-      }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
-        })
-      }*/
     
       
       const handleOrder = (e) => {

@@ -21,21 +21,23 @@ function SearchPage() {
             })
     }, [param])
 
-    console.log(product, "SearchPagen Produt")
+    
     return (
-        <div className="container-fluid py-4">
+        <div className="container py-4">
             {product.length === 0 ?
                 <div className="row">
-                    <div className="col">
-                        <h3>Hakusi ei valitettavasti tuottanut yhtään tulosta.</h3>
-                        <p>Koita uudestaan toisella hakusanalla.</p>
+                    <div style={{height:350}} className="col text-center">                       
+                        <h2 className="mt-5 pt-3">"{param.searchTag}"</h2>
+                        <h3>Hakusanasi ei valitettavasti tuottanut yhtään tulosta.</h3>
+                        <p>Koita uudestaan toisella hakusanalla.</p>                          
                     </div>
                 </div>
                 :
                 <div className="row product-container">
-                    <h3>Hakusi tuloksia ,{product.length} tuotetta</h3>
+                    <h3 className="text-center">Tulokset haulle "{param.searchTag}"</h3>
+                    <span>Tuloksia {product.length} kpl</span>
                     {product.map(product =>
-                        <Card key={uuid()} product={product} width={200} height={150}/>)}
+                        <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150} cardHeigh={315} />)}
                 </div>
             }
         </div>

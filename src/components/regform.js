@@ -29,7 +29,7 @@ function RegForm() {
     
     const save = (e) => {
         e.preventDefault()
-        const json = JSON.stringify({description1: newName, description2: newLname, description3: newEmail, description4: newPnum, description5: newPassword, description6: newLetter})
+        const json = JSON.stringify({fname: newName, lname: newLname, email: newEmail, phone: newPnum, password: newPassword, subscribe: newLetter})
         axios.post(URL + 'add.php', json, {
           headers: {
             'Content-Type': 'application/json'

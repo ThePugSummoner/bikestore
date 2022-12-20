@@ -8,6 +8,8 @@ import Card from "../card/card"
 import "./category.css"
 import {useDispatch, useSelector } from "react-redux";
 import {getTotals} from "../../features/cartSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 const URL = 'http://localhost/angularbikes/'
 
@@ -36,7 +38,7 @@ function Category() {
             dispatch(getTotals());
     }, [params, cart, dispatch])
  
-    console.log(products, "Urli homma")
+
 
     if(isLoading){
         return (        
@@ -51,7 +53,7 @@ function Category() {
                 <div style={{backgroundImage:`url(${URL + "kategoriakuvat/" + products.category[0].trkuva})`}} className="col category-div">
                 <ul className="page-navigation">
                     <Link style={{textDecoration: "none",color:"yellow"}} to={"/"}><li>Etusivu</li> </Link>              
-                    <li>{products.category[0].trnimi}</li>  
+                    <li><FontAwesomeIcon style={{paddingRight:10}} icon="fa-solid fa-angle-right" /> {products.category[0].trnimi}</li>  
                 </ul>
                     <div className="category-center-heading"><h1>{products.category[0].trnimi}</h1></div>
                 </div>
@@ -73,7 +75,7 @@ function Category() {
             <div className="row product-container">
 
                 {products.products?.map(product =>
-                    <Card key={uuid()} product={product} width={200} height={150} />)}
+                    <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150} cardHeigh={315} />)}
             </div>
             <ToTop />
         </div>

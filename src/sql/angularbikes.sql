@@ -66,18 +66,31 @@ CREATE TABLE tuote (
     kuva VARCHAR(50),
     saldo SMALLINT,
     koko VARCHAR(10),
+    alennus boolean,
+    uusihinta decimal(10,2),
+    alennusprosentti DECIMAL (10,2),
     FOREIGN KEY (trnro) 
         REFERENCES tuoteryhma(trnro)
 );
 CREATE TABLE tilausrivi (
     tilausnro SMALLINT,
-    rivinro INT(5),
+    rivinro SMALLINT,
     tuotenro INT,
     kpl SMALLINT,
+    PRIMARY KEY (tilausnro, rivinro),
     FOREIGN KEY (tilausnro)
-        REFERENCES tilaus(tilausnro),
+        REFERENCES tilaus(tilausnro)
+        ON DELETE CASCADE,
     FOREIGN KEY (tuotenro)
         REFERENCES tuote(tuotenro)
 );
-
-DROP TABLE tuotteet;
+/*
+CREATE TABLE alennus (
+    id int primary key AUTO_INCREMENT,
+    tuotenro INT,
+    uusihinta DECIMAL(10,2),
+    alennusprosentti DECIMAL(10,2),
+    FOREIGN KEY (tuotenro)
+        REFERENCES tuote(tuotenro)
+);
+--DROP TABLE tuoteryhma;*/

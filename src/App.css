@@ -8,6 +8,67 @@ body {
 .main {
   min-height: 100vh;
 }
+.huolto-form{
+  display: grid;
+  grid-template-columns: 350px 350px;
+  gap: 10px;
+  justify-content: center;
+ 
+}
+
+.huolto-form input,select{
+  margin: 0;
+}
+.button-item{
+  grid-area:5/1/6/3;
+}
+.button-item button{
+  width: 600px;
+}
+@media screen and (max-width: 750px) {
+  .huolto-form{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    gap: 10px;
+    justify-content: center;
+   
+  }
+  .button-item button{
+   width: 400px;   
+  }
+   }
+   @media screen and (max-width: 500px) {
+    .huolto-form{
+      display: grid;
+      grid-template-columns: 200px 200px;
+      gap: 5px;
+      justify-content: center;
+     
+    }
+    .button-item button{
+      width: 350px;
+    }
+     }
+     @media screen and (max-width: 350px) {
+      .hinnasto{
+        text-align: center;
+        width: auto;
+      }
+      .huolto-form{
+        text-align: left;
+        display: grid;
+        grid-template-columns:auto;
+        justify-content: center;
+        align-content:center ;
+       
+      }
+      .button-item{
+        grid-area:9/1/10/2;
+      }
+      .button-item button{
+        width: 250px;
+      }
+       }
 
  /*
  Tästä alkaa product
@@ -17,23 +78,23 @@ body {
 .product-info{
   display: flex;
   flex-direction: column;
-  
-
+}
+.product-info-span-container{
+  font-size: 30px;
+  color: red;
+  margin-left: auto;
+  display: flex;
+  gap: 35px;
 }
 .product-info ul{
   list-style: none;
   padding-left: 0;
   padding-top: 15px;
 }
-.product-info span{
-  font-size: 30px;
-  color: red;
-  margin-left: auto;
-}
 .product-info button{
   justify-self: center;
   align-self:flex-end;
-  width: 200px;
+  width: 225px;
 
 }
 .product-info-varasto{
@@ -54,5 +115,19 @@ Tähän loppuu product
   color: yellow;
   list-style:none;
   display: flex;
-  gap: 20px;
+}
+.page-navigation li{
+ padding: 0;
+ margin: 0;
+}
+.subcate-info{
+  border-bottom:1px solid black;
+  border-image: linear-gradient(to right, transparent 5%,black 2%, black 95%,transparent 5%) 10;
+}
+.product-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
 }

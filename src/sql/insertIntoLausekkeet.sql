@@ -1,9 +1,3 @@
-INSERT INTO asiakas (etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VALUES ('Enimi', 'Snimi', 'sposti@sposti.fi', '0441234567', 'SALASANA', NULL);
-INSERT INTO asiakas (etunimi, sukunimi, sposti, puhnro, salasana, uutiskirje) VALUES ('Erkki', 'Esimmerkki', 'erkkiesim@sposti.fi', '0449876543', 'teSTTesT', 'K');
-
-INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (100, 'Käsittelyssä', '2022-11-12', 150.45, 'Palauta tuote');
-
-INSERT INTO tilaus (astunnus, tila, tilauspvm, summa, palautus) VALUES (101, 'Käsittelyssä', '2022-11-14', 325.55, 'Palauta tuote');
 
 INSERT INTO palvelu (pnimi, hinta) VALUES ('Ensihuolto', 59.90);
 
@@ -131,6 +125,43 @@ insert into tuote (nimi,kuvaus,hinta,trnro,alakategoria,kuva, saldo) VALUES
 ("KMC X9SL Polkupyörän ketju 9-vaihteinen","Hopeanvärisellä 9-vaihteisella X9SL-ketjulla KMC esittelee erittäin kevyen (SL), ruosteenestoisen ja erittäin kestävän kilpapyörä- ja maastoketjun Shimanon, Campagnolon ja SRAMin 9-vaihteisille vaihteistoille.",38,6,"Ketjut","kmc.png", 56);
 -- Komponentit loppuvat
 
+-- Update lausekkeet alennuksille
+UPDATE tuote
+SET alennus=1 , uusihinta=200 , alennusprosentti=50
+where tuotenro=2;
+
+
+UPDATE tuote
+SET alennus=1 , uusihinta=200 , alennusprosentti=50
+where tuotenro=6;
+
+UPDATE tuote
+SET alennus=1 , uusihinta=1834.5 , alennusprosentti=50
+where tuotenro=8;
+
+UPDATE tuote
+SET alennus=1 , uusihinta=759.5 , alennusprosentti=50
+where tuotenro=11;
+
+UPDATE tuote
+SET alennus=1 , uusihinta=1334.5 , alennusprosentti=50
+where tuotenro=16;
+
+UPDATE tuote
+SET alennus=1 , uusihinta=2499.5 , alennusprosentti=50
+where tuotenro=20;
+
+UPDATE tuote
+SET alennus=1 , uusihinta=484.5 , alennusprosentti=50
+where tuotenro=22;
+
+UPDATE tuote
+SET alennus=1 , uusihinta=379.5 , alennusprosentti=50
+where tuotenro=23;
+
+UPDATE tuote
+SET alennus=1 , uusihinta=49.5 , alennusprosentti=50
+where tuotenro=25;
 DELETE
 FROM tuoteryhma
 WHERE trnro > 6;
