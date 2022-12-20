@@ -8,7 +8,7 @@ $category_id=$parameters[1];
 
 try{
     $db=openDb();
-    $sql="select tuotenro,nimi,kuvaus,hinta,tuote.trnro,alakategoria,kuva,saldo,koko,trnimi,alennus,uusihinta,alennusprosentti from tuote inner join tuoteryhma on tuote.trnro=tuoteryhma.trnro where trnimi='$category_id'";
+    $sql="select tuotenro,nimi,kuvaus,hinta,tuote.trnro,alakategoria,kuva,saldo,koko,trnimi from tuote inner join tuoteryhma on tuote.trnro=tuoteryhma.trnro where trnimi='$category_id'";
     $query=$db->query($sql);
     $products=$query->fetchAll(PDO::FETCH_ASSOC);
 
