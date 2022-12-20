@@ -34,15 +34,13 @@ function Navbar() {
 
     const user = JSON.parse(localStorage.getItem("sposti"))
 
-    var etunimi = ""
-    //var way = ""
+    var signup = ""
+    
 
     if (user === "") {
-       etunimi = "Oma tili"
-       //way = "/userinfo"
+       signup = "Oma tili"
     } else {
-       etunimi = "Käyttäjätilini"
-       //way = "/account"
+       signup = "Käyttäjätilini"
     }
 
     const handleUser = (e) => {
@@ -102,7 +100,12 @@ function Navbar() {
     const [openKori, setOpenKori] = useState(false)
     
     function handleOpenKori() {
-        setOpenKori(!openKori)
+        if (user === ""){
+          navigate("/userinfo")
+        } else {
+          setOpenKori(!openKori)
+        }
+        //setOpenKori(!openKori)
     }
 
     function handleOpen() {
@@ -119,7 +122,7 @@ console.log(subCategories)
                 <Link to="/" style={{textDecoration:'none', color: 'antiquewhite'}} ><img className="logo-img" src={logo} alt="logo"></img><span style={{marginLeft:3, color: 'antiquewhite'}}>Angular Bikes</span></Link>
                 {/*<span>Angular Bikes</span>*/}
                 <Search />
-                <button style={{backgroundColor: 'transparent', border: 'none'}} onClick={handleUser}><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span style={{marginLeft:5, color: 'antiquewhite'}}>{etunimi}</span></button>
+                <button style={{backgroundColor: 'transparent', border: 'none'}} onClick={handleUser}><FontAwesomeIcon icon="fa-solid fa-user" size="lg" /><span style={{marginLeft:5, color: 'antiquewhite'}}>{signup}</span></button>
                 <div className="cart-preview">
                     <FontAwesomeIcon style={{cursor: "pointer"}} icon="fa-solid fa-cart-shopping" size="lg" onClick={handleOpenKori} />
                     <span className="cart-quantity">
