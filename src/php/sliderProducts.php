@@ -12,7 +12,7 @@ try{
     if($category==="Tarjous"){
 
     }else{
-        $sql="select tuotenro,nimi,kuvaus,hinta,tuote.trnro,alakategoria,kuva,saldo,koko,trnimi from tuote inner join tuoteryhma on tuote.trnro=tuoteryhma.trnro where trnimi='$category'";
+        $sql="select tuotenro,nimi,kuvaus,hinta,tuote.trnro,alakategoria,kuva,saldo,koko,trnimi,alennus,uusihinta,alennusprosentti from tuote inner join tuoteryhma on tuote.trnro=tuoteryhma.trnro where trnimi='$category'";
         $query=$db->query($sql);
         $products=$query->fetchAll(PDO::FETCH_ASSOC);
     }
