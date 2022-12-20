@@ -11,9 +11,24 @@ import { useEffect, useState } from "react";
 const URL = 'http://localhost/angularbikes/'
 
 function Card(props) {
+    const [discountProduct, setDiscountProduct] = useState({
+        nimi: props.product.nimi,
+        hinta: props.product.uusihinta,
+        saldo: props.product.saldo,
+        tuotenro: props.product.tuotenro,
+        kuva: props.product.kuva
+    })
     const [hide, setHide] = useState(props.hide)
+
     const handleAddToCart = (product) => {
-        dispatch(addToCart(product));
+
+        if (props.product.alennus === 1) {
+            dispatch(addToCart(discountProduct));
+
+        } else {
+            dispatch(addToCart(product));
+        }
+
     }
     const dispatch = useDispatch()
     const cart = useSelector((state) => state.cart)
@@ -22,9 +37,13 @@ function Card(props) {
         dispatch(getTotals());
     }, [cart, dispatch])
 
+function discount(){
+
+}
+
     return (
 
-        <div style={{ maxWidth: props.maxWidth }} className="col-4 card-item py-2">
+        <div style={{ maxWidth: props.maxWidth,height:props.cardHeigh }} className="col-4 card-item py-2">
             <Link style={{ textDecoration: "none", color: "black" }} to={`/product/${props.product.tuotenro}`}>
                 <div className="card-image-container">
                     <img style={{ height: props.height, width: props.width }} src={URL + "tuotekuvat/" + props.product.kuva} alt="bike"></img>

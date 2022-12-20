@@ -59,7 +59,7 @@ function SubCategory() {
 
                     {product.products?.map(product =>
 
-                        <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150} />)}
+                        <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150} cardHeigh={315} />)}
 
                 </div>
             </div>

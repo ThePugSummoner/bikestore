@@ -35,7 +35,7 @@ function SearchPage() {
                 <div className="row product-container">
                     <h3>Hakusi tuloksia ,{product.length} tuotetta</h3>
                     {product.map(product =>
-                        <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150}/>)}
+                        <Card key={uuid()} hide={false} product={product} maxWidth={200} height={150} cardHeigh={315} />)}
                 </div>
             }
         </div>
