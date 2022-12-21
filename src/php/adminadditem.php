@@ -21,14 +21,14 @@ if (!empty($item_name) && !empty($price) && !empty($cat_num)) {
 
         $dbcon = openDb();
 
-        $query = $dbcon->prepare('INSERT INTO tuote (nimi, kuvaus, hinta, trnro, alakategoria, kuva, saldo, koko) 
-        VALUES (:nimi, :kuvaus, :hinta, :trnro, :alakategoria, :kuva, :saldo, :koko)');
+        $query = $dbcon->prepare('INSERT INTO tuote (nimi, kuvaus, hinta, trnro, alakategorianro, kuva, saldo, koko) 
+        VALUES (:nimi, :kuvaus, :hinta, :trnro, :alakategorianro, :kuva, :saldo, :koko)');
 
         $query->bindParam(':nimi', $item_name, PDO::PARAM_STR);
         $query->bindParam(':kuvaus', $description, PDO::PARAM_STR);
         $query->bindParam(':hinta', $price, PDO::PARAM_STR);
         $query->bindParam(':trnro', $cat_num, PDO::PARAM_STR);
-        $query->bindParam(':alakategoria', $subcat, PDO::PARAM_STR);
+        $query->bindParam(':alakategorianro', $subcat, PDO::PARAM_STR);
         $query->bindParam(':kuva', $image, PDO::PARAM_STR);
         $query->bindParam(':saldo', $balance, PDO::PARAM_STR);
         $query->bindParam(':koko', $size, PDO::PARAM_STR);
@@ -36,7 +36,7 @@ if (!empty($item_name) && !empty($price) && !empty($cat_num)) {
 
         header('HTTP/1.1 200 OK');
         $data = array('nimi' => $item_name, 'kuvaus' => $description, 'hinta' => $price, 
-        'trnro' => $cat_num, 'alakategoria' => $subcat, 'kuva' => $image, 'saldo' => $balance, 'koko' => $size);
+        'trnro' => $cat_num, 'alakategorianro' => $subcat, 'kuva' => $image, 'saldo' => $balance, 'koko' => $size);
         print json_encode($data);
 
     } catch (PDOException $pdoex) {
