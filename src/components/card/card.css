@@ -11,11 +11,13 @@ card item css starts here
     flex-direction: column;
     align-items:center;
     gap: 5px;
+    will-change: transform;
+    transition: transform 0.5s ease-out;
   
   }
   .card-item:hover{
-  box-shadow:0px 0px 2px 1px #888888 ;
-  }
+    transform: scale(1.1);
+    }
   
   .card-item h5 {
     font-size: 15px;
