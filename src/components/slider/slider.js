@@ -118,7 +118,7 @@ function Slider(props) {
             </div>)
     }
     return (
-        <div id="carouselExampleControls" className="carousel-slide py-3" data-bs-ride="carousel">
+        <div id="carouselExampleControls" className="carousel-slide mb-auto" data-bs-ride="carousel">
             <h3>{props.category}</h3>
             <div className="carousel-inner" ref={ref}>
                 {products?.map(product => <Card key={uuid()} hide={true} product={product} width={80} maxWidth={150} height={120} cardHeigh={244} />)}
