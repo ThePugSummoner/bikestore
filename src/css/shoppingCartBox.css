@@ -162,6 +162,12 @@
   cursor: pointer;
   margin-top: 5px;
 }
+.cart-checkout-box button:hover {
+  background-color: #001d4e;
+}
+.cart-close:hover {
+  color: #001d4e;
+}
 .cart-empty-box {
   font-size: 20px;
   font-weight: 500;
