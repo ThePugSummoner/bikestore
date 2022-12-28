@@ -14,8 +14,6 @@ INSERT INTO palvelu (pnimi, hinta) VALUES ('Etu-/takaenkaan vaihto', 18.90);
 INSERT INTO palvelu (pnimi, hinta) VALUES ('Renkaiden vaihto (eteen ja taakse)', 35.90);
 
 
-INSERT INTO ajanvaraus (etunimi, sukunimi, sposti, puhnro, pnimi, merkki, pvm, aika) VALUES ('test1', 'test1', 'test1@test.com', '123456', 'Ensihuolto', 'Trek Rail 9', '2022-11-12', '19:30:10');
-
 -- Tästä alkaa tuoteryhmien vientilausekkeet
 INSERT into tuoteryhma (trnimi,trotsikko,trkuvaus,trkuva) VALUES
  ("Maastopyörät","Maastopyöräily ei ole vain kilpailulaji","Maastopyöräily on monipuolinen laji, jota voi omien taitojensa ja kuntonsa mukaan harrastaa hyvin monenlaisissa maastoissa. Maastossa pyöräileminen on hauska ja rento tapa liikkua ja retkeillä. Laji sopii myös lapsille, nuorille ja iäkkäämmille. Kokeneempi maastopyöräilijä nauttii raskaammastakin kuntoilusta, teknisemmistä ajohaasteista ja vauhdin hurmasta.
