@@ -5,14 +5,14 @@ require_once 'inc/headers.php';
 
 $input = json_decode(file_get_contents('php://input'));
 
-$item_name = filter_var($input->itemName, FILTER_UNSAFE_RAW);
-$description = filter_var($input->description, FILTER_UNSAFE_RAW);
-$price = filter_var($input->price, FILTER_UNSAFE_RAW);
-$cat_num = filter_var($input->catnum, FILTER_UNSAFE_RAW);
-$subcat = filter_var($input->subcat, FILTER_UNSAFE_RAW);
+$item_name = filter_var($input->itemName, FILTER_SANITIZE_SPECIAL_CHARS);
+$description = filter_var($input->description, FILTER_SANITIZE_SPECIAL_CHARS);
+$price = filter_var($input->price, FILTER_SANITIZE_NUMBER_FLOAT);
+$cat_num = filter_var($input->catnum, FILTER_SANITIZE_NUMBER_INT);
+$subcat = filter_var($input->subcat, FILTER_SANITIZE_NUMBER_INT);
 $image = filter_var($input->image, FILTER_UNSAFE_RAW);
-$balance = filter_var($input->balance, FILTER_UNSAFE_RAW);
-$size = filter_var($input->size, FILTER_UNSAFE_RAW);
+$balance = filter_var($input->balance, FILTER_SANITIZE_NUMBER_INT);
+$size = filter_var($input->size,FILTER_SANITIZE_SPECIAL_CHARS);
 
 
 if (!empty($item_name) && !empty($price) && !empty($cat_num)) {
