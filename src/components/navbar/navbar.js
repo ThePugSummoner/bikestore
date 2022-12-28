@@ -79,22 +79,7 @@ function Navbar() {
           })
       }, [])
 
-     /* useEffect(() => {
-        const getEmail = JSON.parse(localStorage.getItem("sposti"));
-        const json = JSON.stringify({email: getEmail})
-        axios.post(URL + 'user.php', json, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then((response) => {
-          setUser(response.data)
-          console.log(response.data)
-        }).catch(error => {
-          console.log(error.response ? error.response.data.error : error)
-          alert('Häiriö järjestelmässä, yritä kohta uudelleen')
-        })
-      }, [])*/
+    
 
     const {cartTotalQuantity} = useSelector(state => state.cart)
     const [openKori, setOpenKori] = useState(false)
@@ -102,7 +87,10 @@ function Navbar() {
     function handleOpenKori() {
         if (user === ""){
           navigate("/userinfo")
-        } else {
+        } else if (user === "admin@admin.com") {
+          navigate("/adminOrders")
+        }
+        else {
           setOpenKori(!openKori)
         }
         //setOpenKori(!openKori)
