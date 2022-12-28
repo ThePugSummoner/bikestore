@@ -55,6 +55,13 @@ CREATE TABLE tuoteryhma(
     trkuvaus TEXT,
     trotsikko VARCHAR(60)
 );
+CREATE TABLE alatuoteryhma(  
+    alakategorianro INT PRIMARY KEY AUTO_INCREMENT,
+    alakategoria varchar(60),
+    alakategoriakuva VARCHAR(50),
+    alakategoriakuvaus TEXT,
+    alakategoriaotsikko VARCHAR(60)
+);
 
 CREATE TABLE tuote (
     tuotenro INT PRIMARY KEY AUTO_INCREMENT,
@@ -62,7 +69,7 @@ CREATE TABLE tuote (
     kuvaus TEXT,
     hinta DECIMAL(10,2) ,
     trnro INT ,
-    alakategoria varchar(40),
+    alakategorianro INT,
     kuva VARCHAR(50),
     saldo SMALLINT,
     koko VARCHAR(10),
@@ -70,7 +77,9 @@ CREATE TABLE tuote (
     uusihinta decimal(10,2),
     alennusprosentti DECIMAL (10,2),
     FOREIGN KEY (trnro) 
-        REFERENCES tuoteryhma(trnro)
+        REFERENCES tuoteryhma(trnro),
+        FOREIGN KEY (alakategorianro) 
+        REFERENCES alatuoteryhma(alakategorianro)
 );
 CREATE TABLE tilausrivi (
     tilausnro SMALLINT,
@@ -84,6 +93,7 @@ CREATE TABLE tilausrivi (
     FOREIGN KEY (tuotenro)
         REFERENCES tuote(tuotenro)
 );
+
 /*
 CREATE TABLE alennus (
     id int primary key AUTO_INCREMENT,

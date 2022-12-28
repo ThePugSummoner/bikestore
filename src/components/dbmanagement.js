@@ -256,8 +256,8 @@ function Dbmanagement() {
                 <input type="text" className="form-control" id="inputCat" placeholder="Kategorianro"  value={catnum} onChange={e => setCatnum(e.target.value)}/>
             </div>
             <div className="col-md-12">
-                <label style={{marginLeft:10}} htmlFor="inputSubCat" className="form-label">Alakategoria*</label>
-                <input type="text" className="form-control" id="inputSubcat" placeholder="Alakategoria"  value={subcat} onChange={e => setSubcat(e.target.value)} />
+                <label style={{marginLeft:10}} htmlFor="inputSubCat" className="form-label">Alakategorianro*</label>
+                <input type="text" className="form-control" id="inputSubcat" placeholder="Alakategorianro"  value={subcat} onChange={e => setSubcat(e.target.value)} />
             </div>
             <div className="col-md-12">
                 <label style={{marginLeft:10}} htmlFor="inputSubCat" className="form-label">Saldo*</label>

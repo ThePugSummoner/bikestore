@@ -14,6 +14,7 @@ const URL = 'http://localhost/angularbikes/'
 
 function SubCategory() {
     const [product, setProduct] = useState([])
+    const [isLoading,setIsloading]=useState(true)
     const params = useParams()
 
 
@@ -22,13 +23,22 @@ function SubCategory() {
             .then((response) => {
                 const json = response.data
                 setProduct(json)
+                setIsloading(false)
             }).catch(error => {
                 console.log(error.response === undefined ? error : error.response.data.error)
                 alert('Häiriö järjestelmässä, yritä kohta uudelleen!')
             })
     }, [params])
 
+console.log(product,"Subcategorylle tulevat ")
 
+if(isLoading===true){
+    return(
+    <div>
+
+    </div>
+    )
+}
     return (
         <div className="container-fluid">
             <div className="row">
@@ -38,15 +48,13 @@ function SubCategory() {
                     <li style={{ color: "black" }}><FontAwesomeIcon style={{paddingRight:10}} icon="fa-solid fa-angle-right" /> {params.subCategoryId}</li>
                 </ul>
                 <div className="col py-2 mb-4 subcate-info">
-
-                    <h4 className="text-center">{params.subCategoryId}</h4>
-                    <div className="row py-2 my-2 mx-auto">
-                        <div className="col-4">
-                        <img src={bike} alt="kategoria kuva"></img>
+                    <h4 className="text-center">{product.subcategories[0].alakategoriaotsikko}</h4>
+                    <div style={{display:"flex",flexDirection:"row",flexWrap:"wrap", justifyContent:"left"}} className="row py-2 my-2 ">
+                        <div className="col-md-3 ms-0 ps-0 ms-md-5 ps-md-4">
+                        <img className="img-fluid" src={URL + "alakategoriakuvat/" + product.subcategories[0].alakategoriakuva} alt="kategoria kuva"></img>
                         </div>
-                        <div className="col">
-                        <p>Lorem liipalaapapal jotain sinnepäin niin ja näin tänne voidaan kirjoittaa tekstiä . Tai sitten eivoida kirjoittaa yhtään mitään tekstiä.
-                        Mietitään yhdessä. Liipa laapa.
+                        <div className="col-md-5">
+                        <p>{product.subcategories[0].alakategoriakuvaus}
                     </p>
                         </div>
                     </div>
