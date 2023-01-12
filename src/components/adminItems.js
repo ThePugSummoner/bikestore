@@ -34,10 +34,10 @@ function AdminItems() {
             Header: "Tuotenimi",
             accessor: "nimi"
         },
-        {
+        /*{
             Header: "Kuvaus",
             accessor: "kuvaus"
-        },
+        },*/
         {
             Header: "Hinta",
             accessor: "hinta"
